@@ -1,0 +1,229 @@
+<div class="container-fluid" id="add-new-flight-container" >
+           <div class="row">
+                <div class="col-4">
+                    <a [routerLink]="['../']"><span class="glyphicon glyphicon-menu-left" id="back-icon">
+                    </span>Back</a>
+                </div>
+                <div class="col-8" id="add-flight-title">
+                    <p>Add New Flight</p>
+                </div>
+            </div>
+            <div id="page-breaker-line"></div>
+            <div class="row">
+                <div class="col-3" id="add-flight-date">
+                    <span class="glyphicon glyphicon-calendar"></span><p>Date</p>
+                </div>
+                <div class="col-6 offset-3" id="date-selector">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="from" name="from" 
+                        placeholder="MM/DD/YYYY" aria-describedby="sizing-addon2">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" id="flight-title-container">
+                    <p>Flight</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5 add-flight-list">
+                    <p>Flight Symbol</p>
+                </div>
+                <div class="col-1 flight-list-dropdown">
+                    <div class="dropdown">
+                        <button class="btn" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            **
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li (click)="onSelection('D')">D</li>
+                            <li (click)="onSelection('N')">N</li>
+                            <li (click)="onSelection('S')">S</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
+                    <div class="dropdown">
+                        <button class="btn" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            **                            
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li (click)="onSelection('D')">D</li>
+                            <li (click)="onSelection('N')">N</li>
+                            <li (click)="onSelection('S')">S</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
+                    <div class="dropdown">
+                        <button class="btn" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            **
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li (click)="onSelection('D')">D</li>
+                            <li (click)="onSelection('N')">N</li>
+                            <li (click)="onSelection('S')">S</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+           <div class="row flight-list-row">
+                <div class="col-5 add-flight-list">
+                    <p>Duty Symbol</p>
+                </div>
+                <div class="col-1 flight-list-dropdown">
+                    <div class="dropdown">
+                        <button class="btn" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            **
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li (click)="onSelection('PI')">PI</li>
+                            <li (click)="onSelection('PC')">PC</li>
+                            <li (click)="onSelection('IP')">IP</li>
+                            <li (click)="onSelection('SP')">SP</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
+                    <div class="dropdown">
+                        <button class="btn" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            **                           
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li (click)="onSelection('PI')">PI</li>
+                            <li (click)="onSelection('PC')">PC</li>
+                            <li (click)="onSelection('IP')">IP</li>
+                            <li (click)="onSelection('SP')">SP</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
+                    <div class="dropdown">
+                        <button class="btn" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            **
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li (click)="onSelection('PI')">PI</li>
+                            <li (click)="onSelection('PC')">PC</li>
+                            <li (click)="onSelection('IP')">IP</li>
+                            <li (click)="onSelection('SP')">SP</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row flight-list-row">
+                <div class="col-5 add-flight-list">
+                    <p>Hours</p>
+                </div>
+                <div class="col-1 flight-list-dropdown">
+                    <div class="dropdown">
+                        <button class="btn" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            **
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li>
+                                <div class="input-group hours-dropdown">
+                                    <input type="text" class="form-control" placeholder="0.0" 
+                                    aria-describedby="sizing-addon2" [value]="hourValue">
+                                </div>    
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
+                    <div class="dropdown">
+                        <button class="btn" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            **                            
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li>
+                                <div class="input-group hours-dropdown">
+                                    <input type="text" class="form-control" placeholder="0.0" 
+                                    aria-describedby="sizing-addon2">
+                                </div>    
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
+                    <div class="dropdown">
+                        <button class="btn" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            **
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li>
+                                <div class="input-group hours-dropdown">
+                                    <input type="text" class="form-control" placeholder="0.0" 
+                                    aria-describedby="sizing-addon2">
+                                </div>    
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div> 
+            <div class="row flight-list-row">
+                <div class="col-5 add-flight-list">
+                    <p>Seat</p>
+                </div>
+                <div class="col-1 flight-list-dropdown">
+                    <div class="dropdown">
+                        <button class="btn" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            **
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li (click)="onSelection('Front')">Front</li>
+                            <li (click)="onSelection('Back')">Back</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
+                    <div class="dropdown">
+                        <button class="btn" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            **                            
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li (click)="onSelection('Front')">Front</li>
+                            <li (click)="onSelection('Back')">Back</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
+                    <div class="dropdown">
+                        <button class="btn" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            **
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li (click)="onSelection('Front')">Front</li>
+                            <li (click)="onSelection('Back')">Back</li>
+                        </ul>
+                    </div>
+                </div>
+            </div> 
+            <div class="row flight-list-row">
+                <div class="col-4 add-flight-list flight-list-centered">
+                    <p>Remarks</p>
+                </div>
+                <div class="col-8 add-flight-remarks">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Enter remarks..." 
+                        aria-describedby="sizing-addon2">
+                    </div>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-1 offset-4" id="logit-button">
+                    <button class="btn btn-info">Log It!</button>
+                </div>
+            </div> 
+        </div>

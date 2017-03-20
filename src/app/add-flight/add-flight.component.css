@@ -1,0 +1,78 @@
+/*Add New Style page */
+
+#add-new-flight-container {
+    padding-top: 10px;
+    background-color: darkgray; 
+    height: 100vh; 
+}
+
+#back-icon {
+    margin-right: 5px;
+}
+
+a {
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:active  {
+    color: inherit;
+    text-decoration: none;
+}
+
+#page-breaker-line {
+    height: 1px;
+    background-color:#272D2D;
+}
+
+#add-flight-date {
+    font-size: 200%;
+    text-align: center; 
+    margin-top: 3%;
+}
+
+#date-selector {
+    margin-top: 5%;
+}
+
+#date-selector-tool {
+    background-color: #272D2D;
+    height: 30px;
+    width: 30px;
+}
+
+#flight-title-container {
+    font-size: 240%;
+    text-align: center;
+}
+
+.flight-list-row {
+    margin-top: 6%;
+}
+
+.dropdown-menu {
+    background-color: #fff;
+    text-align: center;
+    min-width: 0%;
+}
+
+.dropdown-menu li {
+    margin: 0.5em;
+}
+
+.hours-dropdown input {
+    min-width: 50px;
+}
+
+#logit-button {
+    margin-top: 2%;
+}

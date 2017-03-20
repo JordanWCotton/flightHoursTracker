@@ -1,0 +1,31 @@
+/* Main Menu page */
+
+#main-menu-container {
+    background-color: darkgrey;
+    height: 100vh; 
+}
+
+#title-container {
+    text-align: center;
+    margin-top: 17%;
+    border-radius: 10px;
+}
+
+#title-container h4 {
+    margin-left: 29%;
+}
+
+.main-menu-item {
+    text-align: center;
+    margin-top: 5%;
+    border-radius: 6px;
+}
+
+.main-menu-item p {
+    font-size: 95%;
+}
+
+#new-flight {
+    margin-top: 20%;
+}
+
