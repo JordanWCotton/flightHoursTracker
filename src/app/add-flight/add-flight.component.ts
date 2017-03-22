@@ -10,7 +10,9 @@ export class AddFlightComponent {
   constructor() { }
 
   selectionVar: string = '';
-  hourValue = 1.2;
+  flightOneHours: 0;
+  flightTwoHours: 0;
+  flightThreeHours: 0;
 
   onHourSelection (value) {
     this.hourValue = value;
