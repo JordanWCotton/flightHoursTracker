@@ -14,11 +14,6 @@ export class AddFlightComponent {
   flightTwoHours: 0;
   flightThreeHours: 0;
 
-  onHourSelection (value) {
-    this.hourValue = value;
-    console.log(this.hourValue)
-  }
-
   onSelection (value: string) {
     this.selectionVar = value;
     console.log(this.selectionVar);
