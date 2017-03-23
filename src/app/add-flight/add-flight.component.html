@@ -121,52 +121,22 @@
                     <p>Hours</p>
                 </div>
                 <div class="col-1 flight-list-dropdown">
-                    <div class="dropdown">
-                        <button class="btn" type="button" id="dropdownMenu1"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            **
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li>
                                 <div class="input-group hours-dropdown">
                                     <input type="text" class="form-control" placeholder="0.0" 
-                                    aria-describedby="sizing-addon2" #flightOneHours>
+                                    aria-describedby="sizing-addon2" #flightOneHours (click)="onSubmit(flightOneHours.value)">
                                 </div>    
-                            </li>
-                        </ul>
-                    </div>
                 </div>
                 <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
-                    <div class="dropdown">
-                        <button class="btn" type="button" id="dropdownMenu1"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            **                            
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li>
                                 <div class="input-group hours-dropdown">
                                     <input type="text" class="form-control" placeholder="0.0" 
-                                    aria-describedby="sizing-addon2" #flightTwoHours>
-                                </div>    
-                            </li>
-                        </ul>
-                    </div>
+                                    aria-describedby="sizing-addon2" #flightTwoHours (click)="onSubmit(flightTwoHours.value)">
+                                </div>       
                 </div>
                 <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
-                    <div class="dropdown">
-                        <button class="btn" type="button" id="dropdownMenu1"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            **
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li>
                                 <div class="input-group hours-dropdown">
                                     <input type="text" class="form-control" placeholder="0.0" 
-                                    aria-describedby="sizing-addon2" #flightThreeHours>
+                                    aria-describedby="sizing-addon2" #flightThreeHours (click)="onSubmit(flightThreeHours.value)">
                                 </div>    
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div> 
             <div class="row flight-list-row">

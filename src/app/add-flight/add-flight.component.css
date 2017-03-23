@@ -59,7 +59,7 @@ a:active  {
     margin-top: 6%;
 }
 
-.dropdown-menu {
+.dropdown-menu { /* HERE */
     background-color: #fff;
     text-align: center;
     min-width: 0%;

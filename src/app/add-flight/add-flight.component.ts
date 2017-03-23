@@ -14,6 +14,10 @@ export class AddFlightComponent {
   flightTwoHours: 0;
   flightThreeHours: 0;
 
+  onSubmit(form: any) {
+    console.log(form);
+  }
+
   onSelection (value: string) {
     this.selectionVar = value;
     console.log(this.selectionVar);
