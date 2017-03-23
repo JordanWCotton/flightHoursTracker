@@ -7,42 +7,34 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./add-flight.component.css']
 })
 export class AddFlightComponent {
-  myForm : FormGroup;
+  myForm: FormGroup;
 
   constructor() { 
     this.myForm = new FormGroup ({
-      'flightSymbol': new FormControl(),
-      'dutySymbol': new FormControl(),
-      'hours': new FormControl(),
-      'seat': new FormControl()
+      'flightSymbol': new FormGroup ({
+        'D': new FormControl(),
+        'N': new FormControl(),
+        'S': new FormControl()
+      }),
+      'dutySymbol': new FormGroup ({
+        'PI': new FormControl(),
+        'PC': new FormControl(),
+        'IP': new FormControl(),
+        'SP': new FormControl(),
+      }),
+      'hours': new FormGroup({
+
+      }),
+      'seat': new FormGroup ({
+        'Front': new FormControl(),
+        'Back': new FormControl()
+      })
     })
   }
 
-  seats = [
-    'front',
-    'back'
-  ]
-
-  flightSymbols = [
-    'D',
-    'N',
-    'S'
-  ]
-
-  selectionVar: string = '';
-  flightOneHours: 0;
-  flightTwoHours: 0;
-  flightThreeHours: 0;
-
-  onSubmit(form: any) {
-    console.log(form);
+  onSubmit() {
+    console.log(this.myForm.value);
   }
-
-  onSelection (value: string) {
-    this.selectionVar = value;
-    console.log(this.selectionVar);
-  }
-
 
 
 }
