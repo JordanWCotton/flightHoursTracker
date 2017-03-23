@@ -25,20 +25,21 @@
                     <p>Flight</p>
                 </div>
             </div>
+            <form [formGroup]="myForm">
             <div class="row">
                 <div class="col-5 add-flight-list">
                     <p>Flight Symbol</p>
                 </div>
-                <div class="col-1 flight-list-dropdown">
+                <div class="col-1 flight-list-dropdown"> 
                     <div class="dropdown">
                         <button class="btn" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             **
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li (click)="onSelection('D')">D</li>
-                            <li (click)="onSelection('N')">N</li>
-                            <li (click)="onSelection('S')">S</li>
+                            <div *ngFor="let f of flightSymbols">
+                                <input type="radio" name="seat" value="front">{{f}}
+                            </div>
                         </ul>
                     </div>
                 </div>
@@ -196,4 +197,5 @@
                     <button class="btn btn-info">Log It!</button>
                 </div>
             </div> 
+        </form>
         </div>

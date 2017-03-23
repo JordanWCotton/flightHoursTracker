@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-add-flight',
@@ -6,8 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-flight.component.css']
 })
 export class AddFlightComponent {
+  myForm : FormGroup;
 
-  constructor() { }
+  constructor() { 
+    this.myForm = new FormGroup ({
+      'flightSymbol': new FormControl(),
+      'dutySymbol': new FormControl(),
+      'hours': new FormControl(),
+      'seat': new FormControl()
+    })
+  }
+
+  seats = [
+    'front',
+    'back'
+  ]
+
+  flightSymbols = [
+    'D',
+    'N',
+    'S'
+  ]
 
   selectionVar: string = '';
   flightOneHours: 0;
