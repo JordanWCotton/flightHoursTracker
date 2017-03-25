@@ -23,7 +23,7 @@ export class AddFlightComponent {
         'SP': new FormControl(),
       }),
       'hours': new FormGroup({
-
+        'flightHours': new FormControl()
       }),
       'seat': new FormGroup ({
         'Front': new FormControl(),
