@@ -14,10 +14,11 @@
                 <div class="col-3" id="add-flight-date">
                     <span class="glyphicon glyphicon-calendar"></span><p>Date</p>
                 </div>
-                <div class="col-6 offset-3" id="date-selector">
+                <div class="col-6 offset-3" id="date-selector" formGroupName="myDateSelector">
                     <div class="input-group">
                         <input type="text" class="form-control" id="from" name="from" 
-                        placeholder="MM/DD/YYYY" aria-describedby="sizing-addon2">
+                        placeholder="MM/DD/YYYY" aria-describedby="sizing-addon2" formControlName="Date"
+                        #dateValue value="dateValue.value">
                     </div>
                 </div>
             </div>

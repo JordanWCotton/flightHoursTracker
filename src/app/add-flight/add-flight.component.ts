@@ -11,6 +11,9 @@ export class AddFlightComponent {
 
   constructor() { 
     this.myForm = new FormGroup ({
+      'myDateSelector':new FormGroup({
+        'Date': new FormControl()
+      }),
       'flightSymbol': new FormGroup ({
         'D': new FormControl(),
         'N': new FormControl(),
