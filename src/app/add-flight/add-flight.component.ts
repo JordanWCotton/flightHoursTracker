@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { AddFlightService } from '../add-flight.service';
+
 
 @Component({
   selector: 'app-add-flight',
@@ -9,7 +11,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class AddFlightComponent {
   myForm: FormGroup;
 
-  constructor() { 
+  constructor(private addFlight: AddFlightService) { 
     this.myForm = new FormGroup ({
       'myDateSelector':new FormGroup({
         'Date': new FormControl()
@@ -36,7 +38,7 @@ export class AddFlightComponent {
   }
 
   onSubmit() {
-    console.log(this.myForm.value);
+    this.addFlight.logFlightData(this.myForm);
   }
 
 

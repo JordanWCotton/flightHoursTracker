@@ -9,6 +9,8 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { FlightLogComponent } from './flight-log/flight-log.component';
 import { AddFlightComponent } from './add-flight/add-flight.component';
 import { routing } from './routing';
+import { AddFlightService } from './add-flight.service';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { routing } from './routing';
     routing,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AddFlightService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
