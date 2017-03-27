@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AddFlightService } from '../add-flight.service';
+import { Flight } from '../flight.interface';
 
 
 @Component({
@@ -9,39 +10,45 @@ import { AddFlightService } from '../add-flight.service';
   styleUrls: ['./add-flight.component.css']
 })
 export class AddFlightComponent {
-  myForm: FormGroup;
-  flightSymbol: string = '**';
-  dutySymbol: string = '**';
-  seat: string = '**';
+  public flight: Flight;
 
-  constructor(private addFlight: AddFlightService) { 
-    this.myForm = new FormGroup ({
-      'myDateSelector':new FormGroup({
-        'Date': new FormControl()
-      }),
-      'flightSymbol': new FormGroup ({
-        'D': new FormControl(),
-        'N': new FormControl(),
-        'S': new FormControl()
-      }),
-      'dutySymbol': new FormGroup ({
-        'PI': new FormControl(),
-        'PC': new FormControl(),
-        'IP': new FormControl(),
-        'SP': new FormControl(),
-      }),
-      'hours': new FormGroup({
-        'flightHours': new FormControl()
-      }),
-      'seat': new FormGroup ({
-        'Front': new FormControl(),
-        'Back': new FormControl()
-      })
-    })
+  constructor(private addFlight: AddFlightService) {}
+
+  hours: number = 0.0;
+  dateValue: string = '';
+  remarksValue: string = '';
+
+  seats = [
+    { value: 'F'},
+    { value: 'B'}
+  ];
+
+  dutySymbols = [
+    { value: 'PI'},
+    { value: 'PC'},
+    { value: 'IP'},
+    { value: 'SP'}
+  ];
+
+  flightSymbols = [
+    { value: 'D'},
+    { value: 'N'},
+    { value: 'S'}
+  ];
+
+  ngOnInit() {
+    this.flight = {
+      hours: this.hours,
+      date: this.dateValue,
+      remarks: this.remarksValue,
+      seat: this.seats[0].value,
+      dutySymbol: this.dutySymbols[0].value,
+      flightSymbol: this.flightSymbols[0].value
+    }
   }
 
-  onSubmit() {
-    this.addFlight.logFlightData(this.myForm);
+  onSubmit(f) {
+    this.addFlight.logFlightData(f.value);
   }
 
 

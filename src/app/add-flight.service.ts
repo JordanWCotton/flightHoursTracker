@@ -6,8 +6,11 @@ export class AddFlightService {
 
   constructor() { }
 
-  logFlightData (myForm: FormGroup) {
-    console.log(myForm.value);
+  logFlightData (formData) {
+    console.log(formData);
+
+    //Logic to take the 'B', 'F' etc and make it 'Front' and 'Back', repackadge and send the new data to 
+    //the FireBase server using http 
   }
 
 }

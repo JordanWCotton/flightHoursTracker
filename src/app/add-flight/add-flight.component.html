@@ -9,16 +9,16 @@
                 </div>
             </div>
             <div id="page-breaker-line"></div>
-            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <form #f="ngForm">
             <div class="row">
                 <div class="col-3" id="add-flight-date">
                     <span class="glyphicon glyphicon-calendar"></span><p>Date</p>
                 </div>
-                <div class="col-6 offset-3" id="date-selector" formGroupName="myDateSelector">
+                <div class="col-6 offset-3" id="date-selector">
                     <div class="input-group">
-                        <input type="text" class="form-control" id="from" name="from" 
-                        placeholder="MM/DD/YYYY" aria-describedby="sizing-addon2" formControlName="Date"
-                        #dateValue value="dateValue.value">
+                        <input type="text" class="form-control" id="from" name="dateValue" 
+                        placeholder="MM/DD/YYYY" aria-describedby="sizing-addon2"
+                        [(ngModel)]="flight.date">
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                     <p>Flight</p>
                 </div>
             </div>
-            <div class="row" formGroupName="flightSymbol">
+            <div class="row">
                 <div class="col-5 add-flight-list">
                     <p>Flight Symbol</p>
                 </div>
@@ -35,15 +35,16 @@
                     <div class="dropdown">
                         <button class="btn" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{flightSymbol}}
+                            {{f.value.flightSymbol}}
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <input type="radio" name="D" value="D"
-                                formControlName="D" [(ngModel)]="flightSymbol">D
-                                <input type="radio" name="N" value="N"
-                                formControlName="N" [(ngModel)]="flightSymbol">N
-                                <input type="radio" name="S" value="S"
-                                formControlName="S" [(ngModel)]="flightSymbol">S
+                            <div *ngFor="let flightSymbol of flightSymbols">
+                                <label>
+                                <input type="radio" name="flightSymbol" [(ngModel)]="flight.flightSymbol"
+                                [value]="flightSymbol.value">
+                                    {{flightSymbol.value}}
+                                </label>
+                            </div>
                         </ul>
                     </div>
                 </div>
@@ -70,7 +71,7 @@
                     </div>
                 </div>
             </div>
-           <div class="row flight-list-row" formGroupName="dutySymbol">
+           <div class="row flight-list-row">
                 <div class="col-5 add-flight-list">
                     <p>Duty Symbol</p>
                 </div>
@@ -78,17 +79,16 @@
                     <div class="dropdown">
                         <button class="btn" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{dutySymbol}}
+                            {{f.value.dutySymbol}}
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <input type="radio" name="PI" value="PI"
-                                formControlName="PI" [(ngModel)]="dutySymbol">PI
-                                <input type="radio" name="PC" value="PC"
-                                formControlName="PC" [(ngModel)]="dutySymbol">PC
-                                <input type="radio" name="IP" value="IP"
-                                formControlName="IP" [(ngModel)]="dutySymbol">IP
-                                <input type="radio" name="SP" value="SP"
-                                formControlName="SP" [(ngModel)]="dutySymbol">SP
+                            <div *ngFor="let dutySymbol of dutySymbols">
+                                <label>
+                                <input type="radio" name="dutySymbol" [(ngModel)]="flight.dutySymbol"
+                                [value]="dutySymbol.value">
+                                    {{dutySymbol.value}}
+                                </label>
+                            </div>
                         </ul>
                     </div>
                 </div>
@@ -115,14 +115,14 @@
                     </div>
                 </div>
             </div>
-            <div class="row flight-list-row" formGroupName="hours">
+            <div class="row flight-list-row">
                 <div class="col-5 add-flight-list">
                     <p>Hours</p>
                 </div>
                 <div class="col-1 flight-list-dropdown">
                     <div class="input-group hours-dropdown">
-                        <input type="text" class="form-control" placeholder="0.0" 
-                        aria-describedby="sizing-addon2" #flightHours value="flightHours.value" formControlName="flightHours">
+                        <input type="number" class="form-control" placeholder="0.0" 
+                        aria-describedby="sizing-addon2" name="hours" [(ngModel)]="flight.hours">
                     </div>    
                 </div>
                 <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
@@ -136,7 +136,7 @@
                     </div>    
                 </div>
             </div> 
-            <div class="row flight-list-row" formGroupName="seat">
+            <div class="row flight-list-row">
                 <div class="col-5 add-flight-list">
                     <p>Seat</p>
                 </div>
@@ -144,13 +144,16 @@
                     <div class="dropdown">
                         <button class="btn" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{seat}}
+                            {{f.value.seat}}
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <input type="radio" name="Front" value="F"
-                                formControlName="Front" [(ngModel)]="seat">Front
-                                <input type="radio" name="Back" value="B"
-                                formControlName="Back" [(ngModel)]="seat">Back
+                            <div *ngFor="let seat of seats">
+                                <label>
+                                <input type="radio" name="seat" [(ngModel)]="flight.seat"
+                                [value]="seat.value">
+                                {{seat.value}}
+                                </label>
+                            </div>
                         </ul>
                     </div>
                 </div>
@@ -184,13 +187,13 @@
                 <div class="col-8 add-flight-remarks">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Enter remarks..." 
-                        aria-describedby="sizing-addon2">
+                        aria-describedby="sizing-addon2" name="remarks" [(ngModel)]="flight.remarks">
                     </div>
                 </div>
             </div> 
             <div class="row">
                 <div class="col-1 offset-4" id="logit-button">
-                    <button class="btn btn-success" type="submit">Log It!</button>
+                    <button class="btn btn-success" type="submit" (click)="onSubmit(f)">Log It!</button>
                 </div>
             </div> 
         </form>
