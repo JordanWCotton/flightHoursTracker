@@ -35,15 +35,15 @@
                     <div class="dropdown">
                         <button class="btn" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            **
+                            {{flightSymbol}}
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <input type="radio" name="D" value="D"
-                                formControlName="D">D
+                                formControlName="D" [(ngModel)]="flightSymbol">D
                                 <input type="radio" name="N" value="N"
-                                formControlName="N">N
+                                formControlName="N" [(ngModel)]="flightSymbol">N
                                 <input type="radio" name="S" value="S"
-                                formControlName="S">S
+                                formControlName="S" [(ngModel)]="flightSymbol">S
                         </ul>
                     </div>
                 </div>
@@ -78,17 +78,17 @@
                     <div class="dropdown">
                         <button class="btn" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            **
+                            {{dutySymbol}}
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <input type="radio" name="PI" value="PI"
-                                formControlName="PI">PI
+                                formControlName="PI" [(ngModel)]="dutySymbol">PI
                                 <input type="radio" name="PC" value="PC"
-                                formControlName="PC">PC
+                                formControlName="PC" [(ngModel)]="dutySymbol">PC
                                 <input type="radio" name="IP" value="IP"
-                                formControlName="IP">IP
+                                formControlName="IP" [(ngModel)]="dutySymbol">IP
                                 <input type="radio" name="SP" value="SP"
-                                formControlName="SP">SP
+                                formControlName="SP" [(ngModel)]="dutySymbol">SP
                         </ul>
                     </div>
                 </div>
@@ -144,13 +144,13 @@
                     <div class="dropdown">
                         <button class="btn" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            **
+                            {{seat}}
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <input type="radio" name="Front" value="Front"
-                                formControlName="Front">Front
-                                <input type="radio" name="Back" value="Back"
-                                formControlName="Back">Back
+                                <input type="radio" name="Front" value="F"
+                                formControlName="Front" [(ngModel)]="seat">Front
+                                <input type="radio" name="Back" value="B"
+                                formControlName="Back" [(ngModel)]="seat">Back
                         </ul>
                     </div>
                 </div>

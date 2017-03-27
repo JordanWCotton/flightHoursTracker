@@ -10,6 +10,9 @@ import { AddFlightService } from '../add-flight.service';
 })
 export class AddFlightComponent {
   myForm: FormGroup;
+  flightSymbol: string = '**';
+  dutySymbol: string = '**';
+  seat: string = '**';
 
   constructor(private addFlight: AddFlightService) { 
     this.myForm = new FormGroup ({
