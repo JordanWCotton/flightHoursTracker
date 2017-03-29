@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators, NG_VALIDATORS } from '@angular/forms';
 import { AddFlightService } from '../add-flight.service';
 import { Flight } from '../flight.interface';
 
@@ -11,12 +11,14 @@ import { Flight } from '../flight.interface';
 })
 export class AddFlightComponent {
   public flight: Flight;
+  public myForm: FormGroup;
 
-  constructor(private addFlight: AddFlightService) {}
+  constructor(private addFlight: AddFlightService, private _fb: FormBuilder) {}
 
   hours: number = 0.0;
   dateValue: string = '';
   remarksValue: string = '';
+  pattern: string = '/^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/';
 
   seats = [
     { value: 'F'},
@@ -39,16 +41,30 @@ export class AddFlightComponent {
   ngOnInit() {
     this.flight = {
       hours: this.hours,
-      date: this.dateValue,
       remarks: this.remarksValue,
       seat: this.seats[0].value,
       dutySymbol: this.dutySymbols[0].value,
       flightSymbol: this.flightSymbols[0].value
+    },
+
+    this.myForm = this._fb.group({
+      date: ['', <any>Validators.pattern(this.pattern)]
+    })
+  }
+
+  //Send the flight data to the add-flight service after checking hours 
+  onSubmit(f, dateValue) {
+    if (f.value.hours > 9.0) {
+      console.log('Hours too high!'); //Develop error throw here
+    } else {
+      this.addFlight.logFlightData(f);
     }
   }
 
-  onSubmit(f) {
-    this.addFlight.logFlightData(f.value);
+  //Send the date data to the add-flight service
+  onSave(myForm) {
+    this.addFlight.logFlightDate(myForm.value.date)
+    console.log(myForm);
   }
 
 

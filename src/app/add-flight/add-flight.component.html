@@ -10,16 +10,21 @@
             </div>
             <div id="page-breaker-line"></div>
             <form #f="ngForm">
+            <form [formGroup]="myForm" (ngSubmit)="onSave(myForm)">
             <div class="row">
-                <div class="col-3" id="add-flight-date">
-                    <span class="glyphicon glyphicon-calendar"></span><p>Date</p>
-                </div>
-                <div class="col-6 offset-3" id="date-selector">
+                <div class="col-6" id="date-selector">
                     <div class="input-group">
+                        <!-- <span class="glyphicon glyphicon-calendar"></span><p>Date</p> -->
                         <input type="text" class="form-control" id="from" name="dateValue" 
                         placeholder="MM/DD/YYYY" aria-describedby="sizing-addon2"
-                        [(ngModel)]="flight.date">
+                        formControlName="date">
                     </div>
+                </div>
+                <div class="col-3 offset-1" id="date-selector">
+                        <!-- <input type="text" class="form-control" id="from" name="dateValue" 
+                        placeholder="MM/DD/YYYY" aria-describedby="sizing-addon2"
+                        formControlName="date"> -->
+                        <button class="btn btn-primary" type="submit">Set date</button>
                 </div>
             </div>
             <div class="row">
@@ -27,6 +32,7 @@
                     <p>Flight</p>
                 </div>
             </div>
+            </form>
             <div class="row">
                 <div class="col-5 add-flight-list">
                     <p>Flight Symbol</p>
@@ -187,7 +193,7 @@
                 <div class="col-8 add-flight-remarks">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Enter remarks..." 
-                        aria-describedby="sizing-addon2" name="remarks" [(ngModel)]="flight.remarks">
+                        aria-describedby="sizing-addon2" name="remarks" [maxlength]="30" [(ngModel)]="flight.remarks">
                     </div>
                 </div>
             </div> 

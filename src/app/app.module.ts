@@ -24,7 +24,7 @@ import { AddFlightService } from './add-flight.service';
     FormsModule,
     HttpModule,
     routing,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [AddFlightService],
   bootstrap: [AppComponent]
