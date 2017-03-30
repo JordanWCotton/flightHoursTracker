@@ -16,7 +16,7 @@ export class AddFlightComponent {
   constructor(private addFlight: AddFlightService, private _fb: FormBuilder) {}
 
   hours: number = 0.0;
-  dateValue: string = '';
+  dateSubmitted: boolean = false;
   remarksValue: string = '';
   //Regex pattern that matches MM/DD/YYYY, from 1900-2099
   pattern = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
@@ -64,8 +64,15 @@ export class AddFlightComponent {
 
   //Send the date data to the add-flight service
   onSave(myForm) {
-    this.addFlight.logFlightDate(myForm.value.date)
-    console.log(myForm);
+    //If the data supplied is valid, send date data to service and set dataSubmitted to true
+    //to allow the rest of the form to be submitted
+    if (myForm.valid === true) {
+      this.addFlight.logFlightDate(myForm.value.date);
+      this.dateSubmitted = true;
+      console.log(myForm);
+    } else {
+      console.log('Error, data input not valid.')
+    }
   }
 
 

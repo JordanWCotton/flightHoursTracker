@@ -44,11 +44,14 @@ a:active  {
     margin-top: 5%;
 }
 
-#date-selector-tool {
-    background-color: #272D2D;
-    height: 30px;
-    width: 30px;
+#data-selector-tooltip {
+    background-color: goldenrod;
+    border-radius: 20px;
+    margin-top: 2%;
+    font-size: 0.8em;
 }
+
+
 
 #flight-title-container {
     font-size: 240%;
@@ -59,7 +62,7 @@ a:active  {
     margin-top: 6%;
 }
 
-.dropdown-menu { /* HERE */
+.dropdown-menu { 
     background-color: #fff;
     text-align: center;
     min-width: 0%;

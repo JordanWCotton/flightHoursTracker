@@ -31,7 +31,7 @@ export class AddFlightService {
     console.log(this.remarks);
     console.log(this.flightDate);
 
-    //Logic to take the 'B', 'F' etc and make it 'Front' and 'Back', repackadge and send the new data to 
+    //Logic to take the 'B', 'F' etc and make it 'Front' and 'Back', repackage and send the new data to 
     //the FireBase server using http 
   }
 

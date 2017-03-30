@@ -24,7 +24,12 @@
                         <!-- <input type="text" class="form-control" id="from" name="dateValue" 
                         placeholder="MM/DD/YYYY" aria-describedby="sizing-addon2"
                         formControlName="date"> -->
-                        <button class="btn btn-primary" type="submit">Set date</button>
+                        <button class="btn btn-primary" type="submit" [disabled]="!myForm.valid">Set date</button>
+                </div>
+            </div>
+            <div class="row">
+                <div *ngIf="!myForm.valid && myForm.dirty" class="col-8" id="data-selector-tooltip">
+                        <p>Please enter date in MM/DD/YYYY format</p>
                 </div>
             </div>
             <div class="row">
@@ -199,7 +204,7 @@
             </div> 
             <div class="row">
                 <div class="col-1 offset-4" id="logit-button">
-                    <button class="btn btn-success" type="submit" (click)="onSubmit(f)">Log It!</button>
+                    <button class="btn btn-success" type="submit" [disabled]="!dateSubmitted" (click)="onSubmit(f)">Log It!</button>
                 </div>
             </div> 
         </form>
