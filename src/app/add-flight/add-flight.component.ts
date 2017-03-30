@@ -55,10 +55,10 @@ export class AddFlightComponent {
 
   //Send the flight data to the add-flight service after checking hours 
   onSubmit(f, dateValue) {
-    if (f.value.hours > 9.0) {
-      console.log('Hours too high!'); //Develop error throw here
-    } else {
+    if (f.value.hours < 9.0) {
       this.addFlight.logFlightData(f);
+    } else {
+      console.log('Hours too high!'); //Develop error throw here
     }
   }
 
@@ -74,6 +74,4 @@ export class AddFlightComponent {
       console.log('Error, data input not valid.')
     }
   }
-
-
 }

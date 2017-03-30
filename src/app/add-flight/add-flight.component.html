@@ -24,12 +24,14 @@
                         <!-- <input type="text" class="form-control" id="from" name="dateValue" 
                         placeholder="MM/DD/YYYY" aria-describedby="sizing-addon2"
                         formControlName="date"> -->
-                        <button class="btn btn-primary" type="submit" [disabled]="!myForm.valid">Set date</button>
+                        <button class="btn btn-primary" type="submit" 
+                        [disabled]="!myForm.valid">Set date</button>
                 </div>
             </div>
             <div class="row">
-                <div *ngIf="!myForm.valid && myForm.dirty" class="col-8" id="data-selector-tooltip">
-                        <p>Please enter date in MM/DD/YYYY format</p>
+                <div *ngIf="!myForm.valid && myForm.dirty" class="alert alert-info offset-1 col-10"
+                id="data-selector-tooltip" role="alert">
+                    MM/DD/YYYY format required!
                 </div>
             </div>
             <div class="row">
@@ -42,9 +44,9 @@
                 <div class="col-5 add-flight-list">
                     <p>Flight Symbol</p>
                 </div>
-                <div class="col-1 flight-list-dropdown"> 
+                <div class="col-4 offset-1"> 
                     <div class="dropdown">
-                        <button class="btn" type="button" id="dropdownMenu1"
+                        <button class="btn add-flight-selectors" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             {{f.value.flightSymbol}}
                         </button>
@@ -59,36 +61,14 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
-                    <div class="dropdown">
-                        <button class="btn" type="button" id="dropdownMenu1"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            **                            
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                               <!--NEED DUPLICATION OF FUNCTIONALITY FIX -->
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
-                    <div class="dropdown">
-                        <button class="btn" type="button" id="dropdownMenu1"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            **
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <!--NEED DUPLICATION OF FUNCTIONALITY FIX -->
-                        </ul>
-                    </div>
-                </div>
             </div>
            <div class="row flight-list-row">
                 <div class="col-5 add-flight-list">
                     <p>Duty Symbol</p>
                 </div>
-                <div class="col-1 flight-list-dropdown">
+                <div class="col-4 offset-1">
                     <div class="dropdown">
-                        <button class="btn" type="button" id="dropdownMenu1"
+                        <button class="btn add-flight-selectors" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             {{f.value.dutySymbol}}
                         </button>
@@ -103,47 +83,15 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
-                    <div class="dropdown">
-                        <button class="btn" type="button" id="dropdownMenu1"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            **                           
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                           <!--NEED DUPLICATION OF FUNCTIONALITY FIX -->
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
-                    <div class="dropdown">
-                        <button class="btn" type="button" id="dropdownMenu1"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            **
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <!--NEED DUPLICATION OF FUNCTIONALITY FIX -->
-                        </ul>
-                    </div>
-                </div>
             </div>
             <div class="row flight-list-row">
                 <div class="col-5 add-flight-list">
-                    <p>Hours</p>
+                    <p>Flight Hours</p>
                 </div>
-                <div class="col-1 flight-list-dropdown">
-                    <div class="input-group hours-dropdown">
-                        <input type="number" class="form-control" placeholder="0.0" 
-                        aria-describedby="sizing-addon2" name="hours" [(ngModel)]="flight.hours">
-                    </div>    
-                </div>
-                <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
-                    <div class="input-group hours-dropdown">
-                        <!--NEED DUPLICATION OF FUNCTIONALITY FIX -->
-                    </div>       
-                </div>
-                <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
-                    <div class="input-group hours-dropdown">
-                        <!--NEED DUPLICATION OF FUNCTIONALITY FIX -->
+                <div class="col-4 offset-1">
+                    <div class="input-group add-flight-selectors">
+                        <input type="number" id="hours-input" class="form-control" placeholder="0.0" 
+                        aria-describedby="sizing-addon1" name="hours" [(ngModel)]="flight.hours">
                     </div>    
                 </div>
             </div> 
@@ -151,9 +99,9 @@
                 <div class="col-5 add-flight-list">
                     <p>Seat</p>
                 </div>
-                <div class="col-1 flight-list-dropdown">
+                <div class="col-4 offset-1">
                     <div class="dropdown">
-                        <button class="btn" type="button" id="dropdownMenu1"
+                        <button class="btn add-flight-selectors" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             {{f.value.seat}}
                         </button>
@@ -165,28 +113,6 @@
                                 {{seat.value}}
                                 </label>
                             </div>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
-                    <div class="dropdown">
-                        <button class="btn" type="button" id="dropdownMenu1"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            **                            
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <!--NEED DUPLICATION OF FUNCTIONALITY FIX -->
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-1 offset-1 flight-list-dropdown flight-dropdown-offset">
-                    <div class="dropdown">
-                        <button class="btn" type="button" id="dropdownMenu1"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            **
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <!--NEED DUPLICATION OF FUNCTIONALITY FIX -->
                         </ul>
                     </div>
                 </div>

@@ -45,13 +45,10 @@ a:active  {
 }
 
 #data-selector-tooltip {
-    background-color: goldenrod;
-    border-radius: 20px;
-    margin-top: 2%;
+    margin-top: 1%;
     font-size: 0.8em;
-}
-
-
+    margin-bottom: 1%;
+} 
 
 #flight-title-container {
     font-size: 240%;
@@ -65,15 +62,17 @@ a:active  {
 .dropdown-menu { 
     background-color: #fff;
     text-align: center;
-    min-width: 0%;
+    min-width: auto;
+    padding-left: 45%;
+    padding-right: 45%;
 }
 
-.dropdown-menu li {
-    margin: 0.5em;
+.add-flight-selectors {
+    width: 90px;
 }
 
-.hours-dropdown input {
-    min-width: 50px;
+#hours-input {
+    text-align: center;
 }
 
 #logit-button {
