@@ -49,7 +49,7 @@ export class AddFlightComponent {
     },
 
     this.myForm = this._fb.group({
-      date: ['', <any>Validators.pattern(this.pattern)] 
+      date: ['', [Validators.required, <any>Validators.pattern(this.pattern)]] 
     })
   }
 
