@@ -1,6 +1,6 @@
 
 export interface Flight {
-    hours: number;
+    hours;
     remarks: string;
     seat;
     dutySymbol;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, NG_VALIDATORS } from '@angular/forms';
 import { AddFlightService } from '../add-flight.service';
 import { Flight } from '../flight.interface';
@@ -10,12 +10,15 @@ import { Flight } from '../flight.interface';
   styleUrls: ['./add-flight.component.css']
 })
 export class AddFlightComponent {
+  @ViewChild('elFlight') elFlight:ElementRef;
+  @ViewChild('elDuty') elDuty:ElementRef;
+  @ViewChild('elSeat') elSeat:ElementRef;
   public flight: Flight;
   public myForm: FormGroup;
 
-  constructor(private addFlight: AddFlightService, private _fb: FormBuilder) {}
+  constructor(private addFlight: AddFlightService, private _fb: FormBuilder, private rd: Renderer2) {}
 
-  hours: number = 0.0;
+  hours:number = 0.0;
   dateSubmitted: boolean = false;
   remarksValue: string = '';
   //Regex pattern that matches MM/DD/YYYY, from 1900-2099
@@ -40,8 +43,9 @@ export class AddFlightComponent {
   ];
 
   ngOnInit() {
+    //On initialization, set all the values to default
     this.flight = {
-      hours: this.hours,
+      hours: this.hours.toFixed(1), //Force user inputted values to be a float, with 1 decimal place
       remarks: this.remarksValue,
       seat: this.seats[0].value,
       dutySymbol: this.dutySymbols[0].value,
@@ -52,6 +56,8 @@ export class AddFlightComponent {
       date: ['', [Validators.required, <any>Validators.pattern(this.pattern)]] 
     })
   }
+
+ 
 
   //Send the flight data to the add-flight service after checking hours 
   onSubmit(f, dateValue) {
@@ -72,6 +78,24 @@ export class AddFlightComponent {
       console.log(myForm);
     } else {
       console.log('Error, data input not valid.')
+    }
+  }
+
+  onDropdownSelect(event) {
+    //Bind the input that the user is currently using
+    let selected = event.path[4].id; 
+
+    //Utilize our local variable to determine which dropdown to close
+    switch (selected) {  
+      case this.elFlight.nativeElement.id:
+        this.rd.removeClass(this.elFlight.nativeElement, 'show');
+        break;
+      case this.elDuty.nativeElement.id:
+        this.rd.removeClass(this.elDuty.nativeElement, 'show');
+        break;
+      case this.elSeat.nativeElement.id:
+        this.rd.removeClass(this.elSeat.nativeElement, 'show');
+        break;
     }
   }
 }

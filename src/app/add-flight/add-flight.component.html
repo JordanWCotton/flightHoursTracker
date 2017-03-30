@@ -45,7 +45,7 @@
                     <p>Flight Symbol</p>
                 </div>
                 <div class="col-4 offset-1"> 
-                    <div class="dropdown">
+                    <div class="dropdown" id="elFlight" #elFlight>
                         <button class="btn add-flight-selectors" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             {{f.value.flightSymbol}}
@@ -54,7 +54,7 @@
                             <div *ngFor="let flightSymbol of flightSymbols">
                                 <label>
                                 <input type="radio" name="flightSymbol" [(ngModel)]="flight.flightSymbol"
-                                [value]="flightSymbol.value">
+                                [value]="flightSymbol.value" (click)="onDropdownSelect($event)">
                                     {{flightSymbol.value}}
                                 </label>
                             </div>
@@ -67,7 +67,7 @@
                     <p>Duty Symbol</p>
                 </div>
                 <div class="col-4 offset-1">
-                    <div class="dropdown">
+                    <div class="dropdown" #elDuty id="elDuty">
                         <button class="btn add-flight-selectors" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             {{f.value.dutySymbol}}
@@ -76,7 +76,7 @@
                             <div *ngFor="let dutySymbol of dutySymbols">
                                 <label>
                                 <input type="radio" name="dutySymbol" [(ngModel)]="flight.dutySymbol"
-                                [value]="dutySymbol.value">
+                                [value]="dutySymbol.value" (click)="onDropdownSelect($event)">
                                     {{dutySymbol.value}}
                                 </label>
                             </div>
@@ -100,16 +100,16 @@
                     <p>Seat</p>
                 </div>
                 <div class="col-4 offset-1">
-                    <div class="dropdown">
+                    <div class="dropdown" #elSeat id="elSeat">
                         <button class="btn add-flight-selectors" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{f.value.seat}}
+                            {{f.value.seat}} 
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <div *ngFor="let seat of seats">
                                 <label>
                                 <input type="radio" name="seat" [(ngModel)]="flight.seat"
-                                [value]="seat.value">
+                                [value]="seat.value" (click)="onDropdownSelect($event)">
                                 {{seat.value}}
                                 </label>
                             </div>
