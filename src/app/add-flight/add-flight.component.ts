@@ -18,7 +18,8 @@ export class AddFlightComponent {
   hours: number = 0.0;
   dateValue: string = '';
   remarksValue: string = '';
-  pattern: string = '/^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/';
+  //Regex pattern that matches MM/DD/YYYY, from 1900-2099
+  pattern = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
 
   seats = [
     { value: 'F'},
@@ -48,7 +49,7 @@ export class AddFlightComponent {
     },
 
     this.myForm = this._fb.group({
-      date: ['', <any>Validators.pattern(this.pattern)]
+      date: ['', <any>Validators.pattern(this.pattern)] 
     })
   }
 
