@@ -1,6 +1,4 @@
 # LogIt
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.0.
 This is project is a work in progress, and at this time I plan to port this application to Android using Apache Cordova. Since I am for the moment focusing on developing LogIt in this manner, the styling and layout of the app is completely tailored for mobile devices. Keeping this in mind, during development users should have their browser's dev tools set to emulate a mobile screen's parameters to properly view the application and to avoid issues.
 
 ## Development server
