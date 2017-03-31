@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, NG_VALIDATORS } from '@angular/forms';
+
 import { AddFlightService } from '../add-flight.service';
 import { Flight } from '../flight.interface';
 
@@ -10,20 +11,24 @@ import { Flight } from '../flight.interface';
   styleUrls: ['./add-flight.component.css']
 })
 export class AddFlightComponent {
+  //Bind elements to local variables
   @ViewChild('elFlight') elFlight:ElementRef;
   @ViewChild('elDuty') elDuty:ElementRef;
   @ViewChild('elSeat') elSeat:ElementRef;
+
   public flight: Flight;
   public myForm: FormGroup;
 
   constructor(private addFlight: AddFlightService, private _fb: FormBuilder, private rd: Renderer2) {}
 
-  hours:number = 0.0;
-  dateSubmitted: boolean = false;
-  remarksValue: string = '';
   //Regex pattern that matches MM/DD/YYYY, from 1900-2099
   pattern = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
 
+  hours:number = 0.0;
+  remarksValue: string = '';
+  dateSubmitted: boolean;
+
+  //Static values for our user input menus
   seats = [
     { value: 'F'},
     { value: 'B'}
@@ -44,6 +49,7 @@ export class AddFlightComponent {
 
   ngOnInit() {
     //On initialization, set all the values to default
+    //Template driven form for static data handling
     this.flight = {
       hours: this.hours.toFixed(1), //Force user inputted values to be a float, with 1 decimal place
       remarks: this.remarksValue,
@@ -52,12 +58,11 @@ export class AddFlightComponent {
       flightSymbol: this.flightSymbols[0].value
     },
 
+    //Model driven form for special date validation
     this.myForm = this._fb.group({
       date: ['', [Validators.required, <any>Validators.pattern(this.pattern)]] 
     })
   }
-
- 
 
   //Send the flight data to the add-flight service after checking hours 
   onSubmit(f, dateValue) {
