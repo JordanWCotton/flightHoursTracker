@@ -91,7 +91,8 @@
                 <div class="col-4 offset-1">
                     <div class="input-group add-flight-selectors">
                         <input type="number" id="hours-input" class="form-control" placeholder="0.0" 
-                        aria-describedby="sizing-addon1" name="hours" [(ngModel)]="flight.hours">
+                        aria-describedby="sizing-addon1" name="hours" [(ngModel)]="flight.hours"
+                        [pattern]="hoursPattern">
                     </div>    
                 </div>
             </div> 
@@ -136,7 +137,7 @@
                 </div>
                 <!--Completion Modal-->
                 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-                aria-hidden="true">
+                aria-hidden="true" id="successModal">
                     <div class="modal-dialog modal-sm alert-info">
                         <div class="modal-content" id="submit-modal-content">
                             <div class="modal-header" id="submit-modal-header">

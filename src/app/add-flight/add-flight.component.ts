@@ -23,6 +23,7 @@ export class AddFlightComponent {
 
   //Regex pattern that matches MM/DD/YYYY, from 1900-2099
   datePattern = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
+  hoursPattern = /^-?\d*\.?\d+$/;
 
   hours:number;
   remarksValue: string = '';
@@ -70,12 +71,12 @@ export class AddFlightComponent {
   }
 
   //Send the flight data to the add-flight service after checking hours 
-  onSubmit(f, dateValue) {
-    if (f.value.hours < 9.0) {
+  onSubmit(f) {
+    if (f.value.hours !== null && f.value.hours < 9.0) {
       this.addFlight.logFlightData(f);
     } else {
-      console.log('Hours too high!'); //Develop error throw here
-    }
+      console.log('ERROR!'); //Develop error throw here
+    } 
   }
 
   //Send the date data to the add-flight service
