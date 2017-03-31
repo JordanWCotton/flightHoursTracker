@@ -49,19 +49,24 @@ export class AddFlightComponent {
 
   ngOnInit() {
     //On initialization, set all the values to default
-    //Template driven form for static data handling
+    this.initializeForm();
+
+    //Model driven form for special date validation
+    this.myForm = this._fb.group({
+      date: ['', [Validators.required, <any>Validators.pattern(this.datePattern)]] 
+    })
+  }
+
+  //Template driven form for static data handling
+  initializeForm() {
+    this.dateSubmitted = false;
     this.flight = {
       hours: this.hours.toFixed(1), //Force user inputted values to be a float, with 1 decimal place
       remarks: this.remarksValue,
       seat: this.seats[0].value,
       dutySymbol: this.dutySymbols[0].value,
       flightSymbol: this.flightSymbols[0].value
-    },
-
-    //Model driven form for special date validation
-    this.myForm = this._fb.group({
-      date: ['', [Validators.required, <any>Validators.pattern(this.datePattern)]] 
-    })
+    }
   }
 
   //Send the flight data to the add-flight service after checking hours 
@@ -102,5 +107,11 @@ export class AddFlightComponent {
         this.rd.removeClass(this.elSeat.nativeElement, 'show');
         break;
     }
+  }
+
+  onResetForm() {
+    //Reset the form properties to their defaults, and reset date input
+    this.initializeForm();
+    this.myForm.reset();
   }
 }

@@ -146,8 +146,10 @@
                                 <p>Do you want to log another flight?<p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-success" data-dismiss="modal">Sure!</button>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">No thanks</button>
+                                <button type="button" class="btn btn-success" data-dismiss="modal"
+                                (click)="onResetForm()">Sure!</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                [routerLink]="['../']">No thanks</button>
                             </div>
                         </div>
                     </div>
