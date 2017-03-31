@@ -24,7 +24,7 @@ export class AddFlightComponent {
   //Regex pattern that matches MM/DD/YYYY, from 1900-2099
   datePattern = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
 
-  hours:number = 0.0;
+  hours:number;
   remarksValue: string = '';
   dateSubmitted: boolean;
 
@@ -61,7 +61,7 @@ export class AddFlightComponent {
   initializeForm() {
     this.dateSubmitted = false;
     this.flight = {
-      hours: this.hours.toFixed(1), //Force user inputted values to be a float, with 1 decimal place
+      hours: this.hours, //Force user inputted values to be a float, with 1 decimal place
       remarks: this.remarksValue,
       seat: this.seats[0].value,
       dutySymbol: this.dutySymbols[0].value,
