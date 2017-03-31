@@ -75,6 +75,10 @@ a:active  {
     text-align: center;
 }
 
+#submit-modal-content {
+    text-align: center;
+}
+
 #logit-button {
     margin-top: 2%;
 }

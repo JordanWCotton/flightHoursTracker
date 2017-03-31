@@ -130,7 +130,27 @@
             </div> 
             <div class="row">
                 <div class="col-1 offset-4" id="logit-button">
-                    <button class="btn btn-success" type="submit" [disabled]="!dateSubmitted" (click)="onSubmit(f)">Log It!</button>
+                    <button class="btn btn-success" type="submit" [disabled]="!dateSubmitted"
+                    data-toggle="modal" data-target=".bd-example-modal-sm" 
+                    (click)="onSubmit(f)">Log It!</button>
+                </div>
+                <!--Completion Modal-->
+                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+                aria-hidden="true">
+                    <div class="modal-dialog modal-sm alert-info">
+                        <div class="modal-content" id="submit-modal-content">
+                            <div class="modal-header" id="submit-modal-header">
+                                <h3>Upload successful!</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p>Do you want to log another flight?<p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Sure!</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">No thanks</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div> 
         </form>
