@@ -22,7 +22,7 @@ export class AddFlightComponent {
   constructor(private addFlight: AddFlightService, private _fb: FormBuilder, private rd: Renderer2) {}
 
   //Regex pattern that matches MM/DD/YYYY, from 1900-2099
-  pattern = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
+  datePattern = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
 
   hours:number = 0.0;
   remarksValue: string = '';
@@ -60,7 +60,7 @@ export class AddFlightComponent {
 
     //Model driven form for special date validation
     this.myForm = this._fb.group({
-      date: ['', [Validators.required, <any>Validators.pattern(this.pattern)]] 
+      date: ['', [Validators.required, <any>Validators.pattern(this.datePattern)]] 
     })
   }
 
