@@ -33,8 +33,8 @@ export class AddFlightComponent {
 
   //Static values for our user input menus
   seats = [
-    { value: 'F'},
-    { value: 'B'}
+    { value: 'Front'},
+    { value: 'Back'}
   ];
 
   dutySymbols = [
@@ -52,7 +52,7 @@ export class AddFlightComponent {
     { value: 'NVG'},
     { value: 'NVD'},
     { value: 'Hood'},
-    { value: 'W'}
+    { value: 'Wx'}
   ];
 
   ngOnInit() {

@@ -63,7 +63,17 @@ a:active  {
     background-color: #fff;
     text-align: center;
     min-width: auto;
-    padding-right: 10%;
+    padding-right: 20%;
+    padding-left: 20%;
+    font-size: 1.2em;
+}
+
+ul input {
+    display: none; /* Hide radio button */
+}
+
+.radioSel {
+ background-color: grey;   
 }
 
 .add-flight-selectors {
