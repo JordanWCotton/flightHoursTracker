@@ -5,7 +5,7 @@
                     </span>Back</a>
                 </div>
                 <div class="col-8" id="add-flight-title">
-                    <p>Add New Flight</p>
+                    <p>Add Flight</p>
                 </div>
             </div>
             <div id="page-breaker-line"></div>
@@ -14,16 +14,12 @@
             <div class="row">
                 <div class="col-6" id="date-selector">
                     <div class="input-group">
-                        <!-- <span class="glyphicon glyphicon-calendar"></span><p>Date</p> -->
                         <input type="text" class="form-control" id="from" name="dateValue" 
                         placeholder="MM/DD/YYYY" aria-describedby="sizing-addon2"
                         formControlName="date">
                     </div>
                 </div>
                 <div class="col-3 offset-1" id="date-selector">
-                        <!-- <input type="text" class="form-control" id="from" name="dateValue" 
-                        placeholder="MM/DD/YYYY" aria-describedby="sizing-addon2"
-                        formControlName="date"> -->
                         <button class="btn btn-primary" type="submit" 
                         [disabled]="!myForm.valid">Set date</button>
                 </div>

@@ -29,6 +29,10 @@ a:active  {
     text-decoration: none;
 }
 
+#add-flight-title {
+    font-size: 120%;
+}
+
 #page-breaker-line {
     height: 1px;
     background-color:#272D2D;

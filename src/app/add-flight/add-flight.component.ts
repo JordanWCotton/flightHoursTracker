@@ -45,9 +45,9 @@ export class AddFlightComponent {
   ];
 
   flightSymbols = [
-    { value: 'D'},
-    { value: 'N'},
-    { value: 'S'},
+    { value: 'Day'},
+    { value: 'Night'},
+    { value: 'Sim'},
     { value: 'NVS'},
     { value: 'NVG'},
     { value: 'NVD'},

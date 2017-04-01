@@ -34,7 +34,13 @@ a:active  {
     text-align: center;
 }
 
+#page-breaker-line {
+    height: 1px;
+    background-color:#272D2D;
+}
+
 #date-range-container {
+    margin-top: 3%;
     text-align: center;
 }
 
