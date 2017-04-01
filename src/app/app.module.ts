@@ -10,6 +10,7 @@ import { FlightLogComponent } from './flight-log/flight-log.component';
 import { AddFlightComponent } from './add-flight/add-flight.component';
 import { routing } from './routing';
 import { AddFlightService } from './add-flight.service';
+import { ViewLogService } from './view-log.service';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { AddFlightService } from './add-flight.service';
     routing,
     ReactiveFormsModule,
   ],
-  providers: [AddFlightService],
+  providers: [AddFlightService, ViewLogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

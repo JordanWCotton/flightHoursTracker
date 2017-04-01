@@ -3,14 +3,13 @@ import { FormGroup } from '@angular/forms';
 
 @Injectable()
 export class AddFlightService {
-
+  constructor() { }
+  
   private flightDate: string;
   private flightHours: number;
   private dutySymbol;
   private flightSymbol;
   private remarks;
-
-  constructor() { }
 
   logFlightDate (dataDate) {
     //Set date
