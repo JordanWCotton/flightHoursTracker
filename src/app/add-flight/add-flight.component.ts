@@ -11,6 +11,9 @@ import { Flight } from '../flight.interface';
   styleUrls: ['./add-flight.component.css']
 })
 export class AddFlightComponent {
+
+  constructor(private addFlight: AddFlightService, private _fb: FormBuilder, private rd: Renderer2) {}
+
   //Bind elements to local variables
   @ViewChild('elFlight') elFlight:ElementRef;
   @ViewChild('elDuty') elDuty:ElementRef;
@@ -19,8 +22,6 @@ export class AddFlightComponent {
 
   public flight: Flight;
   public myForm: FormGroup;
-
-  constructor(private addFlight: AddFlightService, private _fb: FormBuilder, private rd: Renderer2) {}
 
   //Regex pattern that matches MM/DD/YYYY, from 1900-2099
   datePattern = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
@@ -46,7 +47,12 @@ export class AddFlightComponent {
   flightSymbols = [
     { value: 'D'},
     { value: 'N'},
-    { value: 'S'}
+    { value: 'S'},
+    { value: 'NVS'},
+    { value: 'NVG'},
+    { value: 'NVD'},
+    { value: 'Hood'},
+    { value: 'W'}
   ];
 
   ngOnInit() {

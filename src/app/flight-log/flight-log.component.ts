@@ -8,6 +8,9 @@ import { ViewLogService } from '../view-log.service';
   styleUrls: ['./flight-log.component.css']
 })
 export class FlightLogComponent implements OnInit {
+  
+  constructor(private viewLog: ViewLogService) { }
+
   totalHours: number;
   dayHours: number;
   nvsHours: number;
@@ -17,8 +20,6 @@ export class FlightLogComponent implements OnInit {
   nightHours: number;
   weatherHours: number;
   simHours: number;
-
-  constructor(private viewLog: ViewLogService) { }
 
   ngOnInit() {
     this.viewLog.pullHours(); //Have the service pull hours from the DB on form initialization

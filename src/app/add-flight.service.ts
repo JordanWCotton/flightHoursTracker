@@ -3,8 +3,9 @@ import { FormGroup } from '@angular/forms';
 
 @Injectable()
 export class AddFlightService {
-  constructor() { }
   
+  constructor() { }
+
   private flightDate: string;
   private flightHours: number;
   private dutySymbol;

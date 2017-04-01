@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 
 @Injectable()
 export class ViewLogService {
+    
     constructor () {}
 
     private hours = {

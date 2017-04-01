@@ -63,8 +63,7 @@ a:active  {
     background-color: #fff;
     text-align: center;
     min-width: auto;
-    padding-left: 45%;
-    padding-right: 45%;
+    padding-right: 10%;
 }
 
 .add-flight-selectors {
