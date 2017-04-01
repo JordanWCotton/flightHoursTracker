@@ -15,6 +15,7 @@ export class AddFlightComponent {
   @ViewChild('elFlight') elFlight:ElementRef;
   @ViewChild('elDuty') elDuty:ElementRef;
   @ViewChild('elSeat') elSeat:ElementRef;
+  @ViewChild('openModalButton') openModal:ElementRef;
 
   public flight: Flight;
   public myForm: FormGroup;
@@ -70,10 +71,12 @@ export class AddFlightComponent {
     }
   }
 
-  //Send the flight data to the add-flight service after checking hours 
+  //Send the flight data  to the add-flight service and calls the 
+  //completion modal after passing hours check
   onSubmit(f) {
     if (f.value.hours !== null && f.value.hours < 9.0) {
       this.addFlight.logFlightData(f);
+      this.openModal.nativeElement.click();
     } else {
       console.log('ERROR!'); //Develop error throw here
     } 
