@@ -1,8 +1,9 @@
 /* Main Menu page */
 
 #main-menu-container {
-    background-color: #9D9E70;
+    background-color: #A3B86C;
     height: 100vh; 
+    color: #373D3F;
 }
 
 #title-container {
@@ -12,7 +13,8 @@
 }
 
 #new-flight, #view-log, #weather, #notams{
-    background-color: #86957D;
+    background-color: #093145;
+    color: #F2F3F4;
 }
 
 #title-container h4 {

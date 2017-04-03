@@ -1,8 +1,8 @@
 <div class="container-fluid" id="flight-log-container">
             <div class="row">
                 <div class="col-3">
-                    <a [routerLink]="['../']"><span class="glyphicon glyphicon-menu-left" id="back-icon">
-                    </span>Back</a>
+                    <div [routerLink]="['../']" class="btn-info" 
+                    id="back-icon">Back</div>
                 </div>
                 <div class="col-6" id="flight-log-title">
                     <p>Flight Log</p>
@@ -10,10 +10,11 @@
             </div>
             <div id="page-breaker-line"></div>
             <div class="row">
-                <div class="col-4 offset-4" id="date-range-container">
+                <!--<div class="col-4 offset-4" id="date-range-container"> -->
                     <!--Controls date picker modal-->
-                    <p data-toggle="modal" data-target="#myModal">Current</p>
-                </div>
+                    <div class="col-4 offset-4 btn-info" id="date-range-button" data-toggle="modal" 
+                    data-target="#myModal">Current</div>
+               <!-- </div> -->
                 <!--date picker modal-->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="#exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
