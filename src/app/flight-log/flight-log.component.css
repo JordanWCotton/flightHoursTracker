@@ -2,7 +2,7 @@
 
 #flight-log-container {
     padding-top: 10px;
-    background-color: darkgrey; 
+    background-color: #9D9E70; 
     height: 100vh; 
 }
 
@@ -61,4 +61,11 @@ a:active  {
 
 #filter-buttons {
     margin-top: 1%;
+}
+
+#filterButton, #reqdButton {
+    background-color: #86957D;
+    text-align: center;
+    border-radius: 6px;
+    margin-top: 5%;
 }

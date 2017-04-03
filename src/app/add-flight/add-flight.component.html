@@ -55,11 +55,11 @@
                 </div>
                 <div class="col-4 offset-1">
                     <div class="dropdown" #elDuty id="elDuty">
-                        <button class="btn add-flight-selectors" type="button" id="dropdownMenu1"
+                        <button class="btn add-flight-selectors" type="button" id="dropdownMenu2"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             {{f.value.dutySymbol}}
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <div *ngFor="let dutySymbol of dutySymbols">
                                 <label>
                                 <input type="radio" name="dutySymbol" [(ngModel)]="flight.dutySymbol"
@@ -89,11 +89,11 @@
                 </div>
                 <div class="col-4 offset-1">
                     <div class="dropdown" #elSeat id="elSeat">
-                        <button class="btn add-flight-selectors" type="button" id="dropdownMenu1"
+                        <button class="btn add-flight-selectors" type="button" id="dropdownMenu3"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             {{f.value.seat}} 
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
                             <div *ngFor="let seat of seats">
                                 <label>
                                 <input type="radio" name="seat" [(ngModel)]="flight.seat"
@@ -118,7 +118,7 @@
             </div> 
             <div class="row">
                 <div class="col-1 offset-4" id="logit-button">
-                    <button class="btn btn-success" type="submit" [disabled]=""
+                    <button class="btn btn-success" type="submit" id="submit-button" [disabled]=""
                     (click)="onSubmit(f)">Log It!</button>
                     <button id="openModalButton" #openModalButton [hidden]="true" data-toggle="modal"
                     data-target=".bd-example-modal-sm"></button>

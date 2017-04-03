@@ -2,7 +2,7 @@
 
 #add-new-flight-container {
     padding-top: 10px;
-    background-color: darkgray; 
+    background-color: #9D9E70; 
     height: 100vh; 
 }
 
@@ -86,6 +86,15 @@ ul input {
 
 #hours-input {
     text-align: center;
+}
+
+#dropdownMenu1, #dropdownMenu2, #dropdownMenu3 {
+    background-color: #86957D;
+    color: white;
+}
+
+#submit-button {
+    background-color: #86957D;
 }
 
 #submit-modal-content {

@@ -1,7 +1,7 @@
 /* Main Menu page */
 
 #main-menu-container {
-    background-color: darkgrey;
+    background-color: #9D9E70;
     height: 100vh; 
 }
 
@@ -9,6 +9,10 @@
     text-align: center;
     margin-top: 17%;
     border-radius: 10px;
+}
+
+#new-flight, #view-log, #weather, #notams{
+    background-color: #86957D;
 }
 
 #title-container h4 {
