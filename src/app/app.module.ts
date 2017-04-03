@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DatePickerModule } from 'ng2-datepicker';
 
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
@@ -26,6 +27,7 @@ import { ViewLogService } from './view-log.service';
     HttpModule,
     routing,
     ReactiveFormsModule,
+    DatePickerModule
   ],
   providers: [AddFlightService, ViewLogService],
   bootstrap: [AppComponent]

@@ -10,32 +10,23 @@
             </div>
             <div id="page-breaker-line"></div>
             <form #f="ngForm">
-            <form [formGroup]="myForm" (ngSubmit)="onSave(myForm)">
             <div class="row">
-                <div class="col-6" id="date-selector">
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="from" name="dateValue" 
-                        placeholder="MM/DD/YYYY" aria-describedby="sizing-addon2"
-                        formControlName="date">
-                    </div>
-                </div>
-                <div class="col-3 offset-1" id="date-selector">
-                        <button class="btn btn-primary" type="submit" 
-                        [disabled]="!myForm.valid">Set date</button>
+                <div class="col-12" id="date-selector">
+                    <ng2-datepicker [options]="options" name="date" 
+                    [(ngModel)]="flight.date"></ng2-datepicker>
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div *ngIf="!myForm.valid && myForm.dirty" class="alert alert-info offset-1 col-10"
                 id="data-selector-tooltip" role="alert">
                     MM/DD/YYYY format required!
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col-12" id="flight-title-container">
                     <p>Flight</p>
                 </div>
             </div>
-            </form>
             <div class="row">
                 <div class="col-5 add-flight-list">
                     <p>Flight Symbol</p>
@@ -127,7 +118,7 @@
             </div> 
             <div class="row">
                 <div class="col-1 offset-4" id="logit-button">
-                    <button class="btn btn-success" type="submit" [disabled]="!dateSubmitted"
+                    <button class="btn btn-success" type="submit" [disabled]=""
                     (click)="onSubmit(f)">Log It!</button>
                     <button id="openModalButton" #openModalButton [hidden]="true" data-toggle="modal"
                     data-target=".bd-example-modal-sm"></button>

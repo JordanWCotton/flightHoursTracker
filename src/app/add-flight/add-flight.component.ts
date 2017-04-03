@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, NG_VALIDATORS } from '@angular/forms';
+import { DatePickerOptions, DateModel } from 'ng2-datepicker';
 
 import { AddFlightService } from '../add-flight.service';
 import { Flight } from '../flight.interface';
@@ -11,9 +12,6 @@ import { Flight } from '../flight.interface';
   styleUrls: ['./add-flight.component.css']
 })
 export class AddFlightComponent {
-
-  constructor(private addFlight: AddFlightService, private _fb: FormBuilder, private rd: Renderer2) {}
-
   //Bind elements to local variables
   @ViewChild('elFlight') elFlight:ElementRef;
   @ViewChild('elDuty') elDuty:ElementRef;
@@ -22,14 +20,20 @@ export class AddFlightComponent {
 
   public flight: Flight;
   public myForm: FormGroup;
+  public date: DateModel;
+  public options: DatePickerOptions;
+  public todayDate = new Date();
+  public hours:number;
+  public remarksValue: string = '';
+
+  constructor(private addFlight: AddFlightService, private _fb: FormBuilder, private rd: Renderer2) {
+    this.options = new DatePickerOptions({
+      initialDate: this.todayDate
+    });
+  }
 
   //Regex pattern that matches MM/DD/YYYY, from 1900-2099
-  datePattern = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
   hoursPattern = /^-?\d*\.?\d+$/;
-
-  hours:number;
-  remarksValue: string = '';
-  dateSubmitted: boolean;
 
   //Static values for our user input menus
   seats = [
@@ -58,17 +62,12 @@ export class AddFlightComponent {
   ngOnInit() {
     //On initialization, set all the values to default
     this.initializeForm();
-
-    //Model driven form for special date validation
-    this.myForm = this._fb.group({
-      date: ['', [Validators.required, <any>Validators.pattern(this.datePattern)]] 
-    })
   }
 
   //Template driven form for static data handling
   initializeForm() {
-    this.dateSubmitted = false;
     this.flight = {
+      date: this.date,
       hours: this.hours, //Force user inputted values to be a float, with 1 decimal place
       remarks: this.remarksValue,
       seat: this.seats[0].value,
@@ -86,19 +85,6 @@ export class AddFlightComponent {
     } else {
       console.log('ERROR!'); //Develop error throw here
     } 
-  }
-
-  //Send the date data to the add-flight service
-  onSave(myForm) {
-    //If the data supplied is valid, send date data to service and set dataSubmitted to true
-    //to allow the rest of the form to be submitted
-    if (myForm.valid === true) {
-      this.addFlight.logFlightDate(myForm.value.date);
-      this.dateSubmitted = true;
-      console.log(myForm);
-    } else {
-      console.log('Error, data input not valid.')
-    }
   }
 
   onDropdownSelect(event) {
@@ -122,6 +108,5 @@ export class AddFlightComponent {
   onResetForm() {
     //Reset the form properties to their defaults, and reset date input
     this.initializeForm();
-    this.myForm.reset();
   }
 }

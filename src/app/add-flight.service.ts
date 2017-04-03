@@ -6,7 +6,7 @@ export class AddFlightService {
   
   constructor() { }
 
-  private flightDate: string;
+  private flightDate;
   private flightHours: number;
   private dutySymbol;
   private flightSymbol;
@@ -19,6 +19,7 @@ export class AddFlightService {
 
   logFlightData (formData) {
     //Set data from flight to private variables
+    this.flightDate = formData.value.date.formatted;
     this.flightHours = formData.value.hours;
     this.dutySymbol = formData.value.dutySymbol;
     this.flightSymbol = formData.value.flightSymbol;
@@ -33,6 +34,7 @@ export class AddFlightService {
 
     //Logic to take the 'B', 'F' etc and make it 'Front' and 'Back', repackage and send the new data to 
     //the FireBase server using http 
+    
   }
 
 }
