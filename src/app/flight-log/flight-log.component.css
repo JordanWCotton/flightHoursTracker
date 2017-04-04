@@ -58,6 +58,10 @@ a:active  {
     text-align: center;
 }
 
+#exampleModelLabel h5 {
+    color: #373D3F;
+}
+
 .add-flight-list {
     text-align: center;
 }
