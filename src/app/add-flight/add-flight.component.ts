@@ -27,7 +27,7 @@ export class AddFlightComponent {
   public remarksValue: string = '';
 
   constructor(private addFlight: AddFlightService, private _fb: FormBuilder, private rd: Renderer2) {
-    this.options = new DatePickerOptions({
+    this.options = new DatePickerOptions ({
       initialDate: this.todayDate
     });
   }

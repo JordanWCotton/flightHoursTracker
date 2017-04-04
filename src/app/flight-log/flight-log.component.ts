@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ViewLogService } from '../view-log.service';
+import { DatePickerOptions, DateModel } from 'ng2-datepicker';
 
 @Component({
   selector: 'app-flight-log',
@@ -8,8 +9,21 @@ import { ViewLogService } from '../view-log.service';
   styleUrls: ['./flight-log.component.css']
 })
 export class FlightLogComponent implements OnInit {
+  public fromOptions: DatePickerOptions;
+  public toOptions: DatePickerOptions;
+  public fromDate: DateModel;
+  public toDate: DateModel;
+  public todayDate = new Date();
   
-  constructor(private viewLog: ViewLogService) { }
+  constructor(private viewLog: ViewLogService) { 
+    this.fromOptions = new DatePickerOptions ({
+      initialDate: this.todayDate
+    })
+
+    this.toOptions = new DatePickerOptions ({
+      initialDate: this.todayDate
+    })
+  }
 
   totalHours: number;
   dayHours: number;

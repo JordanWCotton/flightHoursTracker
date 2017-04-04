@@ -27,10 +27,10 @@
                             </div>
                             <div class="modal-body">
                                 <label for="from">From</label>
-                                <input type="text" id="from" name="from">
+                                <ng2-datepicker [options]="fromOptions" [(ngModel)]="fromDate"></ng2-datepicker>
                                 <br>
                                 <label for="to">To</label>
-                                <input type="text" id="to" name="to">
+                                <ng2-datepicker [options]="toOptions" [(ngModel)]="toDate"></ng2-datepicker>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
