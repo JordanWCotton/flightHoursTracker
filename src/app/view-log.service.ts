@@ -22,7 +22,7 @@ export class ViewLogService {
     pullHours () {
         //ADD LOGIC to pull hours from DB, set to above values;
         console.log('DB Queried!');
-        this.hours.totalHours = 30;
+        this.hours.totalHours = 0; //Demonstration of setting hours 
     }
 
     //Getter function for all of the hours pulled from the database

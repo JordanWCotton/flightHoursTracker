@@ -55,4 +55,9 @@ export class FlightLogComponent implements OnInit {
     this.simHours = serviceHours.simHours;
   }
 
+  sendDates () {
+    console.log('From: ' + this.fromDate.formatted);
+    console.log('To: ' + this.toDate.formatted);
+  }
+
 }
