@@ -107,6 +107,10 @@ export class AddFlightComponent {
 
   onResetForm() {
     //Reset the form properties to their defaults, and reset date input
-    this.initializeForm();
+    this.flight.hours = this.hours;
+    this.flight.remarks = this.remarksValue;
+    this.flight.seat = this.seats[0].value;
+    this.flight.dutySymbol = this.dutySymbols[0].value;
+    this.flight.flightSymbol = this.flightSymbols[0].value;
   }
 }
