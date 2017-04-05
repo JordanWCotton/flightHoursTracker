@@ -86,6 +86,8 @@ ul input {
 
 #submit-modal-content {
     text-align: center;
+    background-color: #A3B86C;
+    color: #373D3F;
 }
 
 #logit-button {
