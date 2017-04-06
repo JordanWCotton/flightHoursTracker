@@ -26,7 +26,7 @@ export class ViewLogService {
         console.log('DB Queried!');
         this.hours.totalHours = 0; //Demonstration of setting hours 
 
-        this.http.get('url', )
+        this.http.get('https://logit-5e725.firebaseio.com/flightData.json', )
     
     }
 

@@ -9,9 +9,7 @@ export class AddFlightService {
 
 
   logFlightData (formData) {
-
     return this.http.post('https://logit-5e725.firebaseio.com/flightData.json', formData.value);
-
   }
 
 }

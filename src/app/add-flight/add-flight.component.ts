@@ -76,19 +76,21 @@ export class AddFlightComponent {
     }
   }
 
-  //Send the flight data  to the add-flight service and calls the 
-  //completion modal after passing hours check
+  //Send the flight data  to the add-flight service 
   onSubmit(f) {
     if (f.value.hours !== null && f.value.hours < 9.0) {
       this.addFlight.logFlightData(f)
         .subscribe (
-          function (response) {
+          (response) => {
             console.log(response);
+            if (response.status == 200) {
+              this.openModal.nativeElement.click();
+            }
           },
           (error) => console.log(error)
         );
     } else {
-      console.log('ERROR!'); //Develop error throw here
+      console.log('Incorrect hours input!'); //Display box on this
     } 
   }
 
