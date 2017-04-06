@@ -80,11 +80,20 @@ export class AddFlightComponent {
   //completion modal after passing hours check
   onSubmit(f) {
     if (f.value.hours !== null && f.value.hours < 9.0) {
-      this.addFlight.logFlightData(f);
-      this.openModal.nativeElement.click();
+      this.addFlight.logFlightData(f)
+        .subscribe (
+          function (response) {
+            console.log(response);
+          },
+          (error) => console.log(error)
+        );
     } else {
       console.log('ERROR!'); //Develop error throw here
     } 
+  }
+
+  openModalFunction () {
+    this.openModal.nativeElement.click();
   }
 
   onDropdownSelect(event) {

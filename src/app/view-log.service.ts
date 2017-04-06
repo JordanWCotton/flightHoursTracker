@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Http } from '@angular/http';
 
 @Injectable()
 export class ViewLogService {
     
-    constructor () {}
+    constructor (private http: Http) {}
 
+    private data: any;
     private hours = {
         totalHours: 0,
         dayHours: 0,
@@ -23,6 +25,9 @@ export class ViewLogService {
         //ADD LOGIC to pull hours from DB, set to above values;
         console.log('DB Queried!');
         this.hours.totalHours = 0; //Demonstration of setting hours 
+
+        this.http.get('url', )
+    
     }
 
     //Getter function for all of the hours pulled from the database
