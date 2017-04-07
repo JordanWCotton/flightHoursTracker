@@ -15,6 +15,7 @@ export class FlightLogComponent implements OnInit {
   public fromDate: DateModel;
   public toDate: DateModel;
   public todayDate = new Date();
+  public datesSubmitted: boolean = false;
 
   constructor(private viewLog: ViewLogService) { 
     this.fromOptions = new DatePickerOptions ({
@@ -38,7 +39,7 @@ export class FlightLogComponent implements OnInit {
         simHours: 0
     }
 
-    
+    //Variables that will be displayed to the user 
       totalHours;
       dayHours;
       nvsHours;
@@ -96,6 +97,7 @@ export class FlightLogComponent implements OnInit {
 
 
   sendDates () {
+    this.datesSubmitted = true;
     console.log('From: ' + this.fromDate.formatted);
     console.log('To: ' + this.toDate.formatted);
   }

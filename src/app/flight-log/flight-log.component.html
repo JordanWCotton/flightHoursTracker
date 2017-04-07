@@ -13,7 +13,11 @@
                 <!--<div class="col-4 offset-4" id="date-range-container"> -->
                     <!--Controls date picker modal-->
                     <div class="col-4 offset-4 btn-info" id="date-range-button" data-toggle="modal" 
-                    data-target="#myModal">Current</div>
+                    data-target="#myModal">
+                        <span *ngIf="!datesSubmitted; else elseSpan">Current</span>
+                        <ng-template #elseSpan id="date-span">{{fromDate.formatted}} <br>TO<br> {{toDate.formatted}}</ng-template>
+                        
+                    </div>
                <!-- </div> -->
                 <!--date picker modal-->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="#exampleModalLabel" aria-hidden="true">
