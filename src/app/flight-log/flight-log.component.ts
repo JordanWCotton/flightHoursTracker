@@ -95,6 +95,7 @@ export class FlightLogComponent implements OnInit {
             totalHours += flightData[hours].hours;
           }
         this.rawHours.totalHours = totalHours;
+        this.roundHours();
     }
 
   //Date range validation logic. Ensures users enter a date range from a point in the past to a point in the 
