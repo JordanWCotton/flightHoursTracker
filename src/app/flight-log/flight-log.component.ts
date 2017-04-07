@@ -75,7 +75,7 @@ export class FlightLogComponent implements OnInit {
   sortHours (flightData) {
         let totalHours = 0;
         console.log('sortHours called');
-        //Sort the hours by their flight symbol data
+        //Loop through the returned flight horus, separate them by flightSymbol, and add to corresponding variables
         for (let data in flightData) {
             flightData[data].flightSymbol ==  'Day' ? this.rawHours.dayHours += flightData[data].hours 
             : flightData[data].flightSymbol == 'Night' ? this.rawHours.nightHours += flightData[data].hours
@@ -90,8 +90,7 @@ export class FlightLogComponent implements OnInit {
         //Gather hour totals 
         for (let hours in flightData) {
             totalHours += flightData[hours].hours;
-        }
-
+          }
         this.rawHours.totalHours = totalHours;
     }
 
