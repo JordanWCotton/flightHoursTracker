@@ -15,19 +15,10 @@ export class FlightLogComponent implements OnInit {
   public fromDate: DateModel;
   public toDate: DateModel;
   public todayDate = new Date();
-  public datesSubmitted: boolean = false;
+  datesSubmitted: boolean = false;
+  datesInvalid: boolean = false;
 
-  constructor(private viewLog: ViewLogService) { 
-    this.fromOptions = new DatePickerOptions ({
-      initialDate: this.todayDate
-    })
-
-    this.toOptions = new DatePickerOptions ({
-      initialDate: this.todayDate
-    })
-  }
-
-  public rawHours = {
+  rawHours = {
         totalHours: 0,
         dayHours: 0,
         nvsHours: 0,
@@ -50,6 +41,16 @@ export class FlightLogComponent implements OnInit {
       weatherHours;
       simHours;
 
+  constructor(private viewLog: ViewLogService) { 
+    this.fromOptions = new DatePickerOptions ({
+      initialDate: this.todayDate
+    })
+
+    this.toOptions = new DatePickerOptions ({
+      initialDate: this.todayDate
+    })
+  }
+
   ngOnInit() {
     this.viewLog.pullHours()  //Have the service pull hours from the DB on form initialization
       .subscribe( 
@@ -57,9 +58,11 @@ export class FlightLogComponent implements OnInit {
           this.sortHours(flightData);
         } 
       );
-      this.roundHours();
+      this.roundHours(); //And then call our function to round the hours for proper addition and display
   }
 
+  //Only way to allow .toFixed(1) to be called on hours, was to reassign them to new local variables
+  //ensuring correct addition of hours for their display
   roundHours () {
     this.totalHours = this.rawHours.totalHours.toFixed(1);
     this.dayHours = this.rawHours.dayHours.toFixed(1);
@@ -94,18 +97,14 @@ export class FlightLogComponent implements OnInit {
         this.rawHours.totalHours = totalHours;
     }
 
-
+  //Date range validation logic. Ensures users enter a date range from a point in the past to a point in the 
+  //future. If they input an incorrect date range the button/date range display willd default back to current
   sendDates () {
-    this.datesSubmitted = true;
-    console.log('From: ' + this.fromDate.formatted);
-    console.log('To: ' + this.toDate.formatted);
-    console.log(this.fromDate);
-   
-    //Date range validation logic. Ensures users enter a date range from a point in the past to a point in the future
-    this.fromDate.year > this.toDate.year ? console.log('Failed!') 
-    : this.fromDate.month < this.toDate.month ? console.log('Correct!') 
-    : this.fromDate.month > this.toDate.month ? console.log('Failed!') 
-    : this.fromDate.day <= this.toDate.day ? console.log('Correct!') : console.log('Failed!');
+    this.fromDate.year > this.toDate.year ? this.datesSubmitted = false//Failed
+    : this.fromDate.month > this.toDate.month ? this.datesSubmitted = false//Failed
+    : this.fromDate.month < this.toDate.month ? this.datesSubmitted = true//Pass 
+    : this.fromDate.day <= this.toDate.day ? this.datesSubmitted = true//Pass 
+    : this.datesSubmitted = false;//Failed
   }
 
 }
