@@ -26,100 +26,74 @@ export class FlightLogComponent implements OnInit {
     })
   }
 
-  totalHours: string;
-  dayHours: string;
-  nvsHours: string;
-  nvgHours:string;
-  nvdHours: string;
-  hoodHours: string;
-  nightHours: string;
-  weatherHours: string;
-  simHours: string;
+  public rawHours = {
+        totalHours: 0,
+        dayHours: 0,
+        nvsHours: 0,
+        nvgHours: 0,
+        nvdHours: 0,
+        hoodHours: 0,
+        nightHours: 0,
+        weatherHours: 0,
+        simHours: 0
+    }
 
-//Data to simulate data from DB for purpose of developing hours sorting algorithms when
-//not connected to the internet
-  fakeData = {
-    'flightOne': {
-      'date': '2017-01-01',
-      'dutySymbol': 'PC',
-      'flightSymbol': 'Sim',
-      'hours': 6.3,
-      'remarks': 'Fake data',
-      'seat': 'Front'
-    },
-    'flightTwo': {
-      'date': '2017-01-01',
-      'dutySymbol': 'SP',
-      'flightSymbol': 'NVD',
-      'hours': 3.3,
-      'remarks': 'Fake data',
-      'seat': 'Front'
-    },
-    'flightThree': {
-      'date': '2017-01-01',
-      'dutySymbol': 'IP',
-      'flightSymbol': 'Wx',
-      'hours': 2.3,
-      'remarks': 'Fake data',
-      'seat': 'Front'
-    },
-    'flightFour': {
-      'date': '2017-01-01',
-      'dutySymbol': 'SP',
-      'flightSymbol': 'NVD',
-      'hours': 3.3,
-      'remarks': 'Fake data',
-      'seat': 'Front'
-    },
-    'flightFive': {
-      'date': '2017-01-01',
-      'dutySymbol': 'SP',
-      'flightSymbol': 'Sim',
-      'hours': 3.3,
-      'remarks': 'Fake data',
-      'seat': 'Front'
-    },
-    'flightSix': {
-      'date': '2017-01-01',
-      'dutySymbol': 'SP',
-      'flightSymbol': 'NVD',
-      'hours': 3.3,
-      'remarks': 'Fake data',
-      'seat': 'Front'
-    },
-    'flightSeven': {
-      'date': '2017-01-01',
-      'dutySymbol': 'SP',
-      'flightSymbol': 'Wx',
-      'hours': 3.3,
-      'remarks': 'Fake data',
-      'seat': 'Front'
-    },
-  }
+    
+      totalHours;
+      dayHours;
+      nvsHours;
+      nvgHours;
+      nvdHours;
+      hoodHours;
+      nightHours;
+      weatherHours;
+      simHours;
 
   ngOnInit() {
     this.viewLog.pullHours()  //Have the service pull hours from the DB on form initialization
       .subscribe( 
         (flightData) => {
-          this.viewLog.sortHours(flightData);
-          this.setHours();
+          this.sortHours(flightData);
         } 
       );
+      this.roundHours();
   }
 
-  setHours () {
-    let serviceHours = this.viewLog.pushHours();
-    //Set local variables to values from the view-log service
-    this.totalHours = serviceHours.totalHours.toFixed(1);
-    this.dayHours = serviceHours.dayHours.toFixed(1);
-    this.nvsHours = serviceHours.nvsHours.toFixed(1);
-    this.nvgHours = serviceHours.nvgHours.toFixed(1);
-    this.nvdHours = serviceHours.nvdHours.toFixed(1);
-    this.hoodHours = serviceHours.hoodHours.toFixed(1);
-    this.nightHours = serviceHours.nightHours.toFixed(1);
-    this.weatherHours = serviceHours.weatherHours.toFixed(1);
-    this.simHours = serviceHours.simHours.toFixed(1);
+  roundHours () {
+    this.totalHours = this.rawHours.totalHours.toFixed(1);
+    this.dayHours = this.rawHours.dayHours.toFixed(1);
+    this.nvsHours = this.rawHours.nvsHours.toFixed(1);
+    this.nvgHours = this.rawHours.nvgHours.toFixed(1);
+    this.nvdHours = this.rawHours.nvdHours.toFixed(1);
+    this.hoodHours = this.rawHours.hoodHours.toFixed(1);
+    this.nightHours = this.rawHours.nightHours.toFixed(1);
+    this.weatherHours = this.rawHours.weatherHours.toFixed(1);
+    this.simHours = this.rawHours.simHours.toFixed(1);
   }
+
+  sortHours (flightData) {
+        let totalHours = 0;
+        console.log('sortHours called');
+        //Sort the hours by their flight symbol data
+        for (let data in flightData) {
+            flightData[data].flightSymbol ==  'Day' ? this.rawHours.dayHours += flightData[data].hours 
+            : flightData[data].flightSymbol == 'Night' ? this.rawHours.nightHours += flightData[data].hours
+            : flightData[data].flightSymbol == 'Sim' ? this.rawHours.simHours += flightData[data].hours 
+            : flightData[data].flightSymbol == 'NVS' ? this.rawHours.nvsHours += flightData[data].hours 
+            : flightData[data].flightSymbol == 'NVG' ? this.rawHours.nvgHours += flightData[data].hours
+            : flightData[data].flightSymbol == 'NVD' ? this.rawHours.nvdHours += flightData[data].hours 
+            : flightData[data].flightSymbol == 'Hood' ? this.rawHours.hoodHours += flightData[data].hours 
+            : flightData[data].flightSymbol == 'Wx' ? this.rawHours.weatherHours += flightData[data].hours : null;
+        }
+
+        //Gather hour totals 
+        for (let hours in flightData) {
+            totalHours += flightData[hours].hours;
+        }
+
+        this.rawHours.totalHours = totalHours;
+    }
+
 
   sendDates () {
     console.log('From: ' + this.fromDate.formatted);
