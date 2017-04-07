@@ -100,6 +100,13 @@ export class FlightLogComponent implements OnInit {
     this.datesSubmitted = true;
     console.log('From: ' + this.fromDate.formatted);
     console.log('To: ' + this.toDate.formatted);
+    console.log(this.fromDate);
+   
+    //Date range validation logic. Ensures users enter a date range from a point in the past to a point in the future
+    this.fromDate.year > this.toDate.year ? console.log('Failed!') 
+    : this.fromDate.month < this.toDate.month ? console.log('Correct!') 
+    : this.fromDate.month > this.toDate.month ? console.log('Failed!') 
+    : this.fromDate.day <= this.toDate.day ? console.log('Correct!') : console.log('Failed!');
   }
 
 }
