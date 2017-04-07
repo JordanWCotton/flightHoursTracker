@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, NG_VALIDATORS } from '@angular/forms';
 import { DatePickerOptions, DateModel } from 'ng2-datepicker';
+import { Response } from '@angular/http';
 
 import { AddFlightService } from '../add-flight.service';
 import { Flight } from '../flight.interface';
@@ -81,7 +82,7 @@ export class AddFlightComponent {
     if (f.value.hours !== null && f.value.hours < 9.0) {
       this.addFlight.logFlightData(f)
         .subscribe (
-          (response) => {
+          (response: Response) => {
             console.log(response);
             if (response.status == 200) {
               this.openModal.nativeElement.click();
