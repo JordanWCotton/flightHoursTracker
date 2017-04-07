@@ -22,7 +22,6 @@ export class ViewLogService {
     }
 
     pullHours () {
-
         return this.http.get('https://logit-5e725.firebaseio.com/flightData.json')
         .map(
             (response: Response) => {
@@ -34,7 +33,7 @@ export class ViewLogService {
 
     sortHours (flightData) {
         let totalHours = 0;
-
+        console.log('sortHours called');
         //Sort the hours by their flight symbol data
         for (let data in flightData) {
             flightData[data].flightSymbol ==  'Day' ? this.hours.dayHours += flightData[data].hours 
@@ -53,7 +52,6 @@ export class ViewLogService {
         }
 
         this.hours.totalHours = totalHours;
-        console.log(this.hours.totalHours);
     }
 
     //Getter function for all of the hours pulled from the database

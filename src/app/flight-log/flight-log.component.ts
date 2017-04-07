@@ -101,17 +101,14 @@ export class FlightLogComponent implements OnInit {
     this.viewLog.pullHours()  //Have the service pull hours from the DB on form initialization
       .subscribe( 
         (flightData) => {
-          console.log(flightData);
+          this.viewLog.sortHours(flightData);
+          this.setHours();
         } 
-      ); 
-    
-    this.viewLog.sortHours(this.fakeData); //Call fake function for fake data
-    this.setHours(); 
+      );
   }
 
   setHours () {
-    let serviceHours = this.viewLog.pushHours(); //Pulling the hours object from the service's getter function
-
+    let serviceHours = this.viewLog.pushHours();
     //Set local variables to values from the view-log service
     this.totalHours = serviceHours.totalHours.toFixed(1);
     this.dayHours = serviceHours.dayHours.toFixed(1);
