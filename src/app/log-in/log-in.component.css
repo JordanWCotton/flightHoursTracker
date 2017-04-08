@@ -1,0 +1,17 @@
+/* Log in page */
+
+#log-in-container {
+    background-color: #A3B86C;
+    height: 100vh; 
+    color: #373D3F;
+}
+
+#title-container {
+    text-align: center;
+    margin-top: 17%;
+    border-radius: 10px;
+}
+
+#form-div {
+    margin-top: 25%;
+}
