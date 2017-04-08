@@ -1,0 +1,26 @@
+/* Sign up page */
+
+#sign-up-container {
+    background-color: #A3B86C;
+    height: 100vh; 
+    color: #373D3F;
+}
+
+#title-container {
+    text-align: center;
+    margin-top: 17%;
+    border-radius: 10px;
+}
+
+#email-input-div {
+    margin-top: 25%;
+}
+
+#sign-up-div {
+    margin-top: 15%;
+}
+
+#submit-button {
+    background-color: #093145;
+    color: #F2F3F4;
+}

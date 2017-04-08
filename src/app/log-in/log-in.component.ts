@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, NgForm, Validators, NG_VALIDATORS } from '@angular/forms';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
@@ -9,7 +11,7 @@ export class LogInComponent implements OnInit {
   email: string;
   password: string;
   
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -19,6 +21,7 @@ export class LogInComponent implements OnInit {
     this.email = form.value.email;
     this.password = form.value.password;
     console.log(this.email, this.password);
+    this.router.navigate(['/main-menu']);
   }
 
 }

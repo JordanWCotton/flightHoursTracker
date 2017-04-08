@@ -1,0 +1,26 @@
+/* Landing menu page */
+
+#landing-menu-container {
+    background-color: #A3B86C;
+    height: 100vh; 
+    color: #373D3F;
+}
+
+#title-container {
+    text-align: center;
+    margin-top: 17%;
+    border-radius: 10px;
+}
+
+.button-space {
+    margin-top: 25%;
+}
+
+#log-in-div {
+    margin-top: 15%;
+}
+
+#signin-button, #signup-button {
+    background-color: #093145;
+    color: #F2F3F4;
+}

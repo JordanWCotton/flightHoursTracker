@@ -13,6 +13,8 @@ import { routing } from './routing';
 import { AddFlightService } from './add-flight.service';
 import { ViewLogService } from './view-log.service';
 import { LogInComponent } from './log-in/log-in.component';
+import { LandingMenuComponent } from './landing-menu/landing-menu.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { LogInComponent } from './log-in/log-in.component';
     MainMenuComponent,
     FlightLogComponent,
     AddFlightComponent,
-    LogInComponent
+    LogInComponent,
+    LandingMenuComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
