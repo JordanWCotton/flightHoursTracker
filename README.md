@@ -1,5 +1,5 @@
 # LogIt
-This is project is a work in progress, and at this time I plan to port this application to Android using Apache Cordova. Since I am for the moment focusing on developing LogIt in this manner, the styling and layout of the app is completely tailored for mobile devices. Keeping this in mind, during development users should have their browser's dev tools set to emulate a mobile screen's parameters to properly view the application and to avoid issues.
+This is project is currently still under development and has no build version at this time. This application currently runs on a Firebase backend and is hosted by AWS S3.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
