@@ -24,7 +24,7 @@ export class AddFlightComponent {
   public date: DateModel;
   public options: DatePickerOptions;
   public todayDate = new Date();
-  public hours:number;
+  public hours: number;
   public remarksValue: string = '';
 
   constructor(private addFlight: AddFlightService, private _fb: FormBuilder, private rd: Renderer2) {
