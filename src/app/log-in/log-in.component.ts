@@ -21,10 +21,7 @@ export class LogInComponent implements OnInit {
   onSignin(form: NgForm) {
     this.email = form.value.email;
     this.password = form.value.password;
-    
     this.auth.signinUser(this.email, this.password);
-  
-    //this.router.navigate(['/main-menu']);
+    
   }
-
 }
