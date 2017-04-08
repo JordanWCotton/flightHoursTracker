@@ -12,6 +12,15 @@
     border-radius: 10px;
 }
 
-#form-div {
+#email-input-div {
     margin-top: 25%;
+}
+
+#log-in-div {
+    margin-top: 15%;
+}
+
+#submit-button {
+    background-color: #093145;
+    color: #F2F3F4;
 }

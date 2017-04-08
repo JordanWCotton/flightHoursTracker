@@ -5,7 +5,25 @@
       <h4>AH-64D/E</h4>
     </div>
   </div>
-  <div class="row" id="form-div">
-    Test
+  <form (ngSubmit)="onSignin(f)" #f="ngForm">
+  <div class="form-group">
+  <div class="row" id="email-input-div">
+    <div class="col-8 offset-2">
+      <label>Email:</label> <br>
+      <input type="email" name="email" id="email-input" ngModel class="form-control">
+    </div>
   </div>
+  <div class="row" id="password-input-div">
+    <div class="col-8 offset-2">
+      <label>Password:</label> <br>
+      <input type="password" name="password" id="password-input" ngModel class="form-control">
+    </div>
+  </div>
+  <div class="row" id="log-in-div">
+    <div class="col-4 offset-4">
+      <button type="submit" id="submit-button" class="btn">Log in</button>
+    </div>
+  </div>
+  </div>
+  </form>
 </div>
