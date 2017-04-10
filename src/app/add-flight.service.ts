@@ -10,9 +10,8 @@ export class AddFlightService {
 
 
   logFlightData (formData) {
-    const token: string = this.auth.getUserToken();
-    return this.http.post('https://logit-5e725.firebaseio.com/flightData.json?auth=' + token,
-     formData.value);
+     
+    return this.http.post('/logData', formData);
   }
 
-}
+} 

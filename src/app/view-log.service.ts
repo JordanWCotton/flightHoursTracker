@@ -10,9 +10,8 @@ export class ViewLogService {
 
     pullHours () {
         console.log('Pulling hours!');
-        const token: string = this.auth.getUserToken();
-        return this.http.get('https://logit-5e725.firebaseio.com/flightData.json?auth='
-        + token)
+        
+        return this.http.get('/flightLog')
         .map(
             (response: Response) => {
                 const data = response.json();
