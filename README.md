@@ -1,5 +1,5 @@
 # LogIt
-This is project is currently still under development and has no build version at this time. This application currently runs on a Firebase backend and is hosted by AWS S3.
+This is project is currently still under development. The front end is built using Angular, with Node.js framework Express handling server logic, and MongoDB with mongoose as the database. 
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
