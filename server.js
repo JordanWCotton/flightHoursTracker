@@ -2,12 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const mongodb = require('mongodb');
 const bodyParser = require('body-parser');
- 
+
 const app = express();
 
 app.use(bodyParser.json());
 
 let db; 
+let userName = ''; 
+let password = '';
 
 //Create express server listening on port 3000
 app.listen(3000, () => {
@@ -32,7 +34,7 @@ app.get('/flightLog', (req, res) => {
     });
 });
 
-mongodb.MongoClient.connect('mongodb://sophmod:stride77@ds155820.mlab.com:55820/test-land', (err, database) => {
+mongodb.MongoClient.connect('mongodb://' + userName + ':' + password + '@ds155820.mlab.com:55820/test-land', (err, database) => {
     db = database;
     if (err) console.log(err);
     console.log('DB connected'); 

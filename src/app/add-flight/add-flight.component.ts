@@ -79,7 +79,7 @@ export class AddFlightComponent {
  
   //Send the flight data  to the add-flight service 
   onSubmit(f) {
-   /* if (f.value.hours !== null && f.value.hours < 9.0) {
+  if (f.value.hours !== null && f.value.hours < 9.0) {
       this.addFlight.logFlightData(f)
         .subscribe (
           (response: Response) => {
@@ -92,9 +92,7 @@ export class AddFlightComponent {
         );
     } else {
       console.log('Incorrect hours input!'); //Display box on this
-    } */
-    this.addFlight.logFlightData(f.value)
-    .subscribe(); 
+    } 
   }
 
   openModalFunction () {
