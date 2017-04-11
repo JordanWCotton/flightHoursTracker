@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 
 @Injectable()
-export class AuthService {
+export class AuthService { 
   private token: string;
   constructor(private router: Router) {}
 

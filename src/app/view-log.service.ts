@@ -10,7 +10,7 @@ export class ViewLogService {
 
     pullHours () {
         console.log('Pulling hours!');
-        
+         
         return this.http.get('/flightLog')
         .map(
             (response: Response) => {

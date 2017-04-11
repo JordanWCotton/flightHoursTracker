@@ -10,7 +10,7 @@ export class AddFlightService {
 
 
   logFlightData (formData) {
-     
+     console.log('logFlightData called!');
     return this.http.post('/logData', formData);
   }
 
