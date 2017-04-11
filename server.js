@@ -4,6 +4,7 @@ const mongodb = require('mongodb');
 const bodyParser = require('body-parser');
 
 const app = express();
+const FLIGHTDATA_COLLECTION = 'flightData';
 
 app.use(bodyParser.json());
 
@@ -21,14 +22,20 @@ let distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
 app.post('/logData', (req, res) => {
+    let newFlight = req.body;
     console.log('Post called');
-    console.log(req.body); //Temporary for testing the code
+
+    //Logs the submitted data to the database, under the flightData collection
+    db.collection(FLIGHTDATA_COLLECTION).insertOne(newFlight, (err, doc) => {
+        console.log('Insert One called');
+    });
 });
 
 app.get('/flightLog', (req, res) => {
     console.log('Get called');
-    
-    let cursor = db.collection('flights').find();
+
+    //Pulls all of the data in the flightData collection
+    let cursor = db.collection(FLIGHTDATA_COLLECTION).find();
     cursor.toArray((err, results) => {
         console.log(results);
     });

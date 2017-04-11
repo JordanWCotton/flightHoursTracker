@@ -80,7 +80,7 @@ export class AddFlightComponent {
   //Send the flight data  to the add-flight service 
   onSubmit(f) {
   if (f.value.hours !== null && f.value.hours < 9.0) {
-      this.addFlight.logFlightData(f)
+      this.addFlight.logFlightData(f.value)
         .subscribe (
           (response: Response) => {
             console.log(response);
