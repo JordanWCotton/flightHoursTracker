@@ -18,11 +18,19 @@ export class LogInComponent implements OnInit {
   ngOnInit() {
   }
 
+  user = {
+    email: 'Jordancotton55@gmail.com',
+    password: 'Password'
+  }
+
   onSignin(form: NgForm) {
     this.email = form.value.email;
     this.password = form.value.password;
     this.router.navigate(['/main-menu']);
-    //this.auth.signinUser(this.email, this.password);
+    /* this.auth.signinUser(this.user)
+    .subscribe(
+      (res) => console.log(res)
+    ); */
     
   }
 }

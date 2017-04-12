@@ -1,12 +1,21 @@
 const express = require('express');
+const path = require('path');
 const mongoose = require('mongoose');
 const mongodb = require('mongodb');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser'); 
+
+require('./user');
+const User = mongoose.model('User');
 
 const app = express();
-const FLIGHTDATA_COLLECTION = 'flightData';
+
+//Serves our angular app upon user landing on domain
+let distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 
 app.use(bodyParser.json());
+
+//app.use('/app/', routes) //Use our routes file when the route starts with /, so all of them!
 
 let db; 
 let userName = ''; 
@@ -14,35 +23,57 @@ let password = '';
 
 //Create express server listening on port 3000
 app.listen(3000, () => {
-    //Logic
+    console.log('Express started')
+}); 
+
+
+//Get main-menu for users authorized
+app.get('/app/main-menu');
+
+//Register a new user
+app.post('/app/register', (req, res) => {
+    console.log('Register user'); 
+    
+    db.collection('users').insertOne(User,(err, doc) => {
+        console.log('Register insert one called');
+    }) 
 });
 
-//Serves our angular app upon user landing on domain
-let distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
+//Log a user in
+app.post('/app/login', (req, res) => {
 
-app.post('/logData', (req, res) => {
+});
+
+//Logs flight data to DB, under collection with the same name as the user who submitted it.
+app.post('/data/log-flight', (req, res) => {
     let newFlight = req.body;
-    console.log('Post called');
+    let collection = 'Jcotton'  //This is where the dynamic assignment of the current user's user name will be made for collection choice
+    console.log('Posting flight data');
 
-    //Logs the submitted data to the database, under the flightData collection
-    db.collection(FLIGHTDATA_COLLECTION).insertOne(newFlight, (err, doc) => {
-        console.log('Insert One called');
+    //Inserts the parameter into the chosen collection
+    db.collection(collection).insertOne(newFlight, (err, doc) => {
+        console.log('insertOne called!');
     });
 });
 
-app.get('/flightLog', (req, res) => {
-    console.log('Get called');
+app.get('/data/flightLog', (req, res) => {
+    let collection = 'Jcotton';
+    console.log('Pulling all flight data');
 
     //Pulls all of the data in the flightData collection
-    let cursor = db.collection(FLIGHTDATA_COLLECTION).find();
+    let cursor = db.collection(collection).find();
     cursor.toArray((err, results) => {
         console.log(results);
     });
 });
 
+//Connect to database
 mongodb.MongoClient.connect('mongodb://' + userName + ':' + password + '@ds155820.mlab.com:55820/test-land', (err, database) => {
     db = database;
     if (err) console.log(err);
     console.log('DB connected'); 
-})
+});
+
+
+//#########ERROR HANDLERS ###################
+

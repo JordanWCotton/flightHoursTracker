@@ -11,7 +11,7 @@ export class ViewLogService {
     pullHours () {
         console.log('Pulling hours!');
          
-        return this.http.get('/flightLog')
+        return this.http.get('/data/flightLog')
         .map(
             (response: Response) => {
                 const data = response.json();
