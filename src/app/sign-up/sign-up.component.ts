@@ -15,17 +15,11 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {
   }
 
-  user = {
-    name: 'Jordan', 
-    email: 'Jordancotton55@gmail.com',
-    password: 'Password'
-  }
-
   onSignup (form) {
-    this.auth.signUpUser(this.user)
+    this.auth.signUpUser(form.value)
     .subscribe(
       (res) => console.log(res)
     );
-  }
+  } 
 
 }

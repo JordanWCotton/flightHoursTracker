@@ -33,16 +33,30 @@ app.get('/app/main-menu');
 //Register a new user
 app.post('/app/register', (req, res) => {
     console.log('Register user'); 
-    
-    db.collection('users').insertOne(User,(err, doc) => {
+    let newUser = new User ();
+    newUser = req.body;
+
+    db.collection('users').insertOne(newUser,(err, doc) => {
         console.log('Register insert one called');
     }) 
 });
 
 //Log a user in
 app.post('/app/login', (req, res) => {
-
+    logUserIn(req.body);
 });
+
+function logUserIn(user) {
+    console.log('Log user in called!');
+    let username = user.email;
+    let password = user.password;
+
+    let cursor = db.collection('users').find({email: username});
+    cursor.toArray((err, results) => {
+        console.log(results); //results contain user info
+    })
+
+};
 
 //Logs flight data to DB, under collection with the same name as the user who submitted it.
 app.post('/data/log-flight', (req, res) => {
