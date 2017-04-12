@@ -43,20 +43,18 @@ app.post('/app/register', (req, res) => {
 
 //Log a user in
 app.post('/app/login', (req, res) => {
-    logUserIn(req.body);
-});
-
-function logUserIn(user) {
-    console.log('Log user in called!');
-    let username = user.email;
-    let password = user.password;
+    let validated = false;
+    let username = req.body.email;
+    let password = req.body.password;
 
     let cursor = db.collection('users').find({email: username});
     cursor.toArray((err, results) => {
-        console.log(results); //results contain user info
-    })
-
-};
+        if (username == results[0].email && password == results[0].password) {
+            validated = true;
+            res.send(validated);
+        }
+    });
+});
 
 //Logs flight data to DB, under collection with the same name as the user who submitted it.
 app.post('/data/log-flight', (req, res) => {

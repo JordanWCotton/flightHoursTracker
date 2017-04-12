@@ -18,7 +18,8 @@ export class SignUpComponent implements OnInit {
   onSignup (form) {
     this.auth.signUpUser(form.value)
     .subscribe(
-      (res) => console.log(res)
+      (res) => console.log(res),
+      (err) => console.log(err)
     );
   } 
 

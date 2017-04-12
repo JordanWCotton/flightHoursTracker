@@ -20,12 +20,10 @@ export class AuthService {
   }
 
   isAuthenticated () {
-    return this.token != null;
+    
   }
 
   onLogout () {
-   
-    this.token = null;
     this.router.navigate(['/']);
   }
 
