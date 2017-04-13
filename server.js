@@ -49,9 +49,18 @@ app.post('/app/login', (req, res) => {
         key: false
     }
 
-    let cursor = db.collection('users').find({email: username});
+    let cursor = db.collection('users').find({email: username, password: password});
 
-     cursor.toArray((err, results) => {
+    cursor.toArray((err, results) => {
+        if (err) throw err;
+
+        if(!results.length) {
+            console.log('Did not find it!');
+        } else {
+            console.log('Found it!');
+        }
+    });
+     /* cursor.toArray((err, results) => {
         if (err) throw err;
             if (results[0] === undefined) {
                 res.send(validated.key);
@@ -61,7 +70,7 @@ app.post('/app/login', (req, res) => {
             } else {
                 res.send(validated.key);
             }
-    });
+    }); */
 });
 
 //Logs flight data to DB, under collection with the same name as the user who submitted it.

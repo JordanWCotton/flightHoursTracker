@@ -22,7 +22,7 @@ export class LogInComponent implements OnInit {
     this.auth.signinUser(form.value)
     .subscribe(
       (res: any) => {
-        if (res._body == true) {
+        if (res._body === true) {
           this.router.navigate(['/main-menu']);
         } else {
           console.log('Failed login attempt');
