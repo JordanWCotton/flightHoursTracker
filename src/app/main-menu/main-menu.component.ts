@@ -13,7 +13,7 @@ export class MainMenuComponent implements OnInit {
   ngOnInit() { 
   }
 
-  onLogout() {
+  onLogout() { 
     this.auth.onLogout();
   }
 

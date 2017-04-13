@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Http, Response } from '@angular/http';
 import { AuthService } from './auth.service';
-import 'rxjs/Rx';
+import 'rxjs/Rx'; 
 
-@Injectable()
+@Injectable() 
 export class ViewLogService {
     constructor (private http: Http, private auth: AuthService) {}
 

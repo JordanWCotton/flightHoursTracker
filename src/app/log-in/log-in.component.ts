@@ -18,7 +18,7 @@ export class LogInComponent implements OnInit {
   ngOnInit() { 
   }
 
-  onSignin(form: NgForm) {
+  onSignIn(form: NgForm) {
     this.auth.signinUser(form.value)
     .subscribe(
       (res) => {

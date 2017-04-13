@@ -4,8 +4,8 @@
       <h1>LOG IT!</h1>
       <h4>AH-64D/E</h4>
     </div> 
-  </div>
-  <form (ngSubmit)="onSignin(f)" #f="ngForm">
+  </div> 
+  <form #f="ngForm">
   <div class="form-group">
   <div class="row" id="email-input-div">
     <div class="col-8 offset-2">
@@ -20,7 +20,7 @@
     </div>
   </div>
   <div class="row" id="log-in-div">
-    <div type="submit" id="submit-button" class="col-4 offset-4 btn">Log in</div>
+    <div type="submit" id="submit-button" (click)="onSignIn(f)"class="col-4 offset-4 btn">Log in</div>
   </div>
   </div>
   </form>

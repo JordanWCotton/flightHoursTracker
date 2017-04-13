@@ -41,6 +41,9 @@ app.post('/app/register', (req, res) => {
     }) 
 });
 
+//User who is logged in
+var currentUser = '';
+
 //Log a user and verify data
 app.post('/app/login', (req, res) => {
     let username = req.body.email;
@@ -61,6 +64,7 @@ app.post('/app/login', (req, res) => {
         } else {
             validated.key = true;
             res.send(validated);
+            currentUser = username; //Sets current user to the user who was just validated
         }
     });
 });
@@ -68,7 +72,7 @@ app.post('/app/login', (req, res) => {
 //Logs flight data to DB, under collection with the same name as the user who submitted it.
 app.post('/data/log-flight', (req, res) => {
     let newFlight = req.body;
-    let collection = 'Jcotton'  //This is where the dynamic assignment of the current user's user name will be made for collection choice
+    let collection = currentUser  //Choose's the current user's collection for storing flight data
     console.log('Posting flight data');
 
     //Inserts the parameter into the chosen collection
@@ -78,7 +82,7 @@ app.post('/data/log-flight', (req, res) => {
 });
 
 app.get('/data/flightLog', (req, res) => {
-    let collection = 'Jcotton';
+    let collection = currentUser;
     console.log('Pulling all flight data');
 
     //Pulls all of the data in the flightData collection
