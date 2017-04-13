@@ -63,17 +63,6 @@ app.post('/app/login', (req, res) => {
             res.send(validated);
         }
     });
-     /* cursor.toArray((err, results) => {
-        if (err) throw err;
-            if (results[0] === undefined) {
-                res.send(validated.key);
-            } else if (username === results[0].email && password === results[0].password) {
-                validated.key = true;
-                res.send(validated.key);
-            } else {
-                res.send(validated.key);
-            }
-    }); */
 });
 
 //Logs flight data to DB, under collection with the same name as the user who submitted it.

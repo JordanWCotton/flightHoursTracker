@@ -26,12 +26,12 @@
 
 #add-flight-date {
     font-size: 200%;
-    text-align: center; 
-    margin-top: 3%;
+    text-align: center;
+    margin-top: 1%;
 }
 
 #date-selector {
-    margin-top: 5%;
+    margin-top: 1%;
 }
 
 #data-selector-tooltip {
@@ -43,10 +43,6 @@
 #flight-title-container {
     font-size: 240%;
     text-align: center;
-}
-
-.flight-list-row {
-    margin-top: 6%;
 }
 
 .dropdown-menu { 
@@ -90,7 +86,32 @@ ul input {
     color: #373D3F;
 }
 
-#logit-button {
-    margin-top: 2%;
+.flight-list-row {
+    margin-top: 1%;
 }
 
+#logit-button {
+    margin-top: 2%;
+ }
+
+ .add-flight-remarks {
+     max-width: 30%;
+ }
+
+ @media only screen and (max-width: 840px) {
+     #add-flight-date { 
+    margin-top: 3%;
+    }
+
+    #date-selector {
+    margin-top: 5%;
+    }
+
+    .flight-list-row {
+    margin-top: 6%;
+    }
+
+    .add-flight-remarks {
+        max-width: 100%;
+    }
+ }
