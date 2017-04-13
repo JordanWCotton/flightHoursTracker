@@ -74,7 +74,9 @@ app.post('/data/log-flight', (req, res) => {
 
     //Inserts the parameter into the chosen collection
     db.collection(collection).insertOne(newFlight, (err, doc) => {
-     //Handle errors   
+     if (!err) {
+         res.sendStatus(200);
+     }
     });
 });
 
