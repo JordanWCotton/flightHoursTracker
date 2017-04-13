@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 require('./user');
 const User = mongoose.model('User');
 
-const app = express();
+const app = express(); 
 
 //Serves our angular app upon user landing on domain
 let distDir = __dirname + "/dist/";
@@ -15,9 +15,11 @@ app.use(express.static(distDir));
 
 app.use(bodyParser.json());
 
-//app.use('/app/', routes) //Use our routes file when the route starts with /, so all of them!
-
-let db; 
+//Allows access to our database outside of connect method
+let db;
+//Stores current logged in user for proper collection and data access 
+let currentUser = '';
+//Database credentials
 let userName = ''; 
 let password = '';
 
@@ -25,7 +27,6 @@ let password = '';
 app.listen(3000, () => {
     console.log('Express started')
 }); 
-
 
 //Get main-menu for users authorized
 app.get('/app/main-menu');
@@ -41,20 +42,15 @@ app.post('/app/register', (req, res) => {
     }) 
 });
 
-//User who is logged in
-var currentUser = '';
-
 //Log a user and verify data
 app.post('/app/login', (req, res) => {
     let username = req.body.email;
     let password = req.body.password;
     let validated = {
         key: false
-    }
+    };
 
-    //Check for the username and password match
     let cursor = db.collection('users').find({email: username, password: password});
-
     cursor.toArray((err, results) => {
         if (err) throw err;
 
@@ -72,23 +68,25 @@ app.post('/app/login', (req, res) => {
 //Logs flight data to DB, under collection with the same name as the user who submitted it.
 app.post('/data/log-flight', (req, res) => {
     let newFlight = req.body;
-    let collection = currentUser  //Choose's the current user's collection for storing flight data
-    console.log('Posting flight data');
+
+    //Choose's the current logged in user's collection for storing flight data
+    let collection = currentUser  
 
     //Inserts the parameter into the chosen collection
     db.collection(collection).insertOne(newFlight, (err, doc) => {
-        console.log('insertOne called!');
+     //Handle errors   
     });
 });
 
 app.get('/data/flightLog', (req, res) => {
     let collection = currentUser;
-    console.log('Pulling all flight data');
 
     //Pulls all of the data in the flightData collection
     let cursor = db.collection(collection).find();
     cursor.toArray((err, results) => {
-        console.log(results);
+        //Handle errors
+        
+        res.send(results);
     });
 });
 

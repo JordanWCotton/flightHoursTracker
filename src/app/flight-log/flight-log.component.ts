@@ -18,6 +18,7 @@ export class FlightLogComponent implements OnInit {
   datesSubmitted: boolean = false;
   datesInvalid: boolean = false;
 
+  //Holds the raw hours after being sorted, before being rounded
   rawHours = {
         totalHours: 0,
         dayHours: 0,
@@ -30,7 +31,7 @@ export class FlightLogComponent implements OnInit {
         simHours: 0
     }
 
-    //Variables that will be displayed to the user 
+    //Holds the rounded and ready to be viewed hours
       totalHours;
       dayHours;
       nvsHours;
