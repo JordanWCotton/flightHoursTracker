@@ -21,14 +21,13 @@ export class LogInComponent implements OnInit {
   onSignin(form: NgForm) {
     this.auth.signinUser(form.value)
     .subscribe(
-      (res) => {
-        if (res) {
+      (res: any) => {
+        if (res._body == true) {
           this.router.navigate(['/main-menu']);
         } else {
-          console.log('Authentication failed!'); //Modal popup saying incorrect  
+          console.log('Failed login attempt');
         }
       }
     );  
-    
   }
 }

@@ -12,7 +12,7 @@ export class AuthService {
   }
 
   signUpUser (user) {
-    return this.http.post('/app/register', user);
+    return this.http.post('/app/register', user)
   }
 
   getUserToken () {

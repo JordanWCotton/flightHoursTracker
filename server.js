@@ -41,18 +41,26 @@ app.post('/app/register', (req, res) => {
     }) 
 });
 
-//Log a user in
+//Log a user and verify data
 app.post('/app/login', (req, res) => {
-    let validated = false;
     let username = req.body.email;
     let password = req.body.password;
+    let validated = {
+        key: false
+    }
 
     let cursor = db.collection('users').find({email: username});
-    cursor.toArray((err, results) => {
-        if (username == results[0].email && password == results[0].password) {
-            validated = true;
-            res.send(validated);
-        }
+
+     cursor.toArray((err, results) => {
+        if (err) throw err;
+            if (results[0] === undefined) {
+                res.send(validated.key);
+            } else if (username === results[0].email && password === results[0].password) {
+                validated.key = true;
+                res.send(validated.key);
+            } else {
+                res.send(validated.key);
+            }
     });
 });
 
