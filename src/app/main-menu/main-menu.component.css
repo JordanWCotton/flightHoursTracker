@@ -11,7 +11,7 @@
     margin-top: 5%;
     border-radius: 10px;
 }
-
+ 
 #new-flight, #view-log, #weather, #notams{
     background-color: #093145;
     color: #F2F3F4;
@@ -35,19 +35,17 @@
     margin-top: 5%;
 }
 
+/*Mobile specific */
 @media only screen and (max-width: 840px) {
     #title-container {
-    margin-top: 17%;
+        margin-top: 17%;
     }
 
     .main-menu-item {
-    margin-top: 5%;
+        margin-top: 5%;
     }
 
     #new-flight {
-    margin-top: 20%;
+        margin-top: 20%;
     }
-
 }
-
-

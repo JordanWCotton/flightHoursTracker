@@ -2,18 +2,19 @@
 
 #landing-menu-container {
     background-color: #A3B86C;
-    height: 100vh; 
-    color: #373D3F;
-}
+    height: 100vh;  
+    color: #373D3F; 
+} 
 
 #title-container {
     text-align: center;
-    margin-top: 17%;
+    margin-top: 5%;
+    margin-bottom: 7%;
     border-radius: 10px;
 }
 
 .button-space {
-    margin-top: 25%;
+    margin-top: 5%;
 }
 
 #log-in-div {
@@ -23,4 +24,19 @@
 #signin-button, #signup-button {
     background-color: #093145;
     color: #F2F3F4;
+    text-align: center;
+    width: 100%;
 }
+
+/*Mobile specific */
+@media only screen and (max-width: 840px) {
+    .button-space {
+        margin-top: 20%;
+    }
+
+    #title-container {
+        margin-top: 17%;
+        margin-bottom: 13%;
+    }
+}
+

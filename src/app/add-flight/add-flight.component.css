@@ -98,17 +98,18 @@ ul input {
      max-width: 30%;
  }
 
+/*Mobile specific */
  @media only screen and (max-width: 840px) {
      #add-flight-date { 
-    margin-top: 3%;
+        margin-top: 3%;
     }
 
     #date-selector {
-    margin-top: 5%;
+        margin-top: 5%;
     }
 
     .flight-list-row {
-    margin-top: 6%;
+        margin-top: 6%;
     }
 
     .add-flight-remarks {

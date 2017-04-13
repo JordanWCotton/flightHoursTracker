@@ -8,19 +8,35 @@
 
 #title-container {
     text-align: center;
-    margin-top: 17%;
+    margin-top: 6%;
     border-radius: 10px;
 }
 
 #email-input-div {
-    margin-top: 25%;
+    margin-top: 10%;
 }
 
 #log-in-div {
-    margin-top: 15%;
+    margin-top: 8%;
 }
 
 #submit-button {
     background-color: #093145;
     color: #F2F3F4;
+}
+
+/*Mobile specific */
+@media only screen and (max-width: 840px) {
+    #title-container {
+        margin-top: 17%;
+    }
+
+    #email-input-div {
+        margin-top: 25%;
+    }
+
+    #log-in-div {
+        margin-top: 15%;
+    }
+
 }
