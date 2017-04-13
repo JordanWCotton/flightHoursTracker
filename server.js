@@ -49,15 +49,18 @@ app.post('/app/login', (req, res) => {
         key: false
     }
 
+    //Check for the username and password match
     let cursor = db.collection('users').find({email: username, password: password});
 
     cursor.toArray((err, results) => {
         if (err) throw err;
 
+        //If results is empty, log in did not match a user.
         if(!results.length) {
-            console.log('Did not find it!');
+            res.send(validated);
         } else {
-            console.log('Found it!');
+            validated.key = true;
+            res.send(validated);
         }
     });
      /* cursor.toArray((err, results) => {

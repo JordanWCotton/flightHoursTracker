@@ -21,11 +21,12 @@ export class LogInComponent implements OnInit {
   onSignin(form: NgForm) {
     this.auth.signinUser(form.value)
     .subscribe(
-      (res: any) => {
-        if (res._body === true) {
+      (res) => {
+        let validation = res.json();
+        if (validation.key === true) {
           this.router.navigate(['/main-menu']);
         } else {
-          console.log('Failed login attempt');
+          console.log('Username or password incorrect!'); //REPLACE WITH MODAL GENERATOR
         }
       }
     );  
