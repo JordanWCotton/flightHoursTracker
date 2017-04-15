@@ -1,9 +1,17 @@
 /* Sign up page */
-
+ 
 #sign-up-container { 
     background-color: #192231;
     height: 100vh; 
     color: #C4BABE;
+}
+
+#log-name {
+    color: #494E6B;
+}
+
+#it-name {
+    color: #985E6D;
 }
 
 #title-container {

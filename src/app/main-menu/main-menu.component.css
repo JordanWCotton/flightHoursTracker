@@ -6,6 +6,14 @@
     color: #C4BABE; 
 }
 
+#log-name {
+    color: #494E6B;
+}
+
+#it-name {
+    color: #985E6D;
+}
+
 #title-container {
     text-align: center;
     margin-top: 5%;
@@ -21,10 +29,6 @@
 #view-log, #notams {
     background-color: #494E6B;
     color: #C4BABE;
-}
-
-#title-container h4 {
-    margin-left: 29%;
 }
 
 .main-menu-item {
