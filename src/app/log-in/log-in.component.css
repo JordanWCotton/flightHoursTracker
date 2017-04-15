@@ -1,17 +1,18 @@
 /* Log in page */
 
 #log-in-container {
-    background-color: #192231;
+    background-color: #AB987A;
     height: 100vh;  
-    color: #C4BABE;
+    color: #F5F5F5;
+    font-family: 'Playfair Display', serif;
 } 
 
-#log-name {
-    color: #494E6B;
+#it-name {
+    color: #FF533D;
 }
 
-#it-name {
-    color: #985E6D;
+#log-name {
+    color: #0F1626;
 }
 
 #title-container {
@@ -29,19 +30,21 @@
 }
 
 #submit-button {
-    background-color: #494E6B;
-    color: #C4BABE;
+    background-color: #0F1626;
+    color: #F5F5F5;
+    text-align: center;
+    border-radius: 6px;
 }
 
 #validation-modal-content {
     text-align: center;
-    background-color: #192231;
-    color: #C4BABE;
+    background-color: #AB987A;
+    color: #F5F5F5;
 }
 
 #modal-close-button {
-    background-color: #985E6D;
-    color: #C4BABE;
+    background-color: #0F1626;
+    color: #F5F5F5;
 }
 
 /*Mobile specific */

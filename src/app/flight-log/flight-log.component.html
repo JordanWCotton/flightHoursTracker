@@ -1,127 +1,123 @@
 <div class="container-fluid" id="flight-log-container"> 
-            <div class="row">
-                <div class="col-3">
-                    <div [routerLink]="['/main-menu']" class="btn-info" 
-                    id="back-icon">Back</div>
-                </div>
-                <div class="col-6" id="flight-log-title">
-                    <p>Flight Log</p>
-                </div>
-            </div>
-            <div id="page-breaker-line"></div>
-            <div class="row">
-                <!--<div class="col-4 offset-4" id="date-range-container"> -->
-                    <!--Controls date picker modal-->
-                    <div class="col-4 offset-4 btn-info" id="date-range-button" data-toggle="modal" 
-                    data-target="#myModal">
-                        <span *ngIf="!datesSubmitted; else elseSpan">Current</span>
-                        <ng-template #elseSpan id="date-span">{{fromDate.formatted}} <br>TO<br> {{toDate.formatted}}</ng-template>
-                        
-                    </div>
-               <!-- </div> -->
-                <!--date picker modal-->
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="#exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content" id="modal-content-id">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Select date range</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <label for="from">From</label>
-                                <ng2-datepicker [options]="fromOptions" [(ngModel)]="fromDate"></ng2-datepicker>
-                                <br>
-                                <label for="to">To</label>
-                                <ng2-datepicker [options]="toOptions" [(ngModel)]="toDate"></ng2-datepicker>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-success" (click)="sendDates()" data-dismiss="modal">Save Changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-            </div>       
-            <div class="row">
-                <div class="col-5 offset-1 add-flight-list">
-                    <p>Total Hours</p>
-                </div>
-                <div class="col-3 offset-1 hours-box">
-                    {{totalHours}}
-                </div>
-            </div>
-            <div class="row flight-list-row">
-                <div class="col-5 offset-1 add-flight-list">
-                    <p>Day</p>
-                </div>
-                <div class="col-3 offset-1 hours-box">
-                    {{dayHours}}
-                </div>
-            </div>  
-            <div class="row flight-list-row">
-                 <div class="col-5 offset-1 add-flight-list">
-                    <p>NVS</p>
-                </div>
-                <div class="col-3 offset-1 hours-box">
-                    {{nvsHours}}
-                </div>
-            </div>
-            <div class="row flight-list-row">
-                 <div class="col-5 offset-1 add-flight-list">
-                    <p>NVG</p>
-                </div>
-                <div class="col-3 offset-1 hours-box">
-                    {{nvgHours}}
-                </div>
-            </div> 
-            <div class="row flight-list-row">
-               <div class="col-5 offset-1 add-flight-list">
-                    <p>NVD</p>
-                </div>
-                <div class="col-3 offset-1 hours-box">
-                    {{nvdHours}}
-                </div>
-            </div> 
-            <div class="row flight-list-row">
-               <div class="col-5 offset-1 add-flight-list">
-                    <p>Hood</p>
-                </div>
-                <div class="col-3 offset-1 hours-box">
-                    {{hoodHours}}
-                </div>
-            </div>
-            <div class="row flight-list-row">
-               <div class="col-5 offset-1 add-flight-list">
-                    <p>Night</p>
-                </div>
-                <div class="col-3 offset-1 hours-box">
-                    {{nightHours}}
-                </div>
-            </div>
-            <div class="row flight-list-row">
-               <div class="col-5 offset-1 add-flight-list">
-                    <p>Weather</p>
-                </div>
-                <div class="col-3 offset-1 hours-box">
-                    {{weatherHours}}
-                </div>
-            </div>
-            <div class="row flight-list-row">
-               <div class="col-5 offset-1 add-flight-list">
-                    <p>Sim</p>
-                </div>
-                <div class="col-3 offset-1 hours-box">
-                    {{simHours}}
-                </div>
-            </div>
-             <div class="row" id="filter-buttons">
-               <!--<div class="col-2 offset-1"> -->
-                    <div class="col-3 offset-2 btn-info" id="filterButton">Filter</div>
-                
-                <!--<div class="col-2 offset-4"> -->
-                    <div class="col-3 offset-2 btn-info" id="reqdButton">Req'd</div>
-        
-            </div>
+    <div class="row">
+        <div class="col-3">
+            <div [routerLink]="['/main-menu']" class="btn-info" 
+            id="back-icon">Back</div>
         </div>
+        <div class="col-6" id="flight-log-title">
+            <p>Flight Log</p>
+        </div> 
+    </div>
+    <div id="page-breaker-line"></div>
+    <div class="row">
+        <!--Controls date picker modal-->
+        <div class="col-4 offset-4 btn-info" id="date-range-button" data-toggle="modal" 
+        data-target="#myModal">
+            <span *ngIf="!datesSubmitted; else elseSpan">Current</span>
+            <ng-template #elseSpan id="date-span">{{fromDate.formatted}} <br>TO<br> {{toDate.formatted}}</ng-template>
+        </div>
+        <!--date picker modal-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="#exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content" id="modal-content-id">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Select date range</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="from">From</label>
+                    <ng2-datepicker [options]="fromOptions" [(ngModel)]="fromDate"></ng2-datepicker>
+                    <br>
+                    <label for="to">To</label>
+                    <ng2-datepicker [options]="toOptions" [(ngModel)]="toDate"></ng2-datepicker>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" id="close-daterange-modal" 
+                    data-dismiss="modal">Close</button>
+                    <button type="button" class="btn" id="save-daterange-modal" 
+                    (click)="sendDates()" data-dismiss="modal">Save Changes</button>
+                 </div>
+            </div>
+            </div>
+        </div> 
+    </div>       
+    <div class="row">
+        <div class="col-5 offset-1 add-flight-list">
+            <p>Total Hours</p>
+        </div>
+        <div class="col-3 offset-1 hours-box">
+            {{totalHours}}
+        </div>
+    </div>
+    <div class="row flight-list-row">
+        <div class="col-5 offset-1 add-flight-list">
+            <p>Day</p>
+        </div>
+        <div class="col-3 offset-1 hours-box">
+            {{dayHours}}
+        </div>
+    </div>  
+    <div class="row flight-list-row">
+        <div class="col-5 offset-1 add-flight-list">
+            <p>NVS</p>
+        </div>
+        <div class="col-3 offset-1 hours-box">
+            {{nvsHours}}
+        </div>
+    </div>
+    <div class="row flight-list-row">
+        <div class="col-5 offset-1 add-flight-list">
+            <p>NVG</p>
+        </div>
+        <div class="col-3 offset-1 hours-box">
+            {{nvgHours}}
+        </div>
+    </div> 
+    <div class="row flight-list-row">
+        <div class="col-5 offset-1 add-flight-list">
+            <p>NVD</p>
+        </div>
+        <div class="col-3 offset-1 hours-box">
+            {{nvdHours}}
+        </div>
+    </div> 
+    <div class="row flight-list-row">
+        <div class="col-5 offset-1 add-flight-list">
+            <p>Hood</p>
+        </div>
+        <div class="col-3 offset-1 hours-box">
+            {{hoodHours}}
+        </div>
+    </div>
+    <div class="row flight-list-row">
+        <div class="col-5 offset-1 add-flight-list">
+            <p>Night</p>
+        </div>
+        <div class="col-3 offset-1 hours-box">
+            {{nightHours}}
+        </div>
+    </div>
+    <div class="row flight-list-row">
+        <div class="col-5 offset-1 add-flight-list">
+            <p>Weather</p>
+        </div>
+        <div class="col-3 offset-1 hours-box">
+            {{weatherHours}}
+        </div>
+    </div>
+    <div class="row flight-list-row">
+        <div class="col-5 offset-1 add-flight-list">
+            <p>Sim</p>
+        </div>
+        <div class="col-3 offset-1 hours-box">
+            {{simHours}}
+        </div>
+    </div>
+    <div class="row" id="filter-buttons">
+        <div class="col-3 offset-2 btn-info" id="filterButton">Filter</div>
+        <div class="col-3 offset-2 btn-info" id="reqdButton">Req'd</div>
+        
+    </div>
+</div>

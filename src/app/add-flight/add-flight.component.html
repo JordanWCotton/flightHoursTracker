@@ -1,5 +1,5 @@
 <div class="container-fluid" id="add-new-flight-container" >
-           <div class="row">
+           <div class="row"> 
                 <div class="col-3">
                     <div [routerLink]="['/main-menu']" class="btn-info" 
                     id="back-icon">Back</div>
@@ -27,10 +27,10 @@
                 </div>
                 <div class="col-4 offset-1"> 
                     <div class="dropdown" id="elFlight" #elFlight>
-                        <button class="btn add-flight-selectors" type="button" id="dropdownMenu1"
+                        <div class="btn add-flight-selectors" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{f.value.flightSymbol}}
-                        </button>
+                            <p>{{f.value.flightSymbol}}</p>
+                        </div>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <div *ngFor="let flightSymbol of flightSymbols">
                                 <label>
@@ -49,10 +49,10 @@
                 </div>
                 <div class="col-4 offset-1">
                     <div class="dropdown" #elDuty id="elDuty">
-                        <button class="btn add-flight-selectors" type="button" id="dropdownMenu2"
+                        <div class="btn add-flight-selectors" type="button" id="dropdownMenu2"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{f.value.dutySymbol}}
-                        </button>
+                            <p>{{f.value.dutySymbol}}</p>
+                        </div>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <div *ngFor="let dutySymbol of dutySymbols">
                                 <label>
@@ -88,10 +88,10 @@
                 </div>
                 <div class="col-4 offset-1">
                     <div class="dropdown" #elSeat id="elSeat">
-                        <button class="btn add-flight-selectors" type="button" id="dropdownMenu3"
+                        <div class="btn add-flight-selectors" type="button" id="dropdownMenu3"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{f.value.seat}} 
-                        </button>
+                            <p>{{f.value.seat}}</p> 
+                        </div>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
                             <div *ngFor="let seat of seats">
                                 <label>

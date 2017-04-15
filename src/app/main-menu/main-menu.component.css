@@ -1,17 +1,18 @@
-/* Main Menu page */
+/* Main Menu page */ 
 
 #main-menu-container {
-    background-color: #192231;
+    background-color: #AB987A;
     height: 100vh; 
-    color: #C4BABE; 
-}
-
-#log-name {
-    color: #494E6B;
+    color: #F5F5F5;
+    font-family: 'Playfair Display', serif;
 }
 
 #it-name {
-    color: #985E6D;
+    color: #FF533D;
+}
+
+#log-name {
+    color: #0F1626;
 }
 
 #title-container {
@@ -21,14 +22,14 @@
 }
  
 #new-flight, #weather {
-    background-color: #985E6D;
-    color: #C4BABE;
+    background-color: #FF533D;
+    color: #F5F5F5;
     
 }
 
 #view-log, #notams {
-    background-color: #494E6B;
-    color: #C4BABE;
+    background-color: #0F1626;
+    color: #F5F5F5;
 }
 
 .main-menu-item {
@@ -46,10 +47,14 @@
 }
 
 #logout-button {
-    background-color: #985E6D;
-    color: #C4BABE;
+    background-color: #FF533D;
+    color: #F5F5F5;
+    border-radius: 6px;
 }
 
+#logout-button p {
+    margin: 0;
+}
 /*Mobile specific */
 @media only screen and (max-width: 840px) {
     #title-container {
