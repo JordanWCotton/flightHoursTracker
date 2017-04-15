@@ -3,14 +3,15 @@ const path = require('path');
 const mongoose = require('mongoose');
 const mongodb = require('mongodb');
 const bodyParser = require('body-parser'); 
+const router = express.Router();
 
 require('./user'); 
 const User = mongoose.model('User');
 
 const app = express(); 
 
-//Serves our angular app upon user landing on domain
 let distDir = __dirname + "/dist/";
+//Serves our angular app upon user landing on domain
 app.use(express.static(distDir));
 
 app.use(bodyParser.json());
@@ -20,8 +21,8 @@ let db;
 //Stores current logged in user for proper collection and data access 
 let currentUser = '';
 //Database credentials
-let userName = ''; 
-let password = '';
+let userName = 'db_user'; 
+let password = 'Password';
 
 //Create express server listening on port 3000
 app.listen(3000, () => {
@@ -99,6 +100,32 @@ mongodb.MongoClient.connect('mongodb://' + userName + ':' + password + '@ds15582
     db = database;
     if (err) console.log(err);
     console.log('DB connected'); 
+});
+
+//##Routes for the SPA. Will handle the user refreshing the page, by resending the same page to Angular##
+app.get('/sign-up', (req, res) => {
+  // Use res.sendfile, as it streams instead of reading the file into memory.
+  res.sendFile(distDir);
+});
+
+app.get('/log-in', (req, res) => {
+  // Use res.sendfile, as it streams instead of reading the file into memory.
+  res.sendFile(distDir);
+});
+
+app.get('/main-menu', (req, res) => {
+  // Use res.sendfile, as it streams instead of reading the file into memory.
+  res.sendFile(distDir);
+});
+
+app.get('/add-flight', (req, res) => {
+  // Use res.sendfile, as it streams instead of reading the file into memory.
+  res.sendFile(distDir);
+});
+
+app.get('/flight-log', (req, res) => {
+  // Use res.sendfile, as it streams instead of reading the file into memory.
+  res.sendFile(distDir);
 });
 
 
