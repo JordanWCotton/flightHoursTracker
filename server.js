@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const mongodb = require('mongodb');
 const bodyParser = require('body-parser'); 
 
-require('./user');
+require('./user'); 
 const User = mongoose.model('User');
 
 const app = express(); 

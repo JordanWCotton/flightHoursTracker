@@ -1,9 +1,9 @@
 /* Main Menu page */
 
 #main-menu-container {
-    background-color: #A3B86C;
+    background-color: #192231;
     height: 100vh; 
-    color: #373D3F;
+    color: #C4BABE; 
 }
 
 #title-container {
@@ -12,9 +12,15 @@
     border-radius: 10px;
 }
  
-#new-flight, #view-log, #weather, #notams{
-    background-color: #093145;
-    color: #F2F3F4;
+#new-flight, #weather {
+    background-color: #985E6D;
+    color: #C4BABE;
+    
+}
+
+#view-log, #notams {
+    background-color: #494E6B;
+    color: #C4BABE;
 }
 
 #title-container h4 {
@@ -33,6 +39,11 @@
 
 #new-flight {
     margin-top: 5%;
+}
+
+#logout-button {
+    background-color: #985E6D;
+    color: #C4BABE;
 }
 
 /*Mobile specific */

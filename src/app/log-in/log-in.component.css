@@ -1,10 +1,10 @@
 /* Log in page */
 
 #log-in-container {
-    background-color: #A3B86C;
-    height: 100vh; 
-    color: #373D3F;
-}
+    background-color: #192231;
+    height: 100vh;  
+    color: #C4BABE;
+} 
 
 #title-container {
     text-align: center;
@@ -21,8 +21,19 @@
 }
 
 #submit-button {
-    background-color: #093145;
-    color: #F2F3F4;
+    background-color: #494E6B;
+    color: #C4BABE;
+}
+
+#validation-modal-content {
+    text-align: center;
+    background-color: #192231;
+    color: #C4BABE;
+}
+
+#modal-close-button {
+    background-color: #985E6D;
+    color: #C4BABE;
 }
 
 /*Mobile specific */

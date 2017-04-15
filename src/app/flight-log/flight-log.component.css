@@ -2,15 +2,15 @@
 
 #flight-log-container {
     padding-top: 10px;
-    background-color: #A3B86C; 
+    background-color: #192231; 
     height: 100vh; 
-    color: #373D3F;
+    color: #C4BABE;
 }
 
 #back-icon {
     margin-right: 5px;
-    background-color: #093145;
-    color: #F2F3F4;
+    background-color: #985E6D;
+    color: #C4BABE;
     text-align: center;
     border-radius: 6px;
 }
@@ -22,13 +22,13 @@
 
 #page-breaker-line {
     height: 1px;
-    background-color:#272D2D;
+    background-color:#C4BABE;
 }
 
 #date-range-container {
     margin-top: 3%;
     text-align: center;
-}
+} 
 
 #modal-content-id {
     background-color: #A3B86C;
@@ -36,8 +36,8 @@
 }
 
 #date-range-button {
-    background-color: #093145;
-    color: #F2F3F4;
+    background-color: #494E6B;
+    color: #C4BABE;
     margin-top: 3%;
     margin-bottom: 3%;
     border-radius: 6px;
@@ -64,8 +64,8 @@
 }
 
 #filterButton, #reqdButton {
-    background-color: #093145;
-    color: #F2F3F4;
+    background-color: #985E6D;
+    color: #C4BABE;
     text-align: center;
     border-radius: 6px;
     margin-top: 5%;

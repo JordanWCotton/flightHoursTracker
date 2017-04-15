@@ -2,15 +2,15 @@
 
 #add-new-flight-container {
     padding-top: 10px;
-    background-color: #A3B86C;
+    background-color: #192231;
     height: 100vh; 
-    color: #373D3F;
+    color: #C4BABE;
 }
 
 #back-icon {
     margin-right: 5px;
-    background-color: #093145;
-    color: #F2F3F4;
+    background-color: #985E6D;
+    color: #C4BABE;
     text-align: center;
     border-radius: 6px;
 }
@@ -64,20 +64,25 @@ ul input {
     text-align: center;
 }
 
-#dropdownMenu1, #dropdownMenu2, #dropdownMenu3 {
-    background-color: #093145;
-    color: #F2F3F4;
+#dropdownMenu1, #dropdownMenu3 {
+    background-color: #494E6B;
+    color: #C4BABE;
 }
 
+#dropdownMenu2 {
+    background-color: #985E6D;
+    color: #C4BABE;
+} 
+
 #submit-button {
-    background-color: #093145;
-    color: #F2F3F4;
+    background-color: #985E6D;
+    color: #C4BABE;
 }
 
 #submit-modal-content {
     text-align: center;
-    background-color: #A3B86C;
-    color: #373D3F;
+    background-color: #192231;
+    color: #C4BABE;
 }
 
 .flight-list-row {
@@ -90,6 +95,16 @@ ul input {
 
  .add-flight-remarks {
      max-width: 30%;
+ }
+
+ #yes-modal-button {
+     background-color: #494E6B;
+     color: #C4BABE;
+ }
+
+ #no-modal-button {
+     background-color: #985E6D;
+     color: #C4BABE;
  }
 
 /*Mobile specific */

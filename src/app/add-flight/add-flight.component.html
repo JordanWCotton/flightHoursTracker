@@ -104,7 +104,7 @@
                     </div>
                 </div>
             </div> 
-            <div class="row flight-list-row">
+            <div class="row flight-list-row"> 
                 <div class="col-4 add-flight-list flight-list-centered">
                     <p>Remarks</p>
                 </div>
@@ -113,11 +113,11 @@
                         <input type="text" class="form-control" placeholder="Enter remarks..." 
                         aria-describedby="sizing-addon2" name="remarks" [maxlength]="30" [(ngModel)]="flight.remarks">
                     </div>
-                </div>
+                </div> 
             </div> 
             <div class="row">
                 <div class="col-1 offset-4" id="logit-button">
-                    <button class="btn btn-success" type="submit" id="submit-button" [disabled]=""
+                    <button class="btn" type="submit" id="submit-button" [disabled]=""
                     (click)="onSubmit(f)">Log It!</button>
                     <button id="openModalButton" #openModalButton [hidden]="true" data-toggle="modal"
                     data-target=".bd-example-modal-sm"></button>
@@ -134,10 +134,10 @@
                                 <p>Do you want to log another flight?<p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-success" data-dismiss="modal"
-                                (click)="onResetForm()">Sure!</button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal"
-                                [routerLink]="['../']">No thanks</button>
+                                <button type="button" class="btn" id="yes-modal-button" 
+                                data-dismiss="modal" (click)="onResetForm()">Sure!</button>
+                                <button type="button" class="btn" id="no-modal-button" 
+                                data-dismiss="modal" [routerLink]="['/main-menu']">No thanks</button>
                             </div>
                         </div>
                     </div>

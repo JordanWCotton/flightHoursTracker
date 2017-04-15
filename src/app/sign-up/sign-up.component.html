@@ -1,4 +1,4 @@
-<div class="container-fluid" id="sign-up-container">
+<div class="container-fluid" id="sign-up-container"> 
   <div class="row">
     <div class="col-8 offset-2" id="title-container">
       <h1>LOG IT!</h1>
@@ -21,7 +21,7 @@
     </div>
     <div class="row" id="password-input-div">
       <div class="col-8 offset-2">
-        <label>Password:</label> <br> 
+        <label>Password:</label> <br>  
         <input type="password" name="password" id="password-input" ngModel class="form-control">
       </div>
     </div>
@@ -35,17 +35,17 @@
   </form>
   <!--Successful registration notification modal -->
   <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-  aria-hidden="true" id="successModal">
+  aria-hidden="true" id="register-modal">
     <div class="modal-dialog modal-sm">
-      <div class="modal-content" id="submit-modal-content">
-        <div class="modal-header" id="submit-modal-header">
+      <div class="modal-content" id="register-modal-content">
+        <div class="modal-header" id="register-modal-header">
           <h3>Success!!</h3>
         </div>
         <div class="modal-body">
           <p>You have successfully registered your account! You may now log in and use the app.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success" 
+          <button type="button" class="btn btn-success" id="modal-close-button"
           data-dismiss="modal" [routerLink]="['../']">Close</button>
         </div>
       </div>

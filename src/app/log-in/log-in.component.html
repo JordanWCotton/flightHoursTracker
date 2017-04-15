@@ -1,4 +1,4 @@
-<div class="container-fluid" id="log-in-container"> 
+<div class="container-fluid" id="log-in-container">   
   <div class="row">
     <div class="col-8 offset-2" id="title-container">
       <h1>LOG IT!</h1>
@@ -8,7 +8,7 @@
   <form #f="ngForm">
   <div class="form-group">
   <div class="row" id="email-input-div">
-    <div class="col-8 offset-2">
+    <div class="col-8 offset-2"> 
       <label>Email:</label> <br>
       <input type="email" name="email" id="email-input" ngModel class="form-control">
     </div>
@@ -21,7 +21,7 @@
   </div> 
   <div class="row" id="log-in-div">
     <div type="submit" id="submit-button" (click)="onSignIn(f)"
-    class="col-4 offset-4 btn">Log in</div>
+    class="col-4 offset-4 btn">Sign In</div>
     <button id="openModal" #openModal [hidden]="true" 
     data-toggle="modal" data-target=".bd-example-modal-sm"></button>
   </div>
@@ -29,10 +29,10 @@
   </form>
   <!--Log in fail notification modal -->
   <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-  aria-hidden="true" id="successModal">
+  aria-hidden="true" id="validation-modal">
     <div class="modal-dialog modal-sm">
-      <div class="modal-content" id="submit-modal-content">
-        <div class="modal-header" id="submit-modal-header">
+      <div class="modal-content" id="validation-modal-content">
+        <div class="modal-header" id="validation-modal-header">
           <h3>Login credentials incorrect</h3>
         </div>
         <div class="modal-body">
@@ -40,8 +40,8 @@
             Please try again.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success" 
-          data-dismiss="modal">Close</button>
+          <button type="button" class="btn" 
+          data-dismiss="modal" id="modal-close-button">Close</button>
         </div>
       </div>
     </div>
