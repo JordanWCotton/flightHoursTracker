@@ -111,7 +111,7 @@ ul input {
     }
  }
 
-/* For extremely small screens */
+/* Future use
 @media only screen and (max-height: 569) {
     #flight-title-container {
         font-size: 140%;
@@ -121,3 +121,4 @@ ul input {
         background-color: purple;
     }
 }
+*/
