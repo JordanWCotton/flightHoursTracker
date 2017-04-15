@@ -16,6 +16,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { LandingMenuComponent } from './landing-menu/landing-menu.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AuthService } from './auth.service';
+import { AuthenticationGuard } from './routing-guard';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import { AuthService } from './auth.service';
     ReactiveFormsModule,
     DatePickerModule
   ],
-  providers: [AddFlightService, ViewLogService, AuthService],
+  providers: [AddFlightService, ViewLogService, AuthService, AuthenticationGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

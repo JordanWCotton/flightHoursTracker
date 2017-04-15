@@ -27,6 +27,7 @@ export class LogInComponent implements OnInit {
         let validation = res.json();
         if (validation.key === true) {
           this.router.navigate(['/main-menu']);
+          this.auth.userSignIn();
         } else {
           this.openModal.nativeElement.click();
         }
