@@ -18,6 +18,7 @@ export class AddFlightComponent {
   @ViewChild('elDuty') elDuty:ElementRef;
   @ViewChild('elSeat') elSeat:ElementRef;
   @ViewChild('openModalButton') openModal:ElementRef;
+  @ViewChild('openSecModal') openSecModal:ElementRef;
 
   public flight: Flight;
   public myForm: FormGroup;
@@ -27,18 +28,16 @@ export class AddFlightComponent {
   public hours: number;
   public remarksValue: string = '';
 
-  constructor(private addFlight: AddFlightService, private _fb: FormBuilder, private rd: Renderer2) {
+  constructor(private addFlight: AddFlightService, private _fb: FormBuilder, 
+  private rd: Renderer2) {
     this.options = new DatePickerOptions ({
       initialDate: this.todayDate
     });
   }
 
-  //Regex pattern that matches MM/DD/YYYY, from 1900-2099
-  hoursPattern = /^-?\d*\.?\d+$/;
-
   //Static values for our user input menus
   seats = [
-    { value: 'Front'},
+    { value: 'Front'}, 
     { value: 'Back'}
   ];
 
@@ -79,26 +78,23 @@ export class AddFlightComponent {
  
   //Send the flight data  to the add-flight service 
   onSubmit(f) {
-  if (f.value.hours !== null && f.value.hours < 9.0) {
+  if (f.value.hours !== null && f.value.hours < 12.0) {
       this.addFlight.logFlightData(f.value)
         .subscribe (
           (response: Response) => {
             console.log(response);
             if (response.status == 200) {
-              this.openModal.nativeElement.click();
-            }
+              this.openModal.nativeElement.click(); //Displays success modal
+            } 
           },
           (error) => console.log(error) 
         );
     } else {
-      console.log('Incorrect hours input!'); //Display box on this
+       
     } 
   }
 
-  openModalFunction () {
-    this.openModal.nativeElement.click();
-  }
-
+  //Closes the dropdown menus when the user selects something
   onDropdownSelect(event) {
     //Bind the input that the user is currently using
     let selected = event.path[4].id; 

@@ -18,10 +18,32 @@
       <label>Password:</label> <br>
       <input type="password" name="password" id="password-input" ngModel class="form-control">
     </div>
-  </div>
+  </div> 
   <div class="row" id="log-in-div">
-    <div type="submit" id="submit-button" (click)="onSignIn(f)"class="col-4 offset-4 btn">Log in</div>
+    <div type="submit" id="submit-button" (click)="onSignIn(f)"
+    class="col-4 offset-4 btn">Log in</div>
+    <button id="openModal" #openModal [hidden]="true" 
+    data-toggle="modal" data-target=".bd-example-modal-sm"></button>
   </div>
   </div>
   </form>
+  <!--Log in fail notification modal -->
+  <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+  aria-hidden="true" id="successModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content" id="submit-modal-content">
+        <div class="modal-header" id="submit-modal-header">
+          <h3>Login credentials incorrect</h3>
+        </div>
+        <div class="modal-body">
+          <p>You have failed to login, either the email or password you have provided is incorrect.
+            Please try again.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" 
+          data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

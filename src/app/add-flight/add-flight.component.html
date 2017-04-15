@@ -16,12 +16,6 @@
                     [(ngModel)]="flight.date"></ng2-datepicker>
                 </div>
             </div>
-            <!-- <div class="row">
-                <div *ngIf="!myForm.valid && myForm.dirty" class="alert alert-info offset-1 col-10"
-                id="data-selector-tooltip" role="alert">
-                    MM/DD/YYYY format required!
-                </div>
-            </div> -->
             <div class="row">
                 <div class="col-12" id="flight-title-container">
                     <p>Flight</p>
@@ -78,11 +72,16 @@
                 <div class="col-4 offset-1">
                     <div class="input-group add-flight-selectors">
                         <input type="number" id="hours-input" class="form-control" placeholder="0.0" 
-                        aria-describedby="sizing-addon1" name="hours" [(ngModel)]="flight.hours"
-                        [pattern]="hoursPattern">
-                    </div>    
+                        aria-describedby="sizing-addon1" name="hours" [(ngModel)]="flight.hours">
+                    </div>
                 </div>
             </div> 
+            <div class="row">
+              <div class="alert alert-danger col-5 offset-4" role="alert" id="hours-alert"
+                *ngIf="f.value.hours > 12.0">
+                    <p>Too high!</p>    
+                </div>  
+            </div>
             <div class="row flight-list-row">
                 <div class="col-5 add-flight-list">
                     <p>Seat</p>

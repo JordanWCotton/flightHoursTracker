@@ -32,13 +32,15 @@ app.listen(3000, () => {
 app.get('/app/main-menu');
 
 //Register a new user
-app.post('/app/register', (req, res) => {
-    console.log('Register user'); 
+app.post('/app/register', (req, res) => { 
     let newUser = new User ();
     newUser = req.body;
 
     db.collection('users').insertOne(newUser,(err, doc) => {
-        console.log('Register insert one called');
+        if (!err) {
+            res.sendStatus(200);
+            console.log('User created');
+        }
     }) 
 });
 

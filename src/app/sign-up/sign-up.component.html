@@ -21,14 +21,34 @@
     </div>
     <div class="row" id="password-input-div">
       <div class="col-8 offset-2">
-        <label>Password:</label> <br>
+        <label>Password:</label> <br> 
         <input type="password" name="password" id="password-input" ngModel class="form-control">
       </div>
     </div>
     <div class="row" id="sign-up-div">
         <div type="submit" (click)="onSignUp(f)" id="submit-button" 
         class="col-4 offset-4 btn">Sign up</div>
+        <button id="openModal" #openModal [hidden]="true"
+        data-toggle="modal" data-target=".bd-example-modal-sm"></button>
     </div>
   </div>
   </form>
+  <!--Successful registration notification modal -->
+  <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+  aria-hidden="true" id="successModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content" id="submit-modal-content">
+        <div class="modal-header" id="submit-modal-header">
+          <h3>Success!!</h3>
+        </div>
+        <div class="modal-body">
+          <p>You have successfully registered your account! You may now log in and use the app.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" 
+          data-dismiss="modal" [routerLink]="['../']">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

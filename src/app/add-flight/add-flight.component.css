@@ -24,12 +24,6 @@
     background-color:#272D2D;
 }
 
-#add-flight-date {
-    font-size: 200%;
-    text-align: center;
-    margin-top: 1%;
-}
-
 #date-selector {
     margin-top: 1%;
 }
@@ -116,3 +110,14 @@ ul input {
         max-width: 100%;
     }
  }
+
+/* For extremely small screens */
+@media only screen and (max-height: 569) {
+    #flight-title-container {
+        font-size: 140%;
+    }
+
+    * {
+        background-color: purple;
+    }
+}
