@@ -21,8 +21,8 @@ let db;
 //Stores current logged in user for proper collection and data access 
 let currentUser = '';
 //Database credentials
-let userName = 'db_user'; 
-let password = 'Password';
+let username = ''; 
+let password = '';
 
 //Create express server listening on port 3000
 app.listen(3000, () => {
@@ -96,7 +96,7 @@ app.get('/data/flightLog', (req, res) => {
 });
 
 //Connect to database
-mongodb.MongoClient.connect('mongodb://' + userName + ':' + password + '@ds155820.mlab.com:55820/test-land', (err, database) => {
+mongodb.MongoClient.connect('mongodb://' + username + ':' + password + '@ds155820.mlab.com:55820/test-land', (err, database) => {
     db = database;
     if (err) console.log(err);
     console.log('DB connected'); 
