@@ -18,8 +18,8 @@ export class FlightLogComponent implements OnInit {
   datesSubmitted: boolean = false;
   datesInvalid: boolean = false;
 
-  //Holds the raw hours after being sorted, before being rounded
-  rawHours = {
+  //Holds the raw flight symbol hours after being sorted, before being rounded
+  rawFlightHours = {
         totalHours: 0,
         dayHours: 0,
         nvsHours: 0,
@@ -29,6 +29,14 @@ export class FlightLogComponent implements OnInit {
         nightHours: 0,
         weatherHours: 0,
         simHours: 0
+    }
+
+    //Raw duty hours before being rounded
+    rawDutyHours = {
+      hoursPI: 0,
+      hoursPC: 0,
+      hoursIP: 0,
+      hoursSP: 0
     }
 
     //Holds the rounded and ready to be viewed hours
@@ -56,47 +64,54 @@ export class FlightLogComponent implements OnInit {
     this.viewLog.pullHours()  //Have the service pull hours from the DB on form initialization
       .subscribe( 
         (flightData) => {
+          for (let hours in flightData) {
+            this.rawFlightHours += flightData[hours].hours;
+          }
           this.sortHoursFlightSymbol(flightData);
         } 
       );
-      this.roundHours(); //And then call our function to round the hours for proper addition and display
+      //this.roundHours(); //And then call our function to round the hours for proper addition and display
   }
 
   //Only way to allow .toFixed(1) to be called on hours, was to reassign them to new local variables
   //ensuring correct addition of hours for their display
   roundHours () {
-    this.totalHours = this.rawHours.totalHours.toFixed(1);
-    this.dayHours = this.rawHours.dayHours.toFixed(1);
-    this.nvsHours = this.rawHours.nvsHours.toFixed(1);
-    this.nvgHours = this.rawHours.nvgHours.toFixed(1);
-    this.nvdHours = this.rawHours.nvdHours.toFixed(1);
-    this.hoodHours = this.rawHours.hoodHours.toFixed(1);
-    this.nightHours = this.rawHours.nightHours.toFixed(1);
-    this.weatherHours = this.rawHours.weatherHours.toFixed(1);
-    this.simHours = this.rawHours.simHours.toFixed(1);
+    this.totalHours = this.rawFlightHours.totalHours.toFixed(1);
+    this.dayHours = this.rawFlightHours.dayHours.toFixed(1);
+    this.nvsHours = this.rawFlightHours.nvsHours.toFixed(1);
+    this.nvgHours = this.rawFlightHours.nvgHours.toFixed(1);
+    this.nvdHours = this.rawFlightHours.nvdHours.toFixed(1);
+    this.hoodHours = this.rawFlightHours.hoodHours.toFixed(1);
+    this.nightHours = this.rawFlightHours.nightHours.toFixed(1);
+    this.weatherHours = this.rawFlightHours.weatherHours.toFixed(1);
+    this.simHours = this.rawFlightHours.simHours.toFixed(1);
   }
 
   sortHoursFlightSymbol (flightData) {
-        let totalHours = 0;
+        //let totalHours = 0;
         console.log('sortHoursFlightSymbol called');
-        //Loop through the returned flight horus, separate them by flightSymbol, and add to corresponding variables
+        //Loop through the returned flight hours, separate them by flightSymbol, and add to corresponding variables
         for (let data in flightData) {
-            flightData[data].flightSymbol ==  'Day' ? this.rawHours.dayHours += flightData[data].hours 
-            : flightData[data].flightSymbol == 'Night' ? this.rawHours.nightHours += flightData[data].hours
-            : flightData[data].flightSymbol == 'Sim' ? this.rawHours.simHours += flightData[data].hours 
-            : flightData[data].flightSymbol == 'NVS' ? this.rawHours.nvsHours += flightData[data].hours 
-            : flightData[data].flightSymbol == 'NVG' ? this.rawHours.nvgHours += flightData[data].hours
-            : flightData[data].flightSymbol == 'NVD' ? this.rawHours.nvdHours += flightData[data].hours 
-            : flightData[data].flightSymbol == 'Hood' ? this.rawHours.hoodHours += flightData[data].hours 
-            : flightData[data].flightSymbol == 'Wx' ? this.rawHours.weatherHours += flightData[data].hours : null;
+            flightData[data].flightSymbol ==  'Day' ? this.rawFlightHours.dayHours += flightData[data].hours 
+            : flightData[data].flightSymbol == 'Night' ? this.rawFlightHours.nightHours += flightData[data].hours
+            : flightData[data].flightSymbol == 'Sim' ? this.rawFlightHours.simHours += flightData[data].hours 
+            : flightData[data].flightSymbol == 'NVS' ? this.rawFlightHours.nvsHours += flightData[data].hours 
+            : flightData[data].flightSymbol == 'NVG' ? this.rawFlightHours.nvgHours += flightData[data].hours
+            : flightData[data].flightSymbol == 'NVD' ? this.rawFlightHours.nvdHours += flightData[data].hours 
+            : flightData[data].flightSymbol == 'Hood' ? this.rawFlightHours.hoodHours += flightData[data].hours 
+            : flightData[data].flightSymbol == 'Wx' ? this.rawFlightHours.weatherHours += flightData[data].hours : null;
         }
-
-        //Gather hour totals 
-        for (let hours in flightData) {
-            totalHours += flightData[hours].hours;
-          }
-        this.rawHours.totalHours = totalHours;
+        
         this.roundHours();
+    }
+
+    sortHoursDutySymbol (flightData) {
+      for (let data in flightData) {
+        flightData[data].dutySymbol == 'PI' ? this.rawDutyHours.hoursPI += flightData[data].hours
+        : flightData[data].dutySymbol == 'PC' ? this.rawDutyHours.hoursPC += flightData[data].hours
+        : flightData[data].dutySymbol == 'IP' ? this.rawDutyHours.hoursIP += flightData[data].hours
+        : flightData[data].dutySymbol == 'SP' ? this.rawDutyHours.hoursSP += flightData[data].hours : null;
+      }
     }
 
   //Date range validation logic. Ensures users enter a date range from a point in the past to a point in the 
