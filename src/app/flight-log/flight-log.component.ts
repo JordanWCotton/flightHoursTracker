@@ -65,13 +65,10 @@ export class FlightLogComponent implements OnInit {
     this.viewLog.pullHours()  //Have the service pull hours from the DB on form initialization
       .subscribe( 
         (flightData) => {
-          for (let hours in flightData) {
-            this.rawFlightHours += flightData[hours].hours;
-          }
-          this.sortHoursFlightSymbol(flightData);
+          this.flightSymbolSort(flightData);
         } 
       );
-      this.roundHours();
+      this.roundHours(); //Shows previously saved hours while waiting for server response to pull hours
   }
 
   //Only way to allow .toFixed(1) to be called on hours, was to reassign them to new local variables
@@ -88,8 +85,15 @@ export class FlightLogComponent implements OnInit {
     this.simHours = this.rawFlightHours.simHours.toFixed(1);
   }
 
-  sortHoursFlightSymbol (flightData) {
-        console.log('sortHoursFlightSymbol called');
+  sortTotalHours (flightData) {
+    let totalHours = 0;
+    for (let hours in flightData) {
+      totalHours += flightData[hours].hours;
+    }
+    this.rawFlightHours.totalHours = totalHours;
+  }
+
+  flightSymbolSort (flightData) {  
         //Loop through the returned flight hours, separate them by flightSymbol, and add to corresponding variables
         for (let data in flightData) {
             flightData[data].flightSymbol ==  'Day' ? this.rawFlightHours.dayHours += flightData[data].hours 
@@ -101,17 +105,22 @@ export class FlightLogComponent implements OnInit {
             : flightData[data].flightSymbol == 'Hood' ? this.rawFlightHours.hoodHours += flightData[data].hours 
             : flightData[data].flightSymbol == 'Wx' ? this.rawFlightHours.weatherHours += flightData[data].hours : null;
         }
+
+        this.sortTotalHours(flightData);
         this.roundHours();
     }
 
     //Not yet called anywhere
-    sortHoursDutySymbol (flightData) {
+    dutySymbolSort (flightData) {
       for (let data in flightData) {
         flightData[data].dutySymbol == 'PI' ? this.rawDutyHours.hoursPI += flightData[data].hours
         : flightData[data].dutySymbol == 'PC' ? this.rawDutyHours.hoursPC += flightData[data].hours
         : flightData[data].dutySymbol == 'IP' ? this.rawDutyHours.hoursIP += flightData[data].hours
         : flightData[data].dutySymbol == 'SP' ? this.rawDutyHours.hoursSP += flightData[data].hours : null;
       }
+
+      this.sortTotalHours(flightData);
+      this.roundHours();
     }
 
   //Date range validation logic. Ensures users enter a date range from a point in the past to a point in the 

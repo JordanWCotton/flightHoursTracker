@@ -920,12 +920,9 @@ var FlightLogComponent = (function () {
         var _this = this;
         this.viewLog.pullHours() //Have the service pull hours from the DB on form initialization
             .subscribe(function (flightData) {
-            for (var hours in flightData) {
-                _this.rawFlightHours += flightData[hours].hours;
-            }
-            _this.sortHoursFlightSymbol(flightData);
+            _this.flightSymbolSort(flightData);
         });
-        this.roundHours();
+        this.roundHours(); //Shows previously saved hours while waiting for server response to pull hours
     };
     //Only way to allow .toFixed(1) to be called on hours, was to reassign them to new local variables
     //ensuring correct addition of hours for their display
@@ -940,8 +937,15 @@ var FlightLogComponent = (function () {
         this.weatherHours = this.rawFlightHours.weatherHours.toFixed(1);
         this.simHours = this.rawFlightHours.simHours.toFixed(1);
     };
-    FlightLogComponent.prototype.sortHoursFlightSymbol = function (flightData) {
-        console.log('sortHoursFlightSymbol called');
+    FlightLogComponent.prototype.sortTotalHours = function (flightData) {
+        var totalHours = 0;
+        for (var hours in flightData) {
+            totalHours += flightData[hours].hours;
+        }
+        this.rawFlightHours.totalHours = totalHours;
+    };
+    FlightLogComponent.prototype.flightSymbolSort = function (flightData) {
+        //let totalHours = 0;
         //Loop through the returned flight hours, separate them by flightSymbol, and add to corresponding variables
         for (var data in flightData) {
             flightData[data].flightSymbol == 'Day' ? this.rawFlightHours.dayHours += flightData[data].hours
@@ -953,10 +957,15 @@ var FlightLogComponent = (function () {
                                     : flightData[data].flightSymbol == 'Hood' ? this.rawFlightHours.hoodHours += flightData[data].hours
                                         : flightData[data].flightSymbol == 'Wx' ? this.rawFlightHours.weatherHours += flightData[data].hours : null;
         }
+        /* for (let hours in flightData) {
+          totalHours += flightData[hours].hours;
+        }
+        this.rawFlightHours.totalHours = totalHours; */
+        this.sortTotalHours(flightData);
         this.roundHours();
     };
     //Not yet called anywhere
-    FlightLogComponent.prototype.sortHoursDutySymbol = function (flightData) {
+    FlightLogComponent.prototype.dutySymbolSort = function (flightData) {
         for (var data in flightData) {
             flightData[data].dutySymbol == 'PI' ? this.rawDutyHours.hoursPI += flightData[data].hours
                 : flightData[data].dutySymbol == 'PC' ? this.rawDutyHours.hoursPC += flightData[data].hours
