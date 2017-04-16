@@ -56,7 +56,7 @@ export class FlightLogComponent implements OnInit {
     this.viewLog.pullHours()  //Have the service pull hours from the DB on form initialization
       .subscribe( 
         (flightData) => {
-          this.sortHours(flightData);
+          this.sortHoursFlightSymbol(flightData);
         } 
       );
       this.roundHours(); //And then call our function to round the hours for proper addition and display
@@ -76,9 +76,9 @@ export class FlightLogComponent implements OnInit {
     this.simHours = this.rawHours.simHours.toFixed(1);
   }
 
-  sortHours (flightData) {
+  sortHoursFlightSymbol (flightData) {
         let totalHours = 0;
-        console.log('sortHours called');
+        console.log('sortHoursFlightSymbol called');
         //Loop through the returned flight horus, separate them by flightSymbol, and add to corresponding variables
         for (let data in flightData) {
             flightData[data].flightSymbol ==  'Day' ? this.rawHours.dayHours += flightData[data].hours 
