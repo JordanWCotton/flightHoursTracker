@@ -637,7 +637,7 @@ module.exports = "<router-outlet></router-outlet>"
 /***/ 346:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\" id=\"flight-log-container\"> \n    <div class=\"row\">\n        <div class=\"col-3\">\n            <div [routerLink]=\"['/main-menu']\" class=\"btn-info\" \n            id=\"back-icon\">Back</div>\n        </div>\n        <div class=\"col-6\" id=\"flight-log-title\">\n            <p>Flight Log</p>\n        </div> \n    </div>\n    <div id=\"page-breaker-line\"></div>\n    <div class=\"row\">\n        <!--Controls date picker modal-->\n        <div class=\"col-4 offset-4 btn-info\" id=\"date-range-button\" data-toggle=\"modal\" \n        data-target=\"#myModal\">\n            <span *ngIf=\"!datesSubmitted; else elseSpan\">Current</span>\n            <ng-template #elseSpan id=\"date-span\">{{fromDate.formatted}} <br>TO<br> {{toDate.formatted}}</ng-template>\n        </div>\n        <!--date picker modal-->\n        <div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"#exampleModalLabel\" aria-hidden=\"true\">\n            <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\" id=\"modal-content-id\">\n                <div class=\"modal-header\">\n                    <h5 class=\"modal-title\" id=\"exampleModalLabel\">Select date range</h5>\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\">&times;</span>\n                    </button>\n                </div>\n                <div class=\"modal-body\">\n                    <label for=\"from\">From</label>\n                    <ng2-datepicker [options]=\"fromOptions\" [(ngModel)]=\"fromDate\"></ng2-datepicker>\n                    <br>\n                    <label for=\"to\">To</label>\n                    <ng2-datepicker [options]=\"toOptions\" [(ngModel)]=\"toDate\"></ng2-datepicker>\n                </div>\n                <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn\" id=\"close-daterange-modal\" \n                    data-dismiss=\"modal\">Close</button>\n                    <button type=\"button\" class=\"btn\" id=\"save-daterange-modal\" \n                    (click)=\"sendDates()\" data-dismiss=\"modal\">Save Changes</button>\n                 </div>\n            </div>\n            </div>\n        </div> \n    </div>       \n    <div class=\"row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>Total Hours</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{totalHours}}\n        </div>\n    </div>\n    <div class=\"row flight-list-row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>Day</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{dayHours}}\n        </div>\n    </div>  \n    <div class=\"row flight-list-row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>NVS</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{nvsHours}}\n        </div>\n    </div>\n    <div class=\"row flight-list-row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>NVG</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{nvgHours}}\n        </div>\n    </div> \n    <div class=\"row flight-list-row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>NVD</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{nvdHours}}\n        </div>\n    </div> \n    <div class=\"row flight-list-row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>Hood</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{hoodHours}}\n        </div>\n    </div>\n    <div class=\"row flight-list-row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>Night</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{nightHours}}\n        </div>\n    </div>\n    <div class=\"row flight-list-row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>Weather</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{weatherHours}}\n        </div>\n    </div>\n    <div class=\"row flight-list-row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>Sim</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{simHours}}\n        </div>\n    </div>\n    <div class=\"row\" id=\"filter-buttons\">\n        <div class=\"col-3 offset-2 btn-info\" id=\"filterButton\">Filter</div>\n        <div class=\"col-3 offset-2 btn-info\" id=\"reqdButton\">Req'd</div>\n        \n    </div>\n</div>"
+module.exports = "<div class=\"container-fluid\" id=\"flight-log-container\"> \n    <div class=\"row\">\n        <div class=\"col-3\">\n            <div [routerLink]=\"['/main-menu']\" class=\"btn-info\" \n            id=\"back-icon\">Back</div>\n        </div>\n        <div class=\"col-6\" id=\"flight-log-title\">\n            <p>Flight Log</p>\n        </div> \n    </div>\n    <div id=\"page-breaker-line\"></div>\n    <div class=\"row\">\n        <!--Controls date picker modal-->\n        <div class=\"col-4 offset-4 btn-info\" id=\"date-range-button\" data-toggle=\"modal\" \n        data-target=\"#myModal\">\n            <span *ngIf=\"!datesSubmitted; else elseSpan\">Current</span>\n            <ng-template #elseSpan id=\"date-span\">{{fromDate.formatted}} <br>TO<br> {{toDate.formatted}}</ng-template>\n        </div>\n        <!--date picker modal-->\n        <div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"#exampleModalLabel\" aria-hidden=\"true\">\n            <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\" id=\"modal-content-id\">\n                <div class=\"modal-header\">\n                    <h5 class=\"modal-title\" id=\"exampleModalLabel\">Select date range</h5>\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\">&times;</span>\n                    </button>\n                </div>\n                <div class=\"modal-body\">\n                    <label for=\"from\">From</label>\n                    <ng2-datepicker [options]=\"fromOptions\" [(ngModel)]=\"fromDate\"></ng2-datepicker>\n                    <br>\n                    <label for=\"to\">To</label>\n                    <ng2-datepicker [options]=\"toOptions\" [(ngModel)]=\"toDate\"></ng2-datepicker>\n                </div>\n                <div class=\"modal-footer\">\n                    <button type=\"button\" class=\"btn\" id=\"close-daterange-modal\" \n                    data-dismiss=\"modal\">Close</button>\n                    <button type=\"button\" class=\"btn\" id=\"save-daterange-modal\" \n                    (click)=\"sendDates()\" data-dismiss=\"modal\">Save Changes</button>\n                 </div>\n            </div>\n            </div>\n        </div> \n    </div>       \n    <div class=\"row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>Total Hours</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{totalHours}}\n        </div>\n    </div>\n    <div class=\"row flight-list-row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>Day</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{dayHours}}\n        </div>\n    </div>  \n    <div class=\"row flight-list-row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>NVS</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{nvsHours}}\n        </div>\n    </div>\n    <div class=\"row flight-list-row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>NVG</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{nvgHours}}\n        </div>\n    </div> \n    <div class=\"row flight-list-row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>NVD</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{nvdHours}}\n        </div>\n    </div> \n    <div class=\"row flight-list-row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>Hood</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{hoodHours}}\n        </div>\n    </div>\n    <div class=\"row flight-list-row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>Night</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{nightHours}}\n        </div>\n    </div>\n    <div class=\"row flight-list-row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>Weather</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{weatherHours}}\n        </div>\n    </div>\n    <div class=\"row flight-list-row\">\n        <div class=\"col-5 offset-1 add-flight-list\">\n            <p>Sim</p>\n        </div>\n        <div class=\"col-3 offset-1 hours-box\">\n            {{simHours}}\n        </div>\n    </div>\n    <div class=\"row\" id=\"filter-buttons\">\n        <div class=\"col-3 offset-2 btn-info\" id=\"filterButton\"\n        (click)=\"filterDisplayHours()\">Filter</div>\n        <div class=\"col-3 offset-2 btn-info\" id=\"reqdButton\">Req'd</div>\n        \n    </div>\n</div>"
 
 /***/ }),
 
@@ -889,8 +889,9 @@ var FlightLogComponent = (function () {
         this.todayDate = new Date();
         this.datesSubmitted = false;
         this.datesInvalid = false;
-        //Holds the raw hours after being sorted, before being rounded
-        this.rawHours = {
+        this.sortByDuty = false; //Determines whether hours are sorted via duty symbol or flight symbol
+        //Holds the raw flight symbol hours after being sorted, before being rounded
+        this.rawFlightHours = {
             totalHours: 0,
             dayHours: 0,
             nvsHours: 0,
@@ -900,6 +901,13 @@ var FlightLogComponent = (function () {
             nightHours: 0,
             weatherHours: 0,
             simHours: 0
+        };
+        //Raw duty hours before being rounded
+        this.rawDutyHours = {
+            hoursPI: 0,
+            hoursPC: 0,
+            hoursIP: 0,
+            hoursSP: 0
         };
         this.fromOptions = new __WEBPACK_IMPORTED_MODULE_2_ng2_datepicker__["b" /* DatePickerOptions */]({
             initialDate: this.todayDate
@@ -912,43 +920,49 @@ var FlightLogComponent = (function () {
         var _this = this;
         this.viewLog.pullHours() //Have the service pull hours from the DB on form initialization
             .subscribe(function (flightData) {
-            _this.sortHours(flightData);
+            for (var hours in flightData) {
+                _this.rawFlightHours += flightData[hours].hours;
+            }
+            _this.sortHoursFlightSymbol(flightData);
         });
-        this.roundHours(); //And then call our function to round the hours for proper addition and display
+        this.roundHours();
     };
     //Only way to allow .toFixed(1) to be called on hours, was to reassign them to new local variables
     //ensuring correct addition of hours for their display
     FlightLogComponent.prototype.roundHours = function () {
-        this.totalHours = this.rawHours.totalHours.toFixed(1);
-        this.dayHours = this.rawHours.dayHours.toFixed(1);
-        this.nvsHours = this.rawHours.nvsHours.toFixed(1);
-        this.nvgHours = this.rawHours.nvgHours.toFixed(1);
-        this.nvdHours = this.rawHours.nvdHours.toFixed(1);
-        this.hoodHours = this.rawHours.hoodHours.toFixed(1);
-        this.nightHours = this.rawHours.nightHours.toFixed(1);
-        this.weatherHours = this.rawHours.weatherHours.toFixed(1);
-        this.simHours = this.rawHours.simHours.toFixed(1);
+        this.totalHours = this.rawFlightHours.totalHours.toFixed(1);
+        this.dayHours = this.rawFlightHours.dayHours.toFixed(1);
+        this.nvsHours = this.rawFlightHours.nvsHours.toFixed(1);
+        this.nvgHours = this.rawFlightHours.nvgHours.toFixed(1);
+        this.nvdHours = this.rawFlightHours.nvdHours.toFixed(1);
+        this.hoodHours = this.rawFlightHours.hoodHours.toFixed(1);
+        this.nightHours = this.rawFlightHours.nightHours.toFixed(1);
+        this.weatherHours = this.rawFlightHours.weatherHours.toFixed(1);
+        this.simHours = this.rawFlightHours.simHours.toFixed(1);
     };
-    FlightLogComponent.prototype.sortHours = function (flightData) {
-        var totalHours = 0;
-        console.log('sortHours called');
-        //Loop through the returned flight horus, separate them by flightSymbol, and add to corresponding variables
+    FlightLogComponent.prototype.sortHoursFlightSymbol = function (flightData) {
+        console.log('sortHoursFlightSymbol called');
+        //Loop through the returned flight hours, separate them by flightSymbol, and add to corresponding variables
         for (var data in flightData) {
-            flightData[data].flightSymbol == 'Day' ? this.rawHours.dayHours += flightData[data].hours
-                : flightData[data].flightSymbol == 'Night' ? this.rawHours.nightHours += flightData[data].hours
-                    : flightData[data].flightSymbol == 'Sim' ? this.rawHours.simHours += flightData[data].hours
-                        : flightData[data].flightSymbol == 'NVS' ? this.rawHours.nvsHours += flightData[data].hours
-                            : flightData[data].flightSymbol == 'NVG' ? this.rawHours.nvgHours += flightData[data].hours
-                                : flightData[data].flightSymbol == 'NVD' ? this.rawHours.nvdHours += flightData[data].hours
-                                    : flightData[data].flightSymbol == 'Hood' ? this.rawHours.hoodHours += flightData[data].hours
-                                        : flightData[data].flightSymbol == 'Wx' ? this.rawHours.weatherHours += flightData[data].hours : null;
+            flightData[data].flightSymbol == 'Day' ? this.rawFlightHours.dayHours += flightData[data].hours
+                : flightData[data].flightSymbol == 'Night' ? this.rawFlightHours.nightHours += flightData[data].hours
+                    : flightData[data].flightSymbol == 'Sim' ? this.rawFlightHours.simHours += flightData[data].hours
+                        : flightData[data].flightSymbol == 'NVS' ? this.rawFlightHours.nvsHours += flightData[data].hours
+                            : flightData[data].flightSymbol == 'NVG' ? this.rawFlightHours.nvgHours += flightData[data].hours
+                                : flightData[data].flightSymbol == 'NVD' ? this.rawFlightHours.nvdHours += flightData[data].hours
+                                    : flightData[data].flightSymbol == 'Hood' ? this.rawFlightHours.hoodHours += flightData[data].hours
+                                        : flightData[data].flightSymbol == 'Wx' ? this.rawFlightHours.weatherHours += flightData[data].hours : null;
         }
-        //Gather hour totals 
-        for (var hours in flightData) {
-            totalHours += flightData[hours].hours;
-        }
-        this.rawHours.totalHours = totalHours;
         this.roundHours();
+    };
+    //Not yet called anywhere
+    FlightLogComponent.prototype.sortHoursDutySymbol = function (flightData) {
+        for (var data in flightData) {
+            flightData[data].dutySymbol == 'PI' ? this.rawDutyHours.hoursPI += flightData[data].hours
+                : flightData[data].dutySymbol == 'PC' ? this.rawDutyHours.hoursPC += flightData[data].hours
+                    : flightData[data].dutySymbol == 'IP' ? this.rawDutyHours.hoursIP += flightData[data].hours
+                        : flightData[data].dutySymbol == 'SP' ? this.rawDutyHours.hoursSP += flightData[data].hours : null;
+        }
     };
     //Date range validation logic. Ensures users enter a date range from a point in the past to a point in the 
     //future. If they input an incorrect date range the button/date range display willd default back to current
@@ -958,6 +972,10 @@ var FlightLogComponent = (function () {
                 : this.fromDate.month < this.toDate.month ? this.datesSubmitted = true //Pass 
                     : this.fromDate.day <= this.toDate.day ? this.datesSubmitted = true //Pass 
                         : this.datesSubmitted = false; //Failed
+    };
+    FlightLogComponent.prototype.filterDisplayHours = function () {
+        this.sortByDuty = (!this.sortByDuty);
+        console.log(this.sortByDuty);
     };
     return FlightLogComponent;
 }());

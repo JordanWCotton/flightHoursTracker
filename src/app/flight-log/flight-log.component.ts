@@ -17,6 +17,7 @@ export class FlightLogComponent implements OnInit {
   public todayDate = new Date();
   datesSubmitted: boolean = false;
   datesInvalid: boolean = false;
+  sortByDuty: boolean = false; //Determines whether hours are sorted via duty symbol or flight symbol
 
   //Holds the raw flight symbol hours after being sorted, before being rounded
   rawFlightHours = {
@@ -70,7 +71,7 @@ export class FlightLogComponent implements OnInit {
           this.sortHoursFlightSymbol(flightData);
         } 
       );
-      //this.roundHours(); //And then call our function to round the hours for proper addition and display
+      this.roundHours();
   }
 
   //Only way to allow .toFixed(1) to be called on hours, was to reassign them to new local variables
@@ -88,7 +89,6 @@ export class FlightLogComponent implements OnInit {
   }
 
   sortHoursFlightSymbol (flightData) {
-        //let totalHours = 0;
         console.log('sortHoursFlightSymbol called');
         //Loop through the returned flight hours, separate them by flightSymbol, and add to corresponding variables
         for (let data in flightData) {
@@ -101,10 +101,10 @@ export class FlightLogComponent implements OnInit {
             : flightData[data].flightSymbol == 'Hood' ? this.rawFlightHours.hoodHours += flightData[data].hours 
             : flightData[data].flightSymbol == 'Wx' ? this.rawFlightHours.weatherHours += flightData[data].hours : null;
         }
-        
         this.roundHours();
     }
 
+    //Not yet called anywhere
     sortHoursDutySymbol (flightData) {
       for (let data in flightData) {
         flightData[data].dutySymbol == 'PI' ? this.rawDutyHours.hoursPI += flightData[data].hours
@@ -122,6 +122,11 @@ export class FlightLogComponent implements OnInit {
     : this.fromDate.month < this.toDate.month ? this.datesSubmitted = true//Pass 
     : this.fromDate.day <= this.toDate.day ? this.datesSubmitted = true//Pass 
     : this.datesSubmitted = false;//Failed
+  }
+
+  filterDisplayHours () {
+    this.sortByDuty = (!this.sortByDuty);
+    console.log(this.sortByDuty);
   }
 
 }
