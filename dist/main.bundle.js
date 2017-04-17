@@ -302,7 +302,7 @@ exports = module.exports = __webpack_require__(19)();
 
 
 // module
-exports.push([module.i, "/* Landing menu page */\r\n \r\n#landing-menu-container { \r\n    background-color: #AB987A;\r\n    height: 100vh;  \r\n    color: #F5F5F5; \r\n    font-family: 'Playfair Display', serif;\r\n}   \r\n\r\n#it-name {\r\n    color: #FF533D;\r\n} \r\n\r\n#log-name {\r\n    color: #0F1626;\r\n}\r\n\r\n#title-container {\r\n    text-align: center;\r\n    margin-top: 5%;\r\n    margin-bottom: 7%;\r\n    border-radius: 10px;\r\n}\r\n\r\n.button-space {\r\n    margin-top: 5%;\r\n}\r\n\r\n#log-in-div {\r\n    margin-top: 15%;\r\n}\r\n\r\n#signin-button {\r\n    background-color: #FF533D;\r\n    color: #F5F5F5;\r\n    text-align: center;\r\n    width: 100%;\r\n    border-radius: 6px;\r\n}\r\n\r\n#signup-button {\r\n    background-color: #0F1626;\r\n    color: #F5F5F5;\r\n    text-align: center;\r\n    width: 100%;\r\n    border-radius: 6px;\r\n}\r\n\r\n\r\n/*Mobile specific */\r\n@media only screen and (max-width: 840px) {\r\n    .button-space {\r\n        margin-top: 20%;\r\n    }\r\n\r\n    #title-container {\r\n        margin-top: 17%;\r\n        margin-bottom: 13%;\r\n    }\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "/* Landing menu page */\r\n \r\n#landing-menu-container { \r\n    /* background-color: #AB987A; */\r\n    background: rgb(243,226,199); /* Old browsers */\r\n    background: -webkit-linear-gradient(bottom left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 42%, rgba(182,141,76,1) 56%, rgba(233,212,179,1) 100%);\r\n    background: linear-gradient(to top right, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 42%, rgba(182,141,76,1) 56%, rgba(233,212,179,1) 100%); /* FF3.6-15 */\r\n    /* Chrome10-25,Safari5.1-6 */\r\n    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\r\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */   \r\n    height: 100vh;  \r\n    color: #F5F5F5; \r\n    font-family: 'Playfair Display', serif;\r\n}   \r\n\r\n#it-name {\r\n    color: #FF533D;\r\n} \r\n\r\n#log-name {\r\n    color: #0F1626;\r\n}\r\n\r\n#title-container {\r\n    text-align: center;\r\n    margin-top: 5%;\r\n    margin-bottom: 7%;\r\n    border-radius: 10px;\r\n}\r\n\r\n.button-space {\r\n    margin-top: 5%;\r\n}\r\n\r\n#log-in-div {\r\n    margin-top: 15%;\r\n}\r\n\r\n#signin-button {\r\n    background-color: #FF533D;\r\n    color: #F5F5F5;\r\n    text-align: center;\r\n    width: 100%;\r\n    border-radius: 6px;\r\n}\r\n\r\n#signup-button {\r\n    background-color: #0F1626;\r\n    color: #F5F5F5;\r\n    text-align: center;\r\n    width: 100%;\r\n    border-radius: 6px;\r\n}\r\n\r\n\r\n/*Mobile specific */\r\n@media only screen and (max-width: 840px) {\r\n    .button-space {\r\n        margin-top: 20%;\r\n    }\r\n\r\n    #title-container {\r\n        margin-top: 17%;\r\n        margin-bottom: 13%;\r\n    }\r\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -644,7 +644,7 @@ module.exports = "<div class=\"container-fluid\" id=\"flight-log-container\"> \n
 /***/ 347:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\" id=\"landing-menu-container\"> \n  <div class=\"row\"> \n    <div class=\"col-8 offset-2\" id=\"title-container\">\n     <h1><span id=\"log-name\">Log</span><span id=\"it-name\">It</span></h1>\n      <h4>AH-64D/E</h4> \n    </div>\n  </div>\n  <div class=\"row button-space\">\n      <div class=\"col-4 offset-4\" id=\"signin-button\"\n      [routerLink]=\"['/log-in']\">\n        <p>Sign In</p>\n      </div> \n  </div>\n  <div class=\"row button-space\">\n    <div class=\"col-4 offset-4\" id=\"signup-button\"\n      [routerLink]=\"['/sign-up']\">\n        <p>Sign Up</p>\n      </div> \n  </div>\n</div>\n"
+module.exports = "<div class=\"container-fluid\" id=\"landing-menu-container\"> \n  <div class=\"row\">  \n    <div class=\"col-8 offset-2\" id=\"title-container\">\n     <h1><span id=\"log-name\">Log</span><span id=\"it-name\">It</span></h1>\n      <h4>AH-64D/E</h4> \n    </div>\n  </div>\n  <div class=\"row button-space\">\n      <div class=\"col-4 offset-4\" id=\"signin-button\"\n      [routerLink]=\"['/log-in']\">\n        <p>Sign In</p>\n      </div> \n  </div>\n  <div class=\"row button-space\">\n    <div class=\"col-4 offset-4\" id=\"signup-button\"\n      [routerLink]=\"['/sign-up']\">\n        <p>Sign Up</p>\n      </div> \n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -945,7 +945,6 @@ var FlightLogComponent = (function () {
         this.rawFlightHours.totalHours = totalHours;
     };
     FlightLogComponent.prototype.flightSymbolSort = function (flightData) {
-        //let totalHours = 0;
         //Loop through the returned flight hours, separate them by flightSymbol, and add to corresponding variables
         for (var data in flightData) {
             flightData[data].flightSymbol == 'Day' ? this.rawFlightHours.dayHours += flightData[data].hours
@@ -957,10 +956,6 @@ var FlightLogComponent = (function () {
                                     : flightData[data].flightSymbol == 'Hood' ? this.rawFlightHours.hoodHours += flightData[data].hours
                                         : flightData[data].flightSymbol == 'Wx' ? this.rawFlightHours.weatherHours += flightData[data].hours : null;
         }
-        /* for (let hours in flightData) {
-          totalHours += flightData[hours].hours;
-        }
-        this.rawFlightHours.totalHours = totalHours; */
         this.sortTotalHours(flightData);
         this.roundHours();
     };
@@ -972,6 +967,8 @@ var FlightLogComponent = (function () {
                     : flightData[data].dutySymbol == 'IP' ? this.rawDutyHours.hoursIP += flightData[data].hours
                         : flightData[data].dutySymbol == 'SP' ? this.rawDutyHours.hoursSP += flightData[data].hours : null;
         }
+        this.sortTotalHours(flightData);
+        this.roundHours();
     };
     //Date range validation logic. Ensures users enter a date range from a point in the past to a point in the 
     //future. If they input an incorrect date range the button/date range display willd default back to current

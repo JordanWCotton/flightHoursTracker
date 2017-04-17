@@ -1,7 +1,15 @@
 /* Landing menu page */
  
 #landing-menu-container { 
-    background-color: #AB987A;
+    /* background-color: #AB987A; */
+    background: rgb(243,226,199); /* Old browsers */
+    background: -webkit-linear-gradient(bottom left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 42%, rgba(182,141,76,1) 56%, rgba(233,212,179,1) 100%);
+    background: -moz-linear-gradient(bottom left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 42%, rgba(182,141,76,1) 56%, rgba(233,212,179,1) 100%);
+    background: -o-linear-gradient(bottom left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 42%, rgba(182,141,76,1) 56%, rgba(233,212,179,1) 100%);
+    background: linear-gradient(to top right, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 42%, rgba(182,141,76,1) 56%, rgba(233,212,179,1) 100%); /* FF3.6-15 */
+    /* Chrome10-25,Safari5.1-6 */
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */   
     height: 100vh;  
     color: #F5F5F5; 
     font-family: 'Playfair Display', serif;

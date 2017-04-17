@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; 
 import { Response } from '@angular/http';
 
 import { ViewLogService } from '../view-log.service';
