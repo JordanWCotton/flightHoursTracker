@@ -42,7 +42,8 @@
             </div>
             </div>
         </div> 
-    </div>       
+    </div>
+    <div *ngIf="!sortByDuty; else dutyHoursDiv">       
     <div class="row">
         <div class="col-5 offset-1 add-flight-list">
             <p>Total Hours</p>
@@ -106,7 +107,7 @@
         <div class="col-3 offset-1 hours-box">
             {{weatherHours}}
         </div>
-    </div>
+    </div> 
     <div class="row flight-list-row">
         <div class="col-5 offset-1 add-flight-list">
             <p>Sim</p>
@@ -115,6 +116,49 @@
             {{simHours}}
         </div>
     </div>
+    </div>
+    <ng-template #dutyHoursDiv>
+    <div class="row">
+        <div class="col-5 offset-1 add-flight-list">
+            <p>Total Hours</p>
+        </div>
+        <div class="col-3 offset-1 hours-box">
+            {{totalHours}}
+        </div>
+    </div>
+    <div class="row flight-list-row">
+        <div class="col-5 offset-1 add-flight-list">
+            <p>PI</p>
+        </div>
+        <div class="col-3 offset-1 hours-box">
+            {{hoursPI}}
+        </div>
+    </div>  
+    <div class="row flight-list-row">
+        <div class="col-5 offset-1 add-flight-list">
+            <p>PC</p>
+        </div>
+        <div class="col-3 offset-1 hours-box">
+            {{hoursPC}}
+        </div>
+    </div>
+    <div class="row flight-list-row">
+        <div class="col-5 offset-1 add-flight-list">
+            <p>IP</p>
+        </div>
+        <div class="col-3 offset-1 hours-box">
+            {{hoursIP}}
+        </div>
+    </div> 
+    <div class="row flight-list-row">
+        <div class="col-5 offset-1 add-flight-list">
+            <p>SP</p>
+        </div>
+        <div class="col-3 offset-1 hours-box">
+            {{hoursSP}}
+        </div>
+    </div> 
+    </ng-template>
     <div class="row" id="filter-buttons">
         <div class="col-3 offset-2 btn-info" id="filterButton"
         (click)="filterDisplayHours()">Filter</div>

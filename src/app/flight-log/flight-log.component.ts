@@ -50,6 +50,10 @@ export class FlightLogComponent implements OnInit {
       nightHours;
       weatherHours;
       simHours;
+      hoursPI;
+      hoursPC;
+      hoursIP;
+      hoursSP;
 
   constructor(private viewLog: ViewLogService) { 
     this.fromOptions = new DatePickerOptions ({
