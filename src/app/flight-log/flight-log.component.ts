@@ -119,7 +119,6 @@ export class FlightLogComponent implements OnInit {
         this.roundHours();
     }
 
-    //Not yet called anywhere
     dutySymbolSort (flightData) {
       for (let data in flightData) {
         flightData[data].dutySymbol == 'PI' ? this.rawDutyHours.hoursPI += flightData[data].hours
