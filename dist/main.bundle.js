@@ -921,6 +921,7 @@ var FlightLogComponent = (function () {
         this.viewLog.pullHours() //Have the service pull hours from the DB on form initialization
             .subscribe(function (flightData) {
             _this.flightSymbolSort(flightData);
+            _this.dutySymbolSort(flightData);
         });
         this.roundHours(); //Shows previously saved hours while waiting for server response to pull hours
     };
@@ -936,6 +937,10 @@ var FlightLogComponent = (function () {
         this.nightHours = this.rawFlightHours.nightHours.toFixed(1);
         this.weatherHours = this.rawFlightHours.weatherHours.toFixed(1);
         this.simHours = this.rawFlightHours.simHours.toFixed(1);
+        this.hoursPI = this.rawDutyHours.hoursPI.toFixed(1);
+        this.hoursPC = this.rawDutyHours.hoursPC.toFixed(1);
+        this.hoursIP = this.rawDutyHours.hoursIP.toFixed(1);
+        this.hoursSP = this.rawDutyHours.hoursSP.toFixed(1);
     };
     FlightLogComponent.prototype.sortTotalHours = function (flightData) {
         var totalHours = 0;
@@ -967,7 +972,7 @@ var FlightLogComponent = (function () {
                     : flightData[data].dutySymbol == 'IP' ? this.rawDutyHours.hoursIP += flightData[data].hours
                         : flightData[data].dutySymbol == 'SP' ? this.rawDutyHours.hoursSP += flightData[data].hours : null;
         }
-        this.sortTotalHours(flightData);
+        //this.sortTotalHours(flightData);
         this.roundHours();
     };
     //Date range validation logic. Ensures users enter a date range from a point in the past to a point in the 

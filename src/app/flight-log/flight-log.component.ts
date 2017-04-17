@@ -70,6 +70,7 @@ export class FlightLogComponent implements OnInit {
       .subscribe( 
         (flightData) => {
           this.flightSymbolSort(flightData);
+          this.dutySymbolSort(flightData);
         } 
       );
       this.roundHours(); //Shows previously saved hours while waiting for server response to pull hours
@@ -87,6 +88,10 @@ export class FlightLogComponent implements OnInit {
     this.nightHours = this.rawFlightHours.nightHours.toFixed(1);
     this.weatherHours = this.rawFlightHours.weatherHours.toFixed(1);
     this.simHours = this.rawFlightHours.simHours.toFixed(1);
+    this.hoursPI = this.rawDutyHours.hoursPI.toFixed(1);
+    this.hoursPC = this.rawDutyHours.hoursPC.toFixed(1);
+    this.hoursIP = this.rawDutyHours.hoursIP.toFixed(1);
+    this.hoursSP = this.rawDutyHours.hoursSP.toFixed(1);
   }
 
   sortTotalHours (flightData) {
@@ -123,7 +128,7 @@ export class FlightLogComponent implements OnInit {
         : flightData[data].dutySymbol == 'SP' ? this.rawDutyHours.hoursSP += flightData[data].hours : null;
       }
 
-      this.sortTotalHours(flightData);
+      //this.sortTotalHours(flightData);
       this.roundHours();
     }
 
