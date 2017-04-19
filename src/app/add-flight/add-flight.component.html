@@ -21,11 +21,45 @@
                     <p>Flight</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-5 add-flight-list">
+            <div class="row" id="first-flight-row">
+                <div class="col-3 add-flight-list">
                     <p>Flight Symbol</p>
                 </div>
-                <div class="col-4 offset-1"> 
+                <div class="col-1 first-row-item"> 
+                    <div class="dropdown" id="elFlight" #elFlight>
+                        <div class="btn add-flight-selectors" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <p>{{f.value.flightSymbol}}</p>
+                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <div *ngFor="let flightSymbol of flightSymbols">
+                                <label>
+                                <input type="radio" name="flightSymbol" [(ngModel)]="flight.flightSymbol"
+                                [value]="flightSymbol.value" (click)="onDropdownSelect($event)" class="radioSel">
+                                    {{flightSymbol.value}}
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-1 next-row-item"> 
+                    <div class="dropdown" id="elFlight" #elFlight>
+                        <div class="btn add-flight-selectors" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <p>{{f.value.flightSymbol}}</p>
+                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <div *ngFor="let flightSymbol of flightSymbols">
+                                <label>
+                                <input type="radio" name="flightSymbol" [(ngModel)]="flight.flightSymbol"
+                                [value]="flightSymbol.value" (click)="onDropdownSelect($event)" class="radioSel">
+                                    {{flightSymbol.value}}
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-1 next-row-item"> 
                     <div class="dropdown" id="elFlight" #elFlight>
                         <div class="btn add-flight-selectors" type="button" id="dropdownMenu1"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -44,10 +78,44 @@
                 </div>
             </div>
            <div class="row flight-list-row">
-                <div class="col-5 add-flight-list">
+                <div class="col-3 add-flight-list">
                     <p>Duty Symbol</p>
                 </div>
-                <div class="col-4 offset-1">
+                <div class="col-1 first-row-item">
+                    <div class="dropdown" #elDuty id="elDuty">
+                        <div class="btn add-flight-selectors" type="button" id="dropdownMenu2"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <p>{{f.value.dutySymbol}}</p>
+                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <div *ngFor="let dutySymbol of dutySymbols">
+                                <label>
+                                <input type="radio" name="dutySymbol" [(ngModel)]="flight.dutySymbol"
+                                [value]="dutySymbol.value" (click)="onDropdownSelect($event)">
+                                    {{dutySymbol.value}}
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-1 next-row-item">
+                    <div class="dropdown" #elDuty id="elDuty">
+                        <div class="btn add-flight-selectors" type="button" id="dropdownMenu2"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <p>{{f.value.dutySymbol}}</p>
+                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <div *ngFor="let dutySymbol of dutySymbols">
+                                <label>
+                                <input type="radio" name="dutySymbol" [(ngModel)]="flight.dutySymbol"
+                                [value]="dutySymbol.value" (click)="onDropdownSelect($event)">
+                                    {{dutySymbol.value}}
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-1 next-row-item">
                     <div class="dropdown" #elDuty id="elDuty">
                         <div class="btn add-flight-selectors" type="button" id="dropdownMenu2"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -66,49 +134,95 @@
                 </div>
             </div>
             <div class="row flight-list-row">
-                <div class="col-5 add-flight-list">
+                <div class="col-3 add-flight-list">
                     <p>Flight Hours</p>
                 </div>
-                <div class="col-4 offset-1">
+                <div class="col-1 first-row-item">
                     <div class="input-group add-flight-selectors">
-                        <input type="number" id="hours-input" class="form-control" placeholder="0.0" 
+                        <input type="number" id="hours-input" class="hours-input-box" placeholder="0.0" 
+                        aria-describedby="sizing-addon1" name="hours" [(ngModel)]="flight.hours">
+                    </div>
+                </div>
+                <div class="col-1 next-row-item">
+                    <div class="input-group add-flight-selectors">
+                        <input type="number" id="hours-input" class="hours-input-box" placeholder="0.0" 
+                        aria-describedby="sizing-addon1" name="hours" [(ngModel)]="flight.hours">
+                    </div>
+                </div>
+                <div class="col-1 next-row-item">
+                    <div class="input-group add-flight-selectors">
+                        <input type="number" id="hours-input" class="hours-input-box" placeholder="0.0" 
                         aria-describedby="sizing-addon1" name="hours" [(ngModel)]="flight.hours">
                     </div>
                 </div>
             </div> 
-            <div class="row">
-              <div class="alert alert-danger col-5 offset-4" role="alert" id="hours-alert"
+            <!-- <div class="row">
+                <div class="alert alert-danger col-5 offset-4" role="alert" id="hours-alert"
                 *ngIf="f.value.hours > 12.0">
                     <p>Too high!</p>    
                 </div>  
-            </div>
+            </div> -->
             <div class="row flight-list-row">
-                <div class="col-5 add-flight-list">
+                <div class="col-3 add-flight-list">
                     <p>Seat</p>
                 </div>
-                <div class="col-4 offset-1">
+                <div class="col-1 first-row-item">
                     <div class="dropdown" #elSeat id="elSeat">
-                        <div class="btn add-flight-selectors" type="button" id="dropdownMenu3"
+                        <div class="btn add-flight-selectors" type="button" id="seatDropdownOne"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <p>{{f.value.seat}}</p> 
+                            <p>{{f.value.seatOne}}</p> 
                         </div>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
-                            <div *ngFor="let seat of seats">
+                        <ul class="dropdown-menu" aria-labelledby="seatDropdownOne">
+                            <div *ngFor="let seats of seatOne">
                                 <label>
-                                <input type="radio" name="seat" [(ngModel)]="flight.seat"
-                                [value]="seat.value" (click)="onDropdownSelect($event)">
-                                {{seat.value}}
+                                <input type="radio" name="seatOne" [(ngModel)]="flight.seatOne"
+                                [value]="seats.value" (click)="onDropdownSelect($event)">
+                                {{seats.value}}
+                                </label>
+                            </div> 
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-1 next-row-item">
+                    <div class="dropdown" #elSeatTwo id="elSeatTwo">
+                        <div class="btn add-flight-selectors" type="button" id="seatDropdownTwo"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <p>{{f.value.seatTwo}}</p> 
+                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="seatDropdownTwo">
+                            <div *ngFor="let seats of seatTwo">
+                                <label>
+                                <input type="radio" name="seatTwo" [(ngModel)]="flight.seatTwo"
+                                [value]="seats.value" (click)="onDropdownSelect($event)">
+                                {{seats.value}}
+                                </label>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-1 next-row-item">
+                    <div class="dropdown" #elSeat id="elSeat">
+                        <div class="btn add-flight-selectors" type="button" id="seatDropdownThree"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <p>{{f.value.seatThree}}</p> 
+                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="seatDropdownThree">
+                            <div *ngFor="let seats of seatThree">
+                                <label>
+                                <input type="radio" name="seatThree" [(ngModel)]="flight.seatThree"
+                                [value]="seats.value" (click)="onDropdownSelect($event)">
+                                {{seats.value}}
                                 </label>
                             </div>
                         </ul>
                     </div>
                 </div>
             </div> 
-            <div class="row flight-list-row"> 
-                <div class="col-4 add-flight-list flight-list-centered">
+            <div class="row" id="last-list-row"> 
+                <div class="col-3 add-flight-list flight-list-centered">
                     <p>Remarks</p>
                 </div>
-                <div class="col-8 add-flight-remarks">
+                <div class="col-7 add-flight-remarks first-row-item">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Enter remarks..." 
                         aria-describedby="sizing-addon2" name="remarks" [maxlength]="30" [(ngModel)]="flight.remarks">

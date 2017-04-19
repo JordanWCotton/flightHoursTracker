@@ -3,7 +3,9 @@ export interface Flight {
     date;
     hours;
     remarks: string;
-    seat;
+    seatOne;
+    seatTwo;
+    seatThree;
     dutySymbol;
     flightSymbol;
 }

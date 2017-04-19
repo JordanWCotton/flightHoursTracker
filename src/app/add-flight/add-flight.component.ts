@@ -20,7 +20,7 @@ export class AddFlightComponent {
   @ViewChild('openModalButton') openModal:ElementRef;
   @ViewChild('openSecModal') openSecModal:ElementRef;
 
-  public flight: Flight;
+  public flight: Flight; 
   public myForm: FormGroup;
   public date: DateModel;
   public options: DatePickerOptions;
@@ -34,11 +34,21 @@ export class AddFlightComponent {
       initialDate: this.todayDate
     });
   }
-
+ 
   //Static values for our user input menus
-  seats = [
-    { value: 'Front'}, 
-    { value: 'Back'}
+  seatOne = [
+    { value: 'F'}, 
+    { value: 'B'}
+  ];
+
+  seatTwo = [
+    { value: 'F'}, 
+    { value: 'B'}
+  ];
+
+  seatThree = [
+    { value: 'F'}, 
+    { value: 'B'}
   ];
 
   dutySymbols = [
@@ -59,6 +69,60 @@ export class AddFlightComponent {
     { value: 'Wx'}
   ];
 
+  /* dutySymbolsOne = [
+    { value: 'PI'},
+    { value: 'PC'},
+    { value: 'IP'},
+    { value: 'SP'}
+  ];
+
+  dutySymbolsTwo = [
+    { value: 'PI'},
+    { value: 'PC'},
+    { value: 'IP'},
+    { value: 'SP'}
+  ];
+
+  dutySymbolsThree = [
+    { value: 'PI'},
+    { value: 'PC'},
+    { value: 'IP'},
+    { value: 'SP'}
+  ];
+
+  flightSymbolsOne = [
+    { value: 'Day'},
+    { value: 'Night'},
+    { value: 'Sim'},
+    { value: 'NVS'},
+    { value: 'NVG'},
+    { value: 'NVD'},
+    { value: 'Hood'},
+    { value: 'Wx'}
+  ];
+
+  flightSymbolsTwo = [
+    { value: 'Day'},
+    { value: 'Night'},
+    { value: 'Sim'},
+    { value: 'NVS'},
+    { value: 'NVG'},
+    { value: 'NVD'},
+    { value: 'Hood'},
+    { value: 'Wx'}
+  ];
+
+  flightSymbolsThree = [
+    { value: 'Day'},
+    { value: 'Night'},
+    { value: 'Sim'},
+    { value: 'NVS'},
+    { value: 'NVG'},
+    { value: 'NVD'},
+    { value: 'Hood'},
+    { value: 'Wx'}
+  ]; */
+
   ngOnInit() {
     //On initialization, set all the values to default
     this.initializeForm();
@@ -70,7 +134,9 @@ export class AddFlightComponent {
       date: this.date,
       hours: this.hours, //Force user inputted values to be a float, with 1 decimal place
       remarks: this.remarksValue,
-      seat: this.seats[0].value,
+      seatOne: this.seatOne[0].value,
+      seatTwo: this.seatTwo[0].value,
+      seatThree: this.seatThree[0].value,
       dutySymbol: this.dutySymbols[0].value,
       flightSymbol: this.flightSymbols[0].value
     }
@@ -92,6 +158,8 @@ export class AddFlightComponent {
     } else {
        
     } 
+
+    console.log(f);
   }
 
   //Closes the dropdown menus when the user selects something
@@ -117,7 +185,9 @@ export class AddFlightComponent {
     //Reset the form properties to their defaults, and reset date input
     this.flight.hours = this.hours;
     this.flight.remarks = this.remarksValue;
-    this.flight.seat = this.seats[0].value;
+    this.flight.seatOne = this.seatOne[0].value;
+    this.flight.seatTwo = this.seatTwo[0].value;
+    this.flight.seatThree = this.seatThree[0].value;
     this.flight.dutySymbol = this.dutySymbols[0].value;
     this.flight.flightSymbol = this.flightSymbols[0].value;
   }
