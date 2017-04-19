@@ -2,7 +2,7 @@
  
 #add-new-flight-container {
     padding-top: 10px;
-    background-color: #AB987A;
+    background-color: #AB987A; 
     height: 100vh; 
     color: #F5F5F5;
     font-family: 'Playfair Display', serif;
@@ -48,6 +48,7 @@
     background-color: #fff;
     text-align: center;
     min-width: auto;
+    width: 80px; 
     padding-right: 20%;
     padding-left: 20%;
     font-size: 1.2em;

@@ -39,21 +39,25 @@ export class AddFlightComponent {
  
   //Static values for our user input menus
   seatOne = [
+    { value: '---'},
     { value: 'F'}, 
     { value: 'B'}
   ];
 
   seatTwo = [
+    { value: '---'},
     { value: 'F'}, 
     { value: 'B'}
   ];
 
   seatThree = [
+    { value: '---'},
     { value: 'F'}, 
     { value: 'B'}
   ];
 
   dutySymbolsOne = [
+    { value: '---'},
     { value: 'PI'},
     { value: 'PC'},
     { value: 'IP'},
@@ -61,6 +65,7 @@ export class AddFlightComponent {
   ];
 
   dutySymbolsTwo = [
+    { value: '---'},
     { value: 'PI'},
     { value: 'PC'},
     { value: 'IP'},
@@ -68,6 +73,7 @@ export class AddFlightComponent {
   ];
 
   dutySymbolsThree = [
+    { value: '---'},
     { value: 'PI'},
     { value: 'PC'},
     { value: 'IP'},
@@ -75,6 +81,7 @@ export class AddFlightComponent {
   ];
 
   flightSymbolsOne = [
+    { value: '---'},
     { value: 'Day'},
     { value: 'Night'},
     { value: 'Sim'},
@@ -86,6 +93,7 @@ export class AddFlightComponent {
   ];
 
   flightSymbolsTwo = [
+    { value: '---' },
     { value: 'Day'},
     { value: 'Night'},
     { value: 'Sim'},
@@ -97,6 +105,7 @@ export class AddFlightComponent {
   ];
 
   flightSymbolsThree = [
+    { value: '---'},
     { value: 'Day'},
     { value: 'Night'},
     { value: 'Sim'},
@@ -134,7 +143,8 @@ export class AddFlightComponent {
  
   //Send the flight data  to the add-flight service 
   onSubmit(f) {
-  if (f.value.hours !== null && f.value.hours < 12.0) {
+  if (true) {  //replace hours validator here
+    console.log('Fucking test fucking');
       this.addFlight.logFlightData(f.value)
         .subscribe (
           (response: Response) => {
@@ -146,10 +156,8 @@ export class AddFlightComponent {
           (error) => console.log(error) 
         );
     } else {
-       
-    } 
 
-    console.log(f);
+    } 
   }
 
   //Closes the dropdown menus when the user selects something
