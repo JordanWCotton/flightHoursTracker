@@ -1,11 +1,17 @@
 
 export interface Flight {
     date;
-    hours;
+    hoursOne;
+    hoursTwo;
+    hoursThree;
     remarks: string;
     seatOne;
     seatTwo;
     seatThree;
-    dutySymbol;
-    flightSymbol;
+    dutySymbolOne;
+    dutySymbolTwo;
+    dutySymbolThree;
+    flightSymbolOne;
+    flightSymbolTwo;
+    flightSymbolThree;
 }

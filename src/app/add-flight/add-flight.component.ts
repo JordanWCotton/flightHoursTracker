@@ -25,7 +25,9 @@ export class AddFlightComponent {
   public date: DateModel;
   public options: DatePickerOptions;
   public todayDate = new Date();
-  public hours: number;
+  public hoursOne: number;
+  public hoursTwo: number;
+  public hoursThree: number;
   public remarksValue: string = '';
 
   constructor(private addFlight: AddFlightService, private _fb: FormBuilder, 
@@ -51,25 +53,7 @@ export class AddFlightComponent {
     { value: 'B'}
   ];
 
-  dutySymbols = [
-    { value: 'PI'},
-    { value: 'PC'},
-    { value: 'IP'},
-    { value: 'SP'}
-  ];
-
-  flightSymbols = [
-    { value: 'Day'},
-    { value: 'Night'},
-    { value: 'Sim'},
-    { value: 'NVS'},
-    { value: 'NVG'},
-    { value: 'NVD'},
-    { value: 'Hood'},
-    { value: 'Wx'}
-  ];
-
-  /* dutySymbolsOne = [
+  dutySymbolsOne = [
     { value: 'PI'},
     { value: 'PC'},
     { value: 'IP'},
@@ -121,7 +105,7 @@ export class AddFlightComponent {
     { value: 'NVD'},
     { value: 'Hood'},
     { value: 'Wx'}
-  ]; */
+  ];  
 
   ngOnInit() {
     //On initialization, set all the values to default
@@ -132,13 +116,19 @@ export class AddFlightComponent {
   initializeForm() {
     this.flight = {
       date: this.date,
-      hours: this.hours, //Force user inputted values to be a float, with 1 decimal place
+      hoursOne: this.hoursOne,
+      hoursTwo: this.hoursTwo,
+      hoursThree: this.hoursThree,
       remarks: this.remarksValue,
       seatOne: this.seatOne[0].value,
       seatTwo: this.seatTwo[0].value,
       seatThree: this.seatThree[0].value,
-      dutySymbol: this.dutySymbols[0].value,
-      flightSymbol: this.flightSymbols[0].value
+      dutySymbolOne: this.dutySymbolsOne[0].value,
+      dutySymbolTwo: this.dutySymbolsTwo[0].value,
+      dutySymbolThree: this.dutySymbolsThree[0].value,
+      flightSymbolOne: this.flightSymbolsOne[0].value,
+      flightSymbolTwo: this.flightSymbolsTwo[0].value,
+      flightSymbolThree: this.flightSymbolsThree[0].value
     }
   }
  
@@ -181,14 +171,20 @@ export class AddFlightComponent {
     }
   }
 
+  //Reset the form properties to their defaults, and reset date input
   onResetForm() {
-    //Reset the form properties to their defaults, and reset date input
-    this.flight.hours = this.hours;
+    this.flight.hoursOne = this.hoursOne;
+    this.flight.hoursTwo = this.hoursTwo;
+    this.flight.hoursThree = this.hoursThree;
     this.flight.remarks = this.remarksValue;
     this.flight.seatOne = this.seatOne[0].value;
     this.flight.seatTwo = this.seatTwo[0].value;
     this.flight.seatThree = this.seatThree[0].value;
-    this.flight.dutySymbol = this.dutySymbols[0].value;
-    this.flight.flightSymbol = this.flightSymbols[0].value;
+    this.flight.dutySymbolOne = this.dutySymbolsOne[0].value;
+    this.flight.dutySymbolTwo = this.dutySymbolsTwo[0].value;
+    this.flight.dutySymbolThree = this.dutySymbolsThree[0].value;
+    this.flight.flightSymbolOne = this.flightSymbolsOne[0].value;
+    this.flight.flightSymbolTwo = this.flightSymbolsTwo[0].value;
+    this.flight.flightSymbolThree = this.flightSymbolsThree[0].value;
   }
 }

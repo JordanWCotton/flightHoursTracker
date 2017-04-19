@@ -76,7 +76,7 @@ ul input {
     border-radius: 8px;
 }
 
-#dropdownMenu1 {
+#flightDropdownOne, #flightDropdownTwo, #flightDropdownThree {
     background-color: #0F1626;
     color: #F5F5F5; 
     width: 60px;
@@ -88,7 +88,7 @@ ul input {
     width: 60px;
 }
 
-#dropdownMenu2 {
+#dutyDropdownOne, #dutyDropdownTwo, #dutyDropdownThree {
     background-color: #FF533D;
     color: #F5F5F5;
     width: 60px;
