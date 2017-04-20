@@ -143,8 +143,8 @@ export class AddFlightComponent {
  
   //Send the flight data  to the add-flight service 
   onSubmit(f) {
-  if (true) {  //replace hours validator here
-    console.log('Fucking test fucking');
+  if (true) {  
+    //replace hours validator here
       this.addFlight.logFlightData(f.value)
         .subscribe (
           (response: Response) => {

@@ -755,8 +755,6 @@ var AddFlightService = (function () {
             this.flightData.flightThree.seat = formData.seatThree;
             this.flightData.thirdFlight = true;
         }
-        console.log('logFlightData called!');
-        console.log(this.flightData);
         return this.http.post('/data/log-flight', this.flightData);
     };
     AddFlightService.prototype.sortFlightData = function (formData) {
@@ -903,7 +901,7 @@ var AddFlightComponent = (function () {
     AddFlightComponent.prototype.onSubmit = function (f) {
         var _this = this;
         if (true) {
-            console.log('Fucking test fucking');
+            //replace hours validator here
             this.addFlight.logFlightData(f.value)
                 .subscribe(function (response) {
                 console.log(response);

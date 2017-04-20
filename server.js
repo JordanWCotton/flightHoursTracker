@@ -70,17 +70,43 @@ app.post('/app/login', (req, res) => {
 
 //Logs flight data to DB, under collection with the same name as the user who submitted it.
 app.post('/data/log-flight', (req, res) => {
-    let newFlight = req.body;
+    //Store flight data into local variables
+    let newFlightOne = req.body.flightOne;
+    let newFlightTwo = req.body.flightTwo;
+    let newFlightThree = req.body.flightThree;
+
+    //Store passed boolean to determine if the user logged multiple flight profiles 
+    let secondFlightPresent = req.body.secondFlight;
+    let thirdFlightPresent = req.body.thirdFlight;
 
     //Choose's the current logged in user's collection for storing flight data
     let collection = currentUser  
 
-    //Inserts the parameter into the chosen collection
-    db.collection(collection).insertOne(newFlight, (err, doc) => {
-     if (!err) {
-         res.sendStatus(200);
-     }
+    //Inserts the flight into the current user's table of flight data
+    db.collection(collection).insertOne(newFlightOne, (err, doc) => {
+        if (!err) { 
+            res.sendStatus(200);
+        };
     });
+
+    //If the user submitted the flight with multiple profiles, log those as well, as separate flights
+    if (secondFlightPresent == true) {
+        db.collection(collection).insertOne(newFlightTwo, (err, doc) => {
+            if (!err) {
+                //res.sendStatus(200);
+            };
+        });
+    };
+
+    if (thirdFlightPresent == true) {
+        db.collection(collection).insertOne(newFlightThree, (err, doc) => {
+            if (!err) {
+                //res.sendStatus(200);
+            };
+        });
+    };
+
+
 });
 
 app.get('/data/flightLog', (req, res) => {

@@ -67,8 +67,6 @@ export class AddFlightService {
 
       this.flightData.thirdFlight = true;
     }
-    console.log('logFlightData called!');
-    console.log(this.flightData);
     return this.http.post('/data/log-flight', this.flightData);
   }
 
