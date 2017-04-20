@@ -21,7 +21,7 @@
     text-align: center;
 }
 
-#page-breaker-line {
+.page-breaker-line {
     height: 1px;
     background-color:#F5F5F5;
 }
@@ -81,3 +81,20 @@
     border-radius: 6px;
     margin-top: 5%;
 }
+
+.custom-col {
+    margin-left: 3%;
+}
+
+.log-display {
+    margin-left: 3%;
+}
+
+#rmk-button {
+    width: 50px;
+    height: 85%;
+    border-radius: 10px;
+    margin-top: 5%;
+}
+
+

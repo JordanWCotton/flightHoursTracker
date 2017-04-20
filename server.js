@@ -105,10 +105,9 @@ app.post('/data/log-flight', (req, res) => {
             };
         });
     };
+}); 
 
-
-});
-
+//Pulls all flight data from current user's collection of logged flights
 app.get('/data/flightLog', (req, res) => {
     let collection = currentUser;
 

@@ -8,7 +8,7 @@
             <p>Flight Log</p>
         </div> 
     </div>
-    <div id="page-breaker-line"></div>
+    <div class="page-breaker-line"></div>
     <div class="row">
         <!--Controls date picker modal-->
         <div class="col-4 offset-4 btn-info" id="date-range-button" data-toggle="modal" 
@@ -43,6 +43,7 @@
             </div>
         </div> 
     </div>
+    <!-- 
     <div *ngIf="!sortByDuty; else dutyHoursDiv">       
     <div class="row">
         <div class="col-5 offset-1 add-flight-list">
@@ -162,7 +163,51 @@
     <div class="row" id="filter-buttons">
         <div class="col-3 offset-2 btn-info" id="filterButton"
         (click)="filterDisplayHours()">Filter</div>
-        <div class="col-3 offset-2 btn-info" id="reqdButton">Req'd</div>
-        
+        <div class="col-3 offset-2 btn-info" id="reqdButton">Req'd</div>     
+    </div>
+    -->
+    <div class="row">
+        <div class="col-4" id="date-row">
+            DATE
+        </div>
+        <div class="col-2" id="fs-row">
+            FS 
+        </div>
+        <div class="col-1" id="ds-row">
+            DS 
+        </div>
+        <div class="col-1" id="hours-row">
+            Hrs
+        </div>
+        <div class="col-1" id="seat-row">
+            St 
+        </div>
+        <div class="custom-col" id="remarks-row">
+            RMKS
+        </div>
+    </div>
+     <div class="page-breaker-line"></div>
+    <div *ngFor="let flights of flightCollection">
+        <div class="row">
+            <div class="col-4" id="date-display-row">
+                {{flights.date.formatted}}
+            </div>
+            <div class="col-2" id="fs-display-row">
+                {{flights.flightSymbol}}
+            </div>
+            <div class="col-1" id="ds-display-row">
+                {{flights.dutySymbol}}
+            </div>
+            <div class="col-1" id="hours-display-row">
+                {{flights.hours}}
+            </div>
+            <div class="col-1" id="seat-display-row">
+                {{flights.seat}}
+            </div>
+            <div class="log-display" id="remarks-display-row">
+                <button id="rmk-button">Rmk</button>
+            </div>
+        </div>
+         <div class="page-breaker-line"></div>
     </div>
 </div>

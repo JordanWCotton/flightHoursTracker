@@ -40,6 +40,8 @@ export class FlightLogComponent implements OnInit {
       hoursSP: 0
     }
 
+    flightCollection = [];
+
     //Holds the rounded and ready to be viewed hours
       totalHours;
       dayHours;
@@ -62,23 +64,25 @@ export class FlightLogComponent implements OnInit {
 
     this.toOptions = new DatePickerOptions ({
       initialDate: this.todayDate
-    })
+    }) 
   }
 
   ngOnInit() {
     this.viewLog.pullHours()  //Have the service pull hours from the DB on form initialization
       .subscribe( 
         (flightData) => {
-          this.flightSymbolSort(flightData);
-          this.dutySymbolSort(flightData);
+          this.flightCollection = flightData;
+          console.log(this.flightCollection);
+          //this.flightSymbolSort(flightData);
+          //this.dutySymbolSort(flightData);
         } 
       );
-      this.roundHours(); //Shows previously saved hours while waiting for server response to pull hours
+      //this.roundHours(); //Shows previously saved hours while waiting for server response to pull hours
   }
 
   //Only way to allow .toFixed(1) to be called on hours, was to reassign them to new local variables
   //ensuring correct addition of hours for their display
-  roundHours () {
+  roundHours () { 
     this.totalHours = this.rawFlightHours.totalHours.toFixed(1);
     this.dayHours = this.rawFlightHours.dayHours.toFixed(1);
     this.nvsHours = this.rawFlightHours.nvsHours.toFixed(1);
