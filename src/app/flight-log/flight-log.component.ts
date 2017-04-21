@@ -72,7 +72,6 @@ export class FlightLogComponent implements OnInit {
       .subscribe( 
         (flightData) => {
           this.flightCollection = flightData;
-          console.log(this.flightCollection);
           //this.flightSymbolSort(flightData);
           //this.dutySymbolSort(flightData);
         } 

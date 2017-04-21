@@ -97,4 +97,15 @@
     margin-top: 5%;
 }
 
+#big-flight-log {
+    height: 420px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+@media only screen and (max-height: 570px) {
+    #big-flight-log {
+        height: 355px;
+    }
+}
 
