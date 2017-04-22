@@ -120,6 +120,35 @@ app.get('/data/flightLog', (req, res) => {
     });
 });
 
+//Pulls a range of flight data from current user's collection of logged flights
+app.get('/date/flightlog/range', (req, res) => {
+    let collection = currentUser;
+    let fromDate = req.fromDate.momentObj;
+    let toDate = req.toDate.momentObj;
+
+    let cursor = db.collection(collection).find({
+        "date.momentObj" : {
+            $gte: fromDate,
+            $lt : toDate
+        }
+    });
+    cursor.toArray((err, results) => {
+        console.log("results")
+    });
+
+    /* Working date range query 
+    let cursor = db.collection(collection).find({
+        "date.momentObj" : {
+            $gte: "2017-04-19T03:49:39.561Z",
+            $lt : "2017-04-22T03:49:39.561Z"
+        }
+    });
+    cursor.toArray((err, results) => {
+        console.log(results);
+    });
+    */
+})
+
 //Connect to database
 mongodb.MongoClient.connect('mongodb://' + username + ':' + password + '@ds155820.mlab.com:55820/test-land', (err, database) => {
     db = database;
