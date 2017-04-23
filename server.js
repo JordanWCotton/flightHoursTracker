@@ -21,8 +21,8 @@ let db;
 //Stores current logged in user for proper collection and data access 
 let currentUser = '';
 //Database credentials
-let username = ''; 
-let password = '';
+let username = '6db_user1'; 
+let password = 'Password6';
 
 //Create express server listening on port 3000
 app.listen(process.env.PORT || 3000, () => {
@@ -91,19 +91,11 @@ app.post('/data/log-flight', (req, res) => {
  
     //If the user submitted the flight with multiple profiles, log those as well, as separate flights
     if (secondFlightPresent == true) {
-        db.collection(collection).insertOne(newFlightTwo, (err, doc) => {
-            if (!err) {
-                //res.sendStatus(200);
-            };
-        });
+        db.collection(collection).insertOne(newFlightTwo, (err, doc) => {});
     };
 
     if (thirdFlightPresent == true) {
-        db.collection(collection).insertOne(newFlightThree, (err, doc) => {
-            if (!err) {
-                //res.sendStatus(200);
-            };
-        });
+        db.collection(collection).insertOne(newFlightThree, (err, doc) => {});
     };
 }); 
 
@@ -115,35 +107,36 @@ app.get('/data/flightLog', (req, res) => {
     let cursor = db.collection(collection).find();
     cursor.toArray((err, results) => {
         //Handle errors
-        
+        results.sortBy((flight) => { 
+            return flight.date.momentObj 
+        });
         res.send(results); 
     });
 });
 
-//Define a sortBy function on all arrays using a Schwartzian Transform
-//This function was written by stackoverflow user Phrogz
-(function(){
-  if (typeof Object.defineProperty === 'function'){
-    try{Object.defineProperty(Array.prototype,'sortBy',{value:sb}); }catch(e){}
-  }
+//Adds a sortBy function which uses a Schwartzian Transform to array prototype
+//This function was inspired by stackoverflow user Phrogz
+(() => {
   if (!Array.prototype.sortBy) Array.prototype.sortBy = sb;
 
-  function sb(f){
-    for (var i=this.length;i;){
+  function sb (f) {
+    for ( let i = this.length; i; ){
       var o = this[--i];
       this[i] = [].concat(f.call(o,o,i),o);
-    }
-    this.sort(function(a,b){
-      for (var i=0,len=a.length;i<len;++i){
-        if (a[i]!=b[i]) return a[i]<b[i]?-1:1;
+    };
+
+    this.sort((a,b) => {
+      for ( let i=0, len=a.length; i<len; ++i){
+        if ( a[i]!=b[i] ) return a[i]<b[i] ? - 1 : 1;
       }
       return 0;
     });
-    for (var i=this.length;i;){
+
+    for ( let i=this.length; i; ){
       this[--i]=this[i][this[i].length-1];
-    }
+    };
     return this;
-  }
+  };
 })();
 
 
@@ -159,22 +152,13 @@ app.post('/data/flightlog/range', (req, res) => {
             $lt : toDate
         }
     });
+
     cursor.toArray((err, results) => {
-        results.sortBy(function(o){ return o.date.momentObj });
+        results.sortBy((flight) => { 
+            return flight.date.momentObj 
+        });
         res.send(results);
     });
-
-    /* Working date range query 
-    let cursor = db.collection(collection).find({
-        "date.momentObj" : {
-            $gte: "2017-04-19T03:49:39.561Z",
-            $lt : "2017-04-22T03:49:39.561Z"
-        }
-    });
-    cursor.toArray((err, results) => {
-        console.log(results);
-    });
-    */
 })
 
 //Connect to database
