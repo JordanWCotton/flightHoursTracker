@@ -1,5 +1,5 @@
 # LogIt
-This is project is currently still under development. The front end is built using Angular, with Node.js framework Express handling server logic, and MongoDB with mongoose as the database. This application currently does not hash passwords upon user creation, and as such stores user passwords in plain text on the database. This is strictly because the app is still in development, and because authentication via salts/hashes will be added to the existing schema structuring at a later time. 
+This is project is currently still under development. The front end is built using Angular, with Node.js framework Express handling server logic, and MongoDB with mongoose as the database. This application currently does not hash user passwords upon creation, and as such stores user passwords in plain text on the database. 
 
 The project must be built before running on the development server.
 
@@ -16,20 +16,10 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Current actively used non-Angular specific dependancies:
-+ Via npm:
-+ express
-+ mongoose
-+ mongodb
-+ path
-+ body-parser
-+ ng2-datepicker
-+ bootstrap
-
 ## User Manual:
 The application is still very much in development, and as such the currently implemented features are as follows:
 
-+ User can create an account, which is stored on the server.
++ User can create an account, which is stored on the server. Passwords are currently stored in plaintext on database.
 + User can log in using created account and password.
 + User can add flights to their account.
 + Multi-profile flights are now supported, and can be submitted in groups of three.
