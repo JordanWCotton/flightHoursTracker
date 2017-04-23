@@ -4,6 +4,7 @@ import { Response } from '@angular/http';
 import { ViewLogService } from '../view-log.service';
 import { DatePickerOptions, DateModel } from 'ng2-datepicker';
 
+
 @Component({
   selector: 'app-flight-log',
   templateUrl: './flight-log.component.html',
@@ -151,7 +152,7 @@ export class FlightLogComponent implements OnInit {
     this.viewLog.pullHourRange(dateRange)
     .subscribe (
       (res) => {
-        console.log(res);
+       console.log(res);
       }
     );
   }
