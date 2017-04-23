@@ -131,7 +131,7 @@ export class FlightLogComponent implements OnInit {
       }
 
       //this.sortTotalHours(flightData);
-      this.roundHours();
+      this.roundHours(); 
     }
 
   //Date range validation logic. Ensures users enter a date range from a point in the past to a point in the 
@@ -142,6 +142,18 @@ export class FlightLogComponent implements OnInit {
     : this.fromDate.month < this.toDate.month ? this.datesSubmitted = true//Pass 
     : this.fromDate.day <= this.toDate.day ? this.datesSubmitted = true//Pass 
     : this.datesSubmitted = false;//Failed
+
+    let dateRange = {
+      toDate : this.toDate,
+      fromDate : this.fromDate
+    };
+
+    this.viewLog.pullHourRange(dateRange)
+    .subscribe (
+      (res) => {
+        console.log(res);
+      }
+    );
   }
 
   filterDisplayHours () {

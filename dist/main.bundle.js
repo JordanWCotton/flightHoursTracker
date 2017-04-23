@@ -284,7 +284,7 @@ exports = module.exports = __webpack_require__(19)();
 
 
 // module
-exports.push([module.i, "/* Flight Log page */\r\n\r\n#flight-log-container {\r\n    padding-top: 10px;\r\n    background-color: #AB987A; \r\n    height: 100vh; \r\n    color: #F5F5F5;\r\n    font-family: 'Playfair Display', serif;\r\n}\r\n\r\n#back-icon {\r\n    margin-right: 5px;\r\n    background-color: #FF533D;\r\n    color: #F5F5F5;\r\n    text-align: center;\r\n    border-radius: 6px;\r\n}\r\n\r\n#flight-log-title {\r\n    font-size: 150%;\r\n    text-align: center;\r\n}\r\n\r\n.page-breaker-line {\r\n    height: 1px;\r\n    background-color:#F5F5F5;\r\n}\r\n\r\n#date-range-container {\r\n    margin-top: 3%;\r\n    text-align: center;\r\n} \r\n\r\n#modal-content-id {\r\n    background-color: #AB987A; \r\n    color: #F5F5F5;\r\n}\r\n\r\n#close-daterange-modal {\r\n    background-color: #FF533D;\r\n    color: #F5F5F5;\r\n}\r\n\r\n#save-daterange-modal {\r\n    background-color: #0F1626;\r\n    color: #F5F5F5;\r\n}\r\n\r\n#date-range-button {\r\n    background-color: #0F1626;\r\n    color: #F5F5F5;\r\n    margin-top: 3%;\r\n    margin-bottom: 3%;\r\n    border-radius: 6px;\r\n    text-align: center;\r\n}\r\n\r\n#exampleModelLabel h5 {\r\n    color: #373D3F;\r\n}\r\n\r\n.add-flight-list {\r\n    text-align: center;\r\n}\r\n\r\n.hours-box {\r\n    text-align: center;\r\n}\r\n.hours-box p {\r\n    border: 2px solid #272D2D;\r\n}\r\n\r\n#filter-buttons {\r\n    margin-top: 1%;\r\n}\r\n\r\n#filterButton, #reqdButton {\r\n    background-color: #FF533D;\r\n    color: #F5F5F5;\r\n    text-align: center;\r\n    border-radius: 6px;\r\n    margin-top: 5%;\r\n}\r\n\r\n.custom-col {\r\n    margin-left: 3%;\r\n}\r\n\r\n.log-display {\r\n    margin-left: 3%;\r\n}\r\n\r\n#rmk-button {\r\n    width: 50px;\r\n    height: 85%;\r\n    border-radius: 10px;\r\n    margin-top: 5%;\r\n}\r\n\r\n#big-flight-log {\r\n    height: 420px;\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n}\r\n\r\n@media only screen and (max-height: 570px) {\r\n    #big-flight-log {\r\n        height: 375px;\r\n    }\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "/* Flight Log page */\r\n\r\n#flight-log-container {\r\n    padding-top: 10px;\r\n    background-color: #AB987A; \r\n    height: 100vh; \r\n    color: #F5F5F5;\r\n    font-family: 'Playfair Display', serif;\r\n}\r\n\r\n#back-icon {\r\n    margin-right: 5px;\r\n    background-color: #FF533D;\r\n    color: #F5F5F5;\r\n    text-align: center;\r\n    border-radius: 6px;\r\n}\r\n\r\n#flight-log-title {\r\n    font-size: 150%;\r\n    text-align: center;\r\n}\r\n\r\n.page-breaker-line {\r\n    height: 1px;\r\n    background-color:#F5F5F5;\r\n}\r\n\r\n#date-range-container {\r\n    margin-top: 3%;\r\n    text-align: center;\r\n} \r\n\r\n#modal-content-id {\r\n    background-color: #AB987A; \r\n    color: #F5F5F5;\r\n}\r\n\r\n#close-daterange-modal {\r\n    background-color: #FF533D;\r\n    color: #F5F5F5;\r\n}\r\n\r\n#save-daterange-modal {\r\n    background-color: #0F1626;\r\n    color: #F5F5F5;\r\n}\r\n\r\n#date-range-button {\r\n    background-color: #0F1626;\r\n    color: #F5F5F5;\r\n    margin-top: 3%;\r\n    margin-bottom: 3%;\r\n    border-radius: 6px;\r\n    text-align: center;\r\n}\r\n\r\n#exampleModelLabel h5 {\r\n    color: #373D3F;\r\n}\r\n\r\n.add-flight-list {\r\n    text-align: center;\r\n}\r\n\r\n.hours-box {\r\n    text-align: center;\r\n}\r\n.hours-box p {\r\n    border: 2px solid #272D2D;\r\n}\r\n\r\n#filter-buttons {\r\n    margin-top: 1%;\r\n}\r\n\r\n#filterButton, #reqdButton {\r\n    background-color: #FF533D;\r\n    color: #F5F5F5;\r\n    text-align: center;\r\n    border-radius: 6px;\r\n    margin-top: 5%;\r\n}\r\n\r\n.custom-col {\r\n    margin-left: 3%;\r\n}\r\n\r\n.log-display {\r\n    margin-left: 3%;\r\n}\r\n\r\n#rmk-button {\r\n    width: 50px;\r\n    height: 85%;\r\n    border-radius: 10px;\r\n    margin-top: 5%;\r\n}\r\n\r\n#big-flight-log {\r\n    height: 420px;\r\n    overflow-y: auto;\r\n    overflow-x: hidden;\r\n}\r\n\r\n@media only screen and (max-height: 570px) {\r\n    #big-flight-log {\r\n        height: 355px;\r\n    }\r\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -755,6 +755,7 @@ var AddFlightService = (function () {
             this.flightData.flightThree.seat = formData.seatThree;
             this.flightData.thirdFlight = true;
         }
+        console.log(this.flightData);
         return this.http.post('/data/log-flight', this.flightData);
     };
     AddFlightService.prototype.sortFlightData = function (formData) {
@@ -1041,7 +1042,6 @@ var FlightLogComponent = (function () {
         this.viewLog.pullHours() //Have the service pull hours from the DB on form initialization
             .subscribe(function (flightData) {
             _this.flightCollection = flightData;
-            console.log(_this.flightCollection);
             //this.flightSymbolSort(flightData);
             //this.dutySymbolSort(flightData);
         });
@@ -1104,6 +1104,14 @@ var FlightLogComponent = (function () {
                 : this.fromDate.month < this.toDate.month ? this.datesSubmitted = true //Pass 
                     : this.fromDate.day <= this.toDate.day ? this.datesSubmitted = true //Pass 
                         : this.datesSubmitted = false; //Failed
+        var dateRange = {
+            toDate: this.toDate,
+            fromDate: this.fromDate
+        };
+        this.viewLog.pullHourRange(dateRange)
+            .subscribe(function (res) {
+            console.log(res);
+        });
     };
     FlightLogComponent.prototype.filterDisplayHours = function () {
         this.sortByDuty = (!this.sortByDuty);
@@ -1397,6 +1405,15 @@ var ViewLogService = (function () {
             .map(function (response) {
             var data = response.json();
             return data;
+        });
+    };
+    ViewLogService.prototype.pullHourRange = function (dateRange) {
+        console.log('Pulling hour range:');
+        console.log(dateRange);
+        return this.http.post('/data/flightlog/range', dateRange)
+            .map(function (response) {
+            var range = response.json();
+            return range;
         });
     };
     return ViewLogService;

@@ -88,7 +88,7 @@ app.post('/data/log-flight', (req, res) => {
             res.sendStatus(200);
         };
     });
-
+ 
     //If the user submitted the flight with multiple profiles, log those as well, as separate flights
     if (secondFlightPresent == true) {
         db.collection(collection).insertOne(newFlightTwo, (err, doc) => {
@@ -116,15 +116,15 @@ app.get('/data/flightLog', (req, res) => {
     cursor.toArray((err, results) => {
         //Handle errors
         
-        res.send(results);
+        res.send(results); 
     });
 });
 
 //Pulls a range of flight data from current user's collection of logged flights
-app.get('/date/flightlog/range', (req, res) => {
+app.post('/data/flightlog/range', (req, res) => {
     let collection = currentUser;
-    let fromDate = req.fromDate.momentObj;
-    let toDate = req.toDate.momentObj;
+    let fromDate = req.body.fromDate.momentObj;
+    let toDate = req.body.toDate.momentObj;
 
     let cursor = db.collection(collection).find({
         "date.momentObj" : {
@@ -133,7 +133,7 @@ app.get('/date/flightlog/range', (req, res) => {
         }
     });
     cursor.toArray((err, results) => {
-        console.log("results")
+        res.send(results);
     });
 
     /* Working date range query 
