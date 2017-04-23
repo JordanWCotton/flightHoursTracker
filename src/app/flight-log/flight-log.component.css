@@ -95,6 +95,8 @@
     height: 85%;
     border-radius: 10px;
     margin-top: 5%;
+    background-color: #0F1626;
+    color: #F5F5F5;
 }
 
 #big-flight-log {
