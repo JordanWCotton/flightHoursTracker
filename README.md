@@ -17,25 +17,25 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Current actively used non-Angular specific dependancies:
-Via npm:
-express
-mongoose
-mongodb
-path
-body-parser
-ng2-datepicker
-bootstrap
++ Via npm:
++ express
++ mongoose
++ mongodb
++ path
++ body-parser
++ ng2-datepicker
++ bootstrap
 
 ## User Manual:
 The application is still very much in development, and as such the currently implemented features are as follows:
 
-User can create an account, which is stored on the server.
-User can log in using created account and password.
-User can add flights to their account.
-Multi-profile flights are now supported, and can be submitted in groups of three.
-User can view all logged flights, displayed in chronological order by the flight's date.
-User can view flights in a specified range, displayed back to the user in chronological order.
-User can view hour totals for each Duty Symbol, or for each Flight Symbol, as well as overall total hours to date.
-User can view hour totals from a specific date range.
++ User can create an account, which is stored on the server.
++ User can log in using created account and password.
++ User can add flights to their account.
++ Multi-profile flights are now supported, and can be submitted in groups of three.
++ User can view all logged flights, displayed in chronological order by the flight's date.
++ User can view flights in a specified range, displayed back to the user in chronological order.
++ User can view hour totals for each Duty Symbol, or for each Flight Symbol, as well as overall total hours to date.
++ User can view hour totals from a specific date range.
 
 
