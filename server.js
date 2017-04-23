@@ -21,8 +21,8 @@ let db;
 //Stores current logged in user for proper collection and data access 
 let currentUser = '';
 //Database credentials
-let username = '6db_user1'; 
-let password = 'Password6';
+let username = ''; 
+let password = '';
 
 //Create express server listening on port 3000
 app.listen(process.env.PORT || 3000, () => {
