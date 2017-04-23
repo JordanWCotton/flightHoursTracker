@@ -1,3 +1,6 @@
+![Alt text](/images/logit.png?raw=true "LogIt"
+
+
 # LogIt
 This is project is currently still under development. The front end is built using Angular, with Node.js framework Express handling server logic, and MongoDB with mongoose as the database. This application currently does not hash passwords upon user creation, and as such stores user passwords in plain text on the database. This is strictly because the app is still in development, and because authentication via salts/hashes will be added to the existing schema structuring at a later time. 
 
