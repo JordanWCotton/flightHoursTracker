@@ -1,12 +1,12 @@
 # LogIt
-This is project is currently still under development. The front end is built using Angular, with Node.js framework Express handling server logic, and MongoDB with mongoose as the database. This application currently does not hash passwords upon user creation, and as such stores user passwords in plain text on the database. This is strictly because the app is still in development, and because authentication via salts/hashes can be added to the existing schema structuring at a later time. 
+This is project is currently still under development. The front end is built using Angular, with Node.js framework Express handling server logic, and MongoDB with mongoose as the database. This application currently does not hash passwords upon user creation, and as such stores user passwords in plain text on the database. This is strictly because the app is still in development, and because authentication via salts/hashes will be added to the existing schema structuring at a later time. 
 
 The project must be built before running on the development server.
 
 There are two variables for the database username and password, note that you must supply these parameters to access the mongoDB server. It is highly suggested that you create your own at https://mlab.com/welcome/
 
 ## Development server
-Run `node server.js` for a dev server. Navigate to `http://localhost:3000/`. 
+Ensure the project is built using `ng build`. Run `node server.js`, then navigate to `http://localhost:3000/`. 
 
 ## Build
 
@@ -25,5 +25,17 @@ path
 body-parser
 ng2-datepicker
 bootstrap
+
+## User Manual:
+The application is still very much in development, and as such the currently implemented features are as follows:
+
+User can create an account, which is stored on the server.
+User can log in using created account and password.
+User can add flights to their account.
+Multi-profile flights are now supported, and can be submitted in groups of three.
+User can view all logged flights, displayed in chronological order by the flight's date.
+User can view flights in a specified range, displayed back to the user in chronological order.
+User can view hour totals for each Duty Symbol, or for each Flight Symbol, as well as overall total hours to date.
+User can view hour totals from a specific date range.
 
 
