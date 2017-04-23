@@ -103,6 +103,32 @@
     overflow-x: hidden;
 }
 
+.bottom-log-btn {
+    text-align: center;
+    margin-top: 1%;
+    border-radius: 6px;
+}
+
+#view-totals-btn {
+    background-color: #0F1626;
+    color: #F5F5F5;
+}
+
+#edit-flights-btn {
+    background-color: #FF533D;
+    color: #F5F5F5;
+}
+
+#show-flight-list {
+    background-color: #0F1626;
+    color: #F5F5F5;
+    margin-top: 3%;
+}
+
+.low-button-row {
+    margin-top: 3%;
+}
+
 @media only screen and (max-height: 570px) {
     #big-flight-log {
         height: 355px;

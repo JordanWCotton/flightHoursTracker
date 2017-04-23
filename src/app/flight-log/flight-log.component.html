@@ -1,4 +1,4 @@
-<div class="container-fluid" id="flight-log-container"> 
+<div class="container-fluid" id="flight-log-container">  
     <div class="row">
         <div class="col-3">
             <div [routerLink]="['/main-menu']" class="btn-info" 
@@ -43,8 +43,70 @@
             </div>
         </div> 
     </div>
-    <!-- 
-    <div *ngIf="!sortByDuty; else dutyHoursDiv">       
+    <div *ngIf="!showTotals; else hourTotalsDiv">
+    <div class="row">
+        <div class="col-4" id="date-row">
+            DATE
+        </div>
+        <div class="col-2" id="fs-row">
+            FS 
+        </div>
+        <div class="col-1" id="ds-row">
+            DS 
+        </div>
+        <div class="col-1" id="hours-row"> 
+            Hrs
+        </div>
+        <div class="col-1" id="seat-row">
+            St 
+        </div>
+        <div class="custom-col" id="remarks-row">
+            RMKS
+        </div>
+    </div>
+     <div class="page-breaker-line"></div>
+     <div id="big-flight-log">
+     <div *ngFor="let flights of flightCollection">
+        <div class="row">
+            <div class="col-4" id="date-display-row">
+                {{flights.date.formatted}}
+            </div>
+            <div class="col-2" id="fs-display-row">
+                {{flights.flightSymbol}}
+            </div>
+            <div class="col-1" id="ds-display-row">
+                {{flights.dutySymbol}}
+            </div>
+            <div class="col-1" id="hours-display-row">
+                {{flights.hours}}
+            </div>
+            <div class="col-1" id="seat-display-row">
+                {{flights.seat}}
+            </div>
+            <div class="log-display" id="remarks-display-row">
+                <button id="rmk-button">Rmk</button>
+            </div>
+        </div>
+         <div class="page-breaker-line"></div>
+    </div>
+    </div>
+    <div class="row low-button-row">
+        <div class="col-4">
+            <div class="bottom-log-btn btn-info" id="view-totals-btn"
+            (click)="changeHoursDisplay()">
+                <p>Totals</p>
+            </div>
+        </div>
+        <div class="col-4 offset-4">
+            <div class="bottom-log-btn btn-info" id="edit-flights-btn">
+                <p>Edit</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <ng-template #hourTotalsDiv>
+    <div *ngIf="!sortByDuty; else dutyHoursDiv">
+    <div class="page-breaker-line"></div>       
     <div class="row">
         <div class="col-5 offset-1 add-flight-list">
             <p>Total Hours</p>
@@ -117,8 +179,10 @@
             {{simHours}}
         </div>
     </div>
+    <div class="page-breaker-line"></div>
     </div>
     <ng-template #dutyHoursDiv>
+    <div class="page-breaker-line"></div>
     <div class="row">
         <div class="col-5 offset-1 add-flight-list">
             <p>Total Hours</p>
@@ -134,7 +198,7 @@
         <div class="col-3 offset-1 hours-box">
             {{hoursPI}}
         </div>
-    </div>  
+    </div> 
     <div class="row flight-list-row">
         <div class="col-5 offset-1 add-flight-list">
             <p>PC</p>
@@ -150,7 +214,7 @@
         <div class="col-3 offset-1 hours-box">
             {{hoursIP}}
         </div>
-    </div> 
+    </div>
     <div class="row flight-list-row">
         <div class="col-5 offset-1 add-flight-list">
             <p>SP</p>
@@ -158,58 +222,21 @@
         <div class="col-3 offset-1 hours-box">
             {{hoursSP}}
         </div>
-    </div> 
+    </div>
+    <div class="page-breaker-line"></div> 
     </ng-template>
     <div class="row" id="filter-buttons">
         <div class="col-3 offset-2 btn-info" id="filterButton"
-        (click)="filterDisplayHours()">Filter</div>
+        (click)="filterTotals()">Filter</div>
         <div class="col-3 offset-2 btn-info" id="reqdButton">Req'd</div>     
     </div>
-    -->
-    <div class="row">
-        <div class="col-4" id="date-row">
-            DATE
-        </div>
-        <div class="col-2" id="fs-row">
-            FS 
-        </div>
-        <div class="col-1" id="ds-row">
-            DS 
-        </div>
-        <div class="col-1" id="hours-row"> 
-            Hrs
-        </div>
-        <div class="col-1" id="seat-row">
-            St 
-        </div>
-        <div class="custom-col" id="remarks-row">
-            RMKS
+    <div class="row low-button-row">
+        <div class="col-4 offset-4">
+            <div class="bottom-log-btn btn-info" id="show-flight-list"
+            (click)="changeHoursDisplay()">
+                <p>Flight List</p>
+            </div>
         </div>
     </div>
-     <div class="page-breaker-line"></div>
-     <div id="big-flight-log">
-    <div *ngFor="let flights of flightCollection">
-        <div class="row">
-            <div class="col-4" id="date-display-row">
-                {{flights.date.formatted}}
-            </div>
-            <div class="col-2" id="fs-display-row">
-                {{flights.flightSymbol}}
-            </div>
-            <div class="col-1" id="ds-display-row">
-                {{flights.dutySymbol}}
-            </div>
-            <div class="col-1" id="hours-display-row">
-                {{flights.hours}}
-            </div>
-            <div class="col-1" id="seat-display-row">
-                {{flights.seat}}
-            </div>
-            <div class="log-display" id="remarks-display-row">
-                <button id="rmk-button">Rmk</button>
-            </div>
-        </div>
-         <div class="page-breaker-line"></div>
-    </div>
-    </div>
+    </ng-template>
 </div>

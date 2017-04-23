@@ -114,7 +114,7 @@ app.get('/data/flightLog', (req, res) => {
     });
 });
 
-//Adds a sortBy function which uses a Schwartzian Transform to array prototype
+//Adds a sortBy function, which uses a Schwartzian Transform, to the Array prototype
 //This function was inspired by stackoverflow user Phrogz
 (() => {
   if (!Array.prototype.sortBy) Array.prototype.sortBy = sb;
@@ -170,30 +170,24 @@ mongodb.MongoClient.connect('mongodb://' + username + ':' + password + '@ds15582
 
 //##Routes for the SPA. Will handle the user refreshing the page, by resending the same page to Angular##
 app.get('/sign-up', (req, res) => {
-  // Use res.sendfile, as it streams instead of reading the file into memory.
   res.sendFile(distDir);
 });
 
 app.get('/log-in', (req, res) => {
-  // Use res.sendfile, as it streams instead of reading the file into memory.
   res.sendFile(distDir);
 });
 
 app.get('/main-menu', (req, res) => {
-  // Use res.sendfile, as it streams instead of reading the file into memory.
   res.sendFile(distDir);
 });
 
 app.get('/add-flight', (req, res) => {
-  // Use res.sendfile, as it streams instead of reading the file into memory.
   res.sendFile(distDir);
 });
 
 app.get('/flight-log', (req, res) => {
-  // Use res.sendfile, as it streams instead of reading the file into memory.
   res.sendFile(distDir);
 });
-
 
 //#########ERROR HANDLERS ###################
 

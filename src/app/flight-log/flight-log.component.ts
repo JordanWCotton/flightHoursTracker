@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'; 
+import { Component, OnInit } from '@angular/core';   
 import { Response } from '@angular/http';
 
 import { ViewLogService } from '../view-log.service';
@@ -18,7 +18,8 @@ export class FlightLogComponent implements OnInit {
   public todayDate = new Date();
   datesSubmitted: boolean = false;
   datesInvalid: boolean = false;
-  sortByDuty: boolean = false; //Determines whether hours are sorted via duty symbol or flight symbol
+  sortByDuty: boolean = false; 
+  showTotals: boolean = false; 
 
   //Holds the raw flight symbol hours after being sorted, before being rounded
   rawFlightHours = {
@@ -73,11 +74,11 @@ export class FlightLogComponent implements OnInit {
       .subscribe( 
         (flightData) => {
           this.flightCollection = flightData;
-          //this.flightSymbolSort(flightData);
-          //this.dutySymbolSort(flightData);
+          this.flightSymbolSort(flightData);
+          this.dutySymbolSort(flightData);
         } 
       );
-      //this.roundHours(); //Shows previously saved hours while waiting for server response to pull hours
+      this.roundHours(); //Shows previously saved hours while waiting for server response to pull hours
   }
 
   //Only way to allow .toFixed(1) to be called on hours, was to reassign them to new local variables
@@ -157,9 +158,12 @@ export class FlightLogComponent implements OnInit {
     );
   }
 
-  filterDisplayHours () {
+  filterTotals () {
     this.sortByDuty = (!this.sortByDuty);
-    console.log(this.sortByDuty);
+  }
+
+  changeHoursDisplay () {
+    this.showTotals = (!this.showTotals);
   }
 
 }

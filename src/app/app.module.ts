@@ -17,6 +17,7 @@ import { LandingMenuComponent } from './landing-menu/landing-menu.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AuthService } from './auth.service';
 import { AuthenticationGuard } from './routing-guard';
+import { FlightTotalsComponent } from './flight-log/flight-totals/flight-totals.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AuthenticationGuard } from './routing-guard';
     AddFlightComponent,
     LogInComponent,
     LandingMenuComponent,
-    SignUpComponent
+    SignUpComponent,
+    FlightTotalsComponent
   ],
   imports: [
     BrowserModule,
