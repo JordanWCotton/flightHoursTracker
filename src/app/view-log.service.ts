@@ -20,8 +20,7 @@ export class ViewLogService {
     }
 
     pullHourRange(dateRange) {
-        console.log('Pulling hour range:');
-        console.log(dateRange);
+        console.log('Pulling hour range!');
 
         return this.http.post('/data/flightlog/range', dateRange)
         .map(

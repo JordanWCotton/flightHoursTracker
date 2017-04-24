@@ -1100,6 +1100,7 @@ var FlightLogComponent = (function () {
     //Date range validation logic. Ensures users enter a date range from a point in the past to a point in the 
     //future. If they input an incorrect date range the button/date range display willd default back to current
     FlightLogComponent.prototype.sendDates = function () {
+        var _this = this;
         this.fromDate.year > this.toDate.year ? this.datesSubmitted = false //Failed
             : this.fromDate.month > this.toDate.month ? this.datesSubmitted = false //Failed
                 : this.fromDate.month < this.toDate.month ? this.datesSubmitted = true //Pass 
@@ -1110,8 +1111,11 @@ var FlightLogComponent = (function () {
             fromDate: this.fromDate
         };
         this.viewLog.pullHourRange(dateRange)
-            .subscribe(function (res) {
-            console.log(res);
+            .subscribe(function (flightData) {
+            console.log('Made it here');
+            console.log(flightData);
+            _this.flightCollection = [];
+            _this.flightCollection = flightData;
         });
     };
     FlightLogComponent.prototype.filterTotals = function () {
@@ -1411,8 +1415,7 @@ var ViewLogService = (function () {
         });
     };
     ViewLogService.prototype.pullHourRange = function (dateRange) {
-        console.log('Pulling hour range:');
-        console.log(dateRange);
+        console.log('Pulling hour range!');
         return this.http.post('/data/flightlog/range', dateRange)
             .map(function (response) {
             var range = response.json();

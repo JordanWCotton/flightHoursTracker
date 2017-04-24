@@ -152,8 +152,11 @@ export class FlightLogComponent implements OnInit {
 
     this.viewLog.pullHourRange(dateRange)
     .subscribe (
-      (res) => {
-       console.log(res);
+      (flightData) => {
+        console.log('Made it here');
+       console.log(flightData);
+       this.flightCollection = [];
+       this.flightCollection = flightData;
       }
     );
   }
