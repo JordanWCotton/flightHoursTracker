@@ -1046,7 +1046,7 @@ var FlightLogComponent = (function () {
             _this.flightSymbolSort(flightData);
             _this.dutySymbolSort(flightData);
         });
-        this.roundHours(); //Shows previously saved hours while waiting for server response to pull hours
+        //this.roundHours(); //Shows previously saved hours while waiting for server response to pull hours
     };
     //Only way to allow .toFixed(1) to be called on hours, was to reassign them to new local variables
     //ensuring correct addition of hours for their display
@@ -1112,10 +1112,7 @@ var FlightLogComponent = (function () {
         };
         this.viewLog.pullHourRange(dateRange)
             .subscribe(function (flightData) {
-            console.log('Made it here');
-            console.log(flightData);
-            _this.flightCollection = [];
-            _this.flightCollection = flightData;
+            _this.displayHoursRange(flightData);
         });
     };
     FlightLogComponent.prototype.filterTotals = function () {
@@ -1123,6 +1120,13 @@ var FlightLogComponent = (function () {
     };
     FlightLogComponent.prototype.changeHoursDisplay = function () {
         this.showTotals = (!this.showTotals);
+    };
+    FlightLogComponent.prototype.displayHoursRange = function (flightData) {
+        this.flightCollection = [];
+        this.flightCollection = flightData;
+        this.flightSymbolSort(flightData);
+        this.dutySymbolSort(flightData);
+        //this.roundHours();
     };
     return FlightLogComponent;
 }());
