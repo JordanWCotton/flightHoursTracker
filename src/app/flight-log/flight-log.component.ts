@@ -78,7 +78,7 @@ export class FlightLogComponent implements OnInit {
           this.dutySymbolSort(flightData);
         } 
       );
-      //this.roundHours(); //Shows previously saved hours while waiting for server response to pull hours
+      this.roundHours(); //Shows previously saved hours while waiting for server response to pull hours
   }
 
   //Only way to allow .toFixed(1) to be called on hours, was to reassign them to new local variables
@@ -131,8 +131,6 @@ export class FlightLogComponent implements OnInit {
         : flightData[data].dutySymbol == 'IP' ? this.rawDutyHours.hoursIP += flightData[data].hours
         : flightData[data].dutySymbol == 'SP' ? this.rawDutyHours.hoursSP += flightData[data].hours : null;
       }
-
-      //this.sortTotalHours(flightData);
       this.roundHours(); 
     }
 
@@ -171,7 +169,6 @@ export class FlightLogComponent implements OnInit {
     this.flightCollection = flightData;
     this.flightSymbolSort(flightData);
     this.dutySymbolSort(flightData);
-    //this.roundHours();
   }
 
 }
