@@ -2,7 +2,8 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose'); 
 const mongodb = require('mongodb');
-const bodyParser = require('body-parser'); 
+const bodyParser = require('body-parser');
+const crypto = require('crypto'); 
 const router = express.Router();
 
 require('./user'); 
@@ -35,35 +36,43 @@ app.get('/app/main-menu');
 //Register a new user
 app.post('/app/register', (req, res) => { 
     let newUser = new User ();
-    newUser = req.body;
+    newUser.name = req.body.name;
+    newUser.email = req.body.email.toLowerCase();
+    
+    newUser.setPassword(req.body.password);
 
     db.collection('users').insertOne(newUser,(err, doc) => {
         if (!err) {
             res.sendStatus(200);
-            console.log('User created');
-        }
-    }) 
+        };
+    }); 
 });
 
-//Log a user and verify data
+//Log in user
 app.post('/app/login', (req, res) => {
-    let username = req.body.email;
+    let username = req.body.email.toLowerCase();
     let password = req.body.password;
     let validated = {
         key: false
     };
 
-    let cursor = db.collection('users').find({email: username, password: password});
+    let cursor = db.collection('users').find({email: username});
     cursor.toArray((err, results) => {
         if (err) throw err;
 
-        //If results is empty, log in did not match a user.
         if(!results.length) {
             res.send(validated);
         } else {
-            validated.key = true;
-            res.send(validated);
-            currentUser = username; //Sets current user to the user who was just validated
+            let salt = results[0].salt;
+            let hash = crypto.pbkdf2Sync(password, salt, 1000, 512, 'sha512').toString('hex');
+            
+            if (results[0].hash === hash) {
+                validated.key = true;
+                res.send(validated);
+                currentUser = username; 
+            } else {
+                res.send(validated);
+            }
         }
     });
 });

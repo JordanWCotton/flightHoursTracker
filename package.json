@@ -30,7 +30,7 @@
     "express-jwt": "^5.1.0",
     "expresss": "0.0.0",
     "firebase": "^3.7.5",
-    "jsonwebtoken": "^7.3.0",
+    "jsonwebtoken": "^7.4.0",
     "mongodb": "^2.2.25",
     "mongoose": "^4.9.4",
     "ng2-datepicker": "^1.8.3",
