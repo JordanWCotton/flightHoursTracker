@@ -651,7 +651,7 @@ module.exports = "<div class=\"container-fluid\" id=\"landing-menu-container\"> 
 /***/ 348:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\" id=\"log-in-container\">   \n  <div class=\"row\">\n    <div class=\"col-8 offset-2\" id=\"title-container\">\n       <h1><span id=\"log-name\">Log</span><span id=\"it-name\">It</span></h1>\n      <h4>AH-64D/E</h4>\n    </div> \n  </div> \n  <form #f=\"ngForm\">\n  <div class=\"form-group\">\n  <div class=\"row\" id=\"email-input-div\">\n    <div class=\"col-8 offset-2\"> \n      <label>Email:</label> <br>\n      <input type=\"email\" name=\"email\" id=\"email-input\" ngModel class=\"form-control\">\n    </div>\n  </div>\n  <div class=\"row\" id=\"password-input-div\">\n    <div class=\"col-8 offset-2\">\n      <label>Password:</label> <br>\n      <input type=\"password\" name=\"password\" id=\"password-input\" ngModel class=\"form-control\">\n    </div>\n  </div> \n  <div class=\"row\" id=\"log-in-div\">\n    <div type=\"submit\" id=\"submit-button\" (click)=\"onSignIn(f)\"\n    class=\"col-4 offset-4 btn-info\">Sign In</div>\n    <button id=\"openModal\" #openModal [hidden]=\"true\" \n    data-toggle=\"modal\" data-target=\".bd-example-modal-sm\"></button>\n  </div>\n  </div>\n  </form>\n  <!--Log in fail notification modal -->\n  <div class=\"modal fade bd-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\"\n  aria-hidden=\"true\" id=\"validation-modal\">\n    <div class=\"modal-dialog modal-sm\">\n      <div class=\"modal-content\" id=\"validation-modal-content\">\n        <div class=\"modal-header\" id=\"validation-modal-header\">\n          <h3>Login credentials incorrect</h3>\n        </div>\n        <div class=\"modal-body\">\n          <p>You have failed to login, either the email or password you have provided is incorrect.\n            Please try again.</p>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn\" \n          data-dismiss=\"modal\" id=\"modal-close-button\">Close</button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container-fluid\" id=\"log-in-container\">   \n  <div class=\"row\">\n    <div class=\"col-8 offset-2\" id=\"title-container\">\n       <h1><span id=\"log-name\">Log</span><span id=\"it-name\">It</span></h1>\n      <h4>AH-64D/E</h4>\n    </div> \n  </div> \n  <form #f=\"ngForm\" (ngSubmit)=\"onSignIn(f)\">\n  <div class=\"form-group\">\n  <div class=\"row\" id=\"email-input-div\">\n    <div class=\"col-8 offset-2\"> \n      <label>Email:</label> <br>\n      <input type=\"email\" name=\"email\" id=\"email-input\" ngModel class=\"form-control\">\n    </div>\n  </div>\n  <div class=\"row\" id=\"password-input-div\">\n    <div class=\"col-8 offset-2\">\n      <label>Password:</label> <br>\n      <input type=\"password\" name=\"password\" id=\"password-input\" ngModel class=\"form-control\">\n    </div>\n  </div> \n  <div class=\"row\" id=\"log-in-div\">\n    <button type=\"submit\" id=\"submit-button\" (click)=\"onSignIn(f)\"\n    class=\"col-4 offset-4 btn-info\">Sign In</button>\n  </div>\n  </div>\n  </form>\n  <button id=\"openModal\" #openModal [hidden]=\"true\" \n    data-toggle=\"modal\" data-target=\".bd-example-modal-sm\"></button>\n  <!--Log in fail notification modal -->\n  <div class=\"modal fade bd-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\"\n  aria-hidden=\"true\" id=\"validation-modal\">\n    <div class=\"modal-dialog modal-sm\">\n      <div class=\"modal-content\" id=\"validation-modal-content\">\n        <div class=\"modal-header\" id=\"validation-modal-header\">\n          <h3>Login credentials incorrect</h3>\n        </div>\n        <div class=\"modal-body\">\n          <p>You have failed to login, either the email or password you have provided is incorrect.\n            Please try again.</p>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn\" \n          data-dismiss=\"modal\" id=\"modal-close-button\">Close</button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1046,7 +1046,7 @@ var FlightLogComponent = (function () {
             _this.flightSymbolSort(flightData);
             _this.dutySymbolSort(flightData);
         });
-        //this.roundHours(); //Shows previously saved hours while waiting for server response to pull hours
+        this.roundHours(); //Shows previously saved hours while waiting for server response to pull hours
     };
     //Only way to allow .toFixed(1) to be called on hours, was to reassign them to new local variables
     //ensuring correct addition of hours for their display
@@ -1094,7 +1094,6 @@ var FlightLogComponent = (function () {
                     : flightData[data].dutySymbol == 'IP' ? this.rawDutyHours.hoursIP += flightData[data].hours
                         : flightData[data].dutySymbol == 'SP' ? this.rawDutyHours.hoursSP += flightData[data].hours : null;
         }
-        //this.sortTotalHours(flightData);
         this.roundHours();
     };
     //Date range validation logic. Ensures users enter a date range from a point in the past to a point in the 
@@ -1126,7 +1125,6 @@ var FlightLogComponent = (function () {
         this.flightCollection = flightData;
         this.flightSymbolSort(flightData);
         this.dutySymbolSort(flightData);
-        //this.roundHours();
     };
     return FlightLogComponent;
 }());
