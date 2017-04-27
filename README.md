@@ -1,5 +1,5 @@
 # LogIt
-This is project is currently still under development. The front end is built using Angular, with Node.js framework Express handling server logic, and MongoDB with mongoose as the database. 
+This is project is currently still under development. The front end is built using Angular, with Node.js and Express handling the server side and API logic, and MongoDB as the database. 
 
 The project must be built before running on the development server.
 
