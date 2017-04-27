@@ -9,7 +9,7 @@
 
 #it-name {
     color: #FF533D;
-} 
+}  
 
 #log-name {
     color: #0F1626;
@@ -28,6 +28,10 @@
 
 #log-in-div {
     margin-top: 15%;
+}
+
+.menu-buttons {
+    font-family: 'Playfair Display', serif;
 }
 
 #signin-button {

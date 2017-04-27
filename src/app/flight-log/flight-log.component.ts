@@ -124,15 +124,15 @@ export class FlightLogComponent implements OnInit {
         this.roundHours();
     }
 
-    dutySymbolSort (flightData) {
-      for (let data in flightData) {
+    dutySymbolSort (flightData) { 
+      for (let data in flightData) { 
         flightData[data].dutySymbol == 'PI' ? this.rawDutyHours.hoursPI += flightData[data].hours
         : flightData[data].dutySymbol == 'PC' ? this.rawDutyHours.hoursPC += flightData[data].hours
         : flightData[data].dutySymbol == 'IP' ? this.rawDutyHours.hoursIP += flightData[data].hours
         : flightData[data].dutySymbol == 'SP' ? this.rawDutyHours.hoursSP += flightData[data].hours : null;
       }
       this.roundHours(); 
-    }
+    } 
 
   //Date range validation logic. Ensures users enter a date range from a point in the past to a point in the 
   //future. If they input an incorrect date range the button/date range display willd default back to current

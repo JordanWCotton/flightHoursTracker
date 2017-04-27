@@ -1,8 +1,8 @@
 <div class="container-fluid" id="add-new-flight-container">  
            <div class="row"> 
                 <div class="col-3">
-                    <div [routerLink]="['/main-menu']" class="btn-info" 
-                    id="back-icon">Back</div>
+                    <button [routerLink]="['/main-menu']" class="btn" 
+                    id="back-icon">Back</button>
                 </div>
                 <div class="col-8 offset-1" id="add-flight-title">
                     <p>Add Flight</p>
@@ -25,12 +25,12 @@
                 <div class="col-3 add-flight-list">
                     <p>Flight Symbol</p>
                 </div>
-                <div class="col-1 first-row-item"> 
+                <div class="col-1 first-row-item">
                     <div class="dropdown" id="elFlight" #elFlight>
-                        <div class="btn add-flight-selectors" type="button" id="flightDropdownOne"
+                        <button class="btn add-flight-selectors" type="button" id="flightDropdownOne"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <p>{{f.value.flightSymbolOne}}</p>
-                        </div>
+                            {{f.value.flightSymbolOne}}
+                        </button>
                         <ul class="dropdown-menu" aria-labelledby="flightDropdownOne">
                             <div *ngFor="let flightSymbol of flightSymbolsOne">
                                 <label>
@@ -44,10 +44,10 @@
                 </div>
                 <div class="col-1 next-row-item"> 
                     <div class="dropdown" id="elFlight" #elFlight>
-                        <div class="btn add-flight-selectors" type="button" id="flightDropdownTwo"
+                        <button class="btn add-flight-selectors" type="button" id="flightDropdownTwo"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <p>{{f.value.flightSymbolTwo}}</p>
-                        </div>
+                            {{f.value.flightSymbolTwo}}
+                        </button>
                         <ul class="dropdown-menu" aria-labelledby="flightDropdownTwo">
                             <div *ngFor="let flightSymbol of flightSymbolsTwo">
                                 <label>
@@ -61,10 +61,10 @@
                 </div>
                 <div class="col-1 next-row-item"> 
                     <div class="dropdown" id="elFlight" #elFlight>
-                        <div class="btn add-flight-selectors" type="button" id="flightDropdownThree"
+                        <button class="btn add-flight-selectors" type="button" id="flightDropdownThree"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <p>{{f.value.flightSymbolThree}}</p>
-                        </div>
+                            {{f.value.flightSymbolThree}}
+                        </button>
                         <ul class="dropdown-menu" aria-labelledby="flightDropdownThree">
                             <div *ngFor="let flightSymbol of flightSymbolsThree">
                                 <label>
@@ -83,10 +83,10 @@
                 </div>
                 <div class="col-1 first-row-item">
                     <div class="dropdown" #elDuty id="elDuty">
-                        <div class="btn add-flight-selectors" type="button" id="dutyDropdownOne"
+                        <button class="btn add-flight-selectors" type="button" id="dutyDropdownOne"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <p>{{f.value.dutySymbolOne}}</p>
-                        </div>
+                            {{f.value.dutySymbolOne}}
+                        </button>
                         <ul class="dropdown-menu" aria-labelledby="dutyDropdownOne">
                             <div *ngFor="let dutySymbol of dutySymbolsOne">
                                 <label>
@@ -100,10 +100,10 @@
                 </div>
                 <div class="col-1 next-row-item">
                     <div class="dropdown" #elDutyTwo id="elDutyTwo">
-                        <div class="btn add-flight-selectors" type="button" id="dutyDropdownTwo"
+                        <button class="btn add-flight-selectors" type="button" id="dutyDropdownTwo"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <p>{{f.value.dutySymbolTwo}}</p>
-                        </div>
+                            {{f.value.dutySymbolTwo}}
+                        </button>
                         <ul class="dropdown-menu" aria-labelledby="dutyDropdownTwo">
                             <div *ngFor="let dutySymbol of dutySymbolsTwo">
                                 <label>
@@ -117,10 +117,10 @@
                 </div>
                 <div class="col-1 next-row-item">
                     <div class="dropdown" #elDutyThree id="elDutyThree">
-                        <div class="btn add-flight-selectors" type="button" id="dutyDropdownThree"
+                        <button class="btn add-flight-selectors" type="button" id="dutyDropdownThree"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <p>{{f.value.dutySymbolThree}}</p>
-                        </div>
+                            {{f.value.dutySymbolThree}}
+                        </button>
                         <ul class="dropdown-menu" aria-labelledby="dutyDropdownThree">
                             <div *ngFor="let dutySymbol of dutySymbolsThree">
                                 <label>
@@ -168,10 +168,10 @@
                 </div>
                 <div class="col-1 first-row-item">
                     <div class="dropdown" #elSeat id="elSeat">
-                        <div class="btn add-flight-selectors" type="button" id="seatDropdownOne"
+                        <button class="btn add-flight-selectors" type="button" id="seatDropdownOne"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <p>{{f.value.seatOne}}</p> 
-                        </div>
+                            {{f.value.seatOne}} 
+                        </button>
                         <ul class="dropdown-menu" aria-labelledby="seatDropdownOne">
                             <div *ngFor="let seats of seatOne">
                                 <label>
@@ -185,10 +185,10 @@
                 </div>
                 <div class="col-1 next-row-item">
                     <div class="dropdown" #elSeatTwo id="elSeatTwo">
-                        <div class="btn add-flight-selectors" type="button" id="seatDropdownTwo"
+                        <button class="btn add-flight-selectors" type="button" id="seatDropdownTwo"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <p>{{f.value.seatTwo}}</p> 
-                        </div>
+                            {{f.value.seatTwo}} 
+                        </button>
                         <ul class="dropdown-menu" aria-labelledby="seatDropdownTwo">
                             <div *ngFor="let seats of seatTwo">
                                 <label>
@@ -202,10 +202,10 @@
                 </div>
                 <div class="col-1 next-row-item">
                     <div class="dropdown" #elSeatThree id="elSeatThree">
-                        <div class="btn add-flight-selectors" type="button" id="seatDropdownThree"
+                        <button class="btn add-flight-selectors" type="button" id="seatDropdownThree"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <p>{{f.value.seatThree}}</p> 
-                        </div>
+                            {{f.value.seatThree}} 
+                        </button>
                         <ul class="dropdown-menu" aria-labelledby="seatDropdownThree">
                             <div *ngFor="let seats of seatThree">
                                 <label>
@@ -215,7 +215,7 @@
                                 </label>
                             </div>
                         </ul>
-                    </div>
+                    </div> 
                 </div>
             </div> 
             <div class="row" id="last-list-row"> 
@@ -230,12 +230,12 @@
                 </div> 
             </div> 
             <div class="row">
-                <div class="col-1 offset-4" id="logit-button">
-                    <button class="btn" type="submit" id="submit-button" [disabled]=""
+                <!--<div class="col-1 offset-4" id="logit-button"> -->
+                    <button class="col-4 offset-4 btn" type="submit" id="submit-button" [disabled]=""
                     (click)="onSubmit(f)">Log It!</button>
                     <button id="openModalButton" #openModalButton [hidden]="true" data-toggle="modal"
                     data-target=".bd-example-modal-sm"></button>
-                </div>
+                <!--</div>-->
                 <!--Completion Modal-->
                 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
                 aria-hidden="true" id="successModal">

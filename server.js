@@ -13,7 +13,7 @@ const app = express();
 
 let distDir = __dirname + "/dist/";
 //Serves our angular app upon user landing on domain
-app.use(express.static(distDir));
+app.use(express.static(distDir)); 
  
 app.use(bodyParser.json());
 
@@ -22,7 +22,7 @@ let db;
 //Stores current logged in user for proper collection and data access 
 let currentUser = '';
 //Database credentials
-let username = ''; 
+let username = '';  
 let password = '';
 
 //Create express server listening on port 3000

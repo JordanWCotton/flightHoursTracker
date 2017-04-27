@@ -9,7 +9,7 @@
 
 #it-name {
     color: #FF533D;
-}
+} 
 
 #log-name {
     color: #0F1626;
@@ -34,6 +34,7 @@
     color: #F5F5F5;
     text-align: center;
     border-radius: 6px;
+    font-family: 'Playfair Display', serif;
 }
 
 #validation-modal-content {

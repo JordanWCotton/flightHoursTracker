@@ -5,7 +5,7 @@
       <h4>AH-64D/E</h4>
     </div>
   </div>
-  <form #f="ngForm">
+  <form #f="ngForm" (ngSubmit)="onSignUp(f)">
   <div class="form-group">
     <div class="row" id="name-input-div">
       <div class="col-8 offset-2">
@@ -26,13 +26,13 @@
       </div>
     </div>
     <div class="row" id="sign-up-div">
-        <div type="submit" (click)="onSignUp(f)" id="submit-button" 
-        class="col-4 offset-4 btn-info">Sign up</div>
-        <button id="openModal" #openModal [hidden]="true"
-        data-toggle="modal" data-target=".bd-example-modal-sm"></button>
+        <button type="submit" (click)="onSignUp(f)" id="submit-button" 
+        class="col-4 offset-4 btn">Sign up</button>
     </div>
   </div>
   </form>
+  <button id="openModal" #openModal [hidden]="true"
+  data-toggle="modal" data-target=".bd-example-modal-sm"></button>
   <!--Successful registration notification modal -->
   <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
   aria-hidden="true" id="register-modal">

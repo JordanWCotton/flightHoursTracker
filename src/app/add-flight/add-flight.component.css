@@ -2,7 +2,7 @@
  
 #add-new-flight-container {
     padding-top: 10px;
-    background-color: #AB987A; 
+    background-color: #AB987A;  
     height: 100vh; 
     color: #F5F5F5;
     font-family: 'Playfair Display', serif;
@@ -12,12 +12,13 @@
     margin-right: 5px;
     background-color: #FF533D;
     color: #F5F5F5;
+    font-family: 'Playfair Display', serif;
     text-align: center;
     border-radius: 6px;
 }
 
 #add-flight-title {
-    font-size: 120%;
+    font-size: 140%;
 }
 
 #page-breaker-line {
@@ -63,7 +64,7 @@ ul input {
 }
 
 .add-flight-selectors {
-    width: 90px;
+    font-family: 'Playfair Display', serif;
 }
 
 .add-flight-selectors p {
@@ -74,19 +75,23 @@ ul input {
     text-align: center;
     width: 60px;
     height: 40px;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 #flightDropdownOne, #flightDropdownTwo, #flightDropdownThree {
     background-color: #0F1626;
     color: #F5F5F5; 
-    width: 60px;
+    font-family: 'Playfair Display', serif;
+    width: 60px; /* try 80 */
+    border-radius: 6px;
 }
 
 #seatDropdownOne, #seatDropdownTwo, #seatDropdownThree {
     background-color: #0F1626;
     color: #F5F5F5; 
+    font-family: 'Playfair Display', serif;
     width: 60px;
+    border-radius: 6px;
 }
 
 #dutyDropdownOne, #dutyDropdownTwo, #dutyDropdownThree {
@@ -98,6 +103,9 @@ ul input {
 #submit-button {
     background-color: #FF533D;
     color: #F5F5F5;
+    font-family: 'Playfair Display', serif;
+    margin-top: 2%;
+    border-radius: 6px;
 }
 
 #submit-modal-content {
