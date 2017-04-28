@@ -1,10 +1,10 @@
 <div class="container-fluid" id="add-new-flight-container">  
-           <div class="row"> 
+           <div class="row">  
                 <div class="col-3">
-                    <button [routerLink]="['/main-menu']" class="btn" 
-                    id="back-icon">Back</button>
+                    <span class="typcn typcn-arrow-left-outline" [routerLink]="['/main-menu']"  
+                    id="back-icon"></span>
                 </div>
-                <div class="col-8 offset-1" id="add-flight-title">
+                <div class="col-6" id="add-flight-title">
                     <p>Add Flight</p>
                 </div>
             </div>
@@ -29,7 +29,9 @@
                     <div class="dropdown" id="elFlight" #elFlight>
                         <button class="btn add-flight-selectors" type="button" id="flightDropdownOne"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{f.value.flightSymbolOne}}
+                            <span *ngIf="f.value.flightSymbolOne == ''; else flightSymbolOneVal" 
+                            class="typcn typcn-th-menu"></span>
+                            <ng-template #flightSymbolOneVal>{{f.value.flightSymbolOne}}</ng-template>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="flightDropdownOne">
                             <div *ngFor="let flightSymbol of flightSymbolsOne">
@@ -41,12 +43,14 @@
                             </div>
                         </ul>
                     </div>
-                </div>
+                </div> 
                 <div class="col-1 next-row-item"> 
                     <div class="dropdown" id="elFlight" #elFlight>
                         <button class="btn add-flight-selectors" type="button" id="flightDropdownTwo"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{f.value.flightSymbolTwo}}
+                            <span *ngIf="f.value.flightSymbolTwo == ''; else flightSymbolTwoVal" 
+                            class="typcn typcn-th-menu"></span>
+                            <ng-template #flightSymbolTwoVal>{{f.value.flightSymbolTwo}}</ng-template>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="flightDropdownTwo">
                             <div *ngFor="let flightSymbol of flightSymbolsTwo">
@@ -63,7 +67,9 @@
                     <div class="dropdown" id="elFlight" #elFlight>
                         <button class="btn add-flight-selectors" type="button" id="flightDropdownThree"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{f.value.flightSymbolThree}}
+                            <span *ngIf="f.value.flightSymbolThree == ''; else flightSymbolThreeVal" 
+                            class="typcn typcn-th-menu"></span>
+                            <ng-template #flightSymbolThreeVal>{{f.value.flightSymbolThree}}</ng-template>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="flightDropdownThree">
                             <div *ngFor="let flightSymbol of flightSymbolsThree">
@@ -85,7 +91,9 @@
                     <div class="dropdown" #elDuty id="elDuty">
                         <button class="btn add-flight-selectors" type="button" id="dutyDropdownOne"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{f.value.dutySymbolOne}}
+                            <span *ngIf="f.value.dutySymbolOne == ''; else dutySymbolOneVal" 
+                            class="typcn typcn-th-menu"></span>
+                            <ng-template #dutySymbolOneVal>{{f.value.dutySymbolOne}}</ng-template>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dutyDropdownOne">
                             <div *ngFor="let dutySymbol of dutySymbolsOne">
@@ -102,7 +110,9 @@
                     <div class="dropdown" #elDutyTwo id="elDutyTwo">
                         <button class="btn add-flight-selectors" type="button" id="dutyDropdownTwo"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{f.value.dutySymbolTwo}}
+                            <span *ngIf="f.value.dutySymbolTwo == ''; else dutySymbolTwoVal" 
+                            class="typcn typcn-th-menu"></span>
+                            <ng-template #dutySymbolTwoVal>{{f.value.dutySymbolTwo}}</ng-template>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dutyDropdownTwo">
                             <div *ngFor="let dutySymbol of dutySymbolsTwo">
@@ -119,7 +129,9 @@
                     <div class="dropdown" #elDutyThree id="elDutyThree">
                         <button class="btn add-flight-selectors" type="button" id="dutyDropdownThree"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{f.value.dutySymbolThree}}
+                            <span *ngIf="f.value.dutySymbolThree == ''; else dutySymbolThreeVal" 
+                            class="typcn typcn-th-menu"></span>
+                            <ng-template #dutySymbolThreeVal>{{f.value.dutySymbolThree}}</ng-template>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dutyDropdownThree">
                             <div *ngFor="let dutySymbol of dutySymbolsThree">
@@ -170,7 +182,9 @@
                     <div class="dropdown" #elSeat id="elSeat">
                         <button class="btn add-flight-selectors" type="button" id="seatDropdownOne"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{f.value.seatOne}} 
+                            <span *ngIf="f.value.seatOne == ''; else seatOneVal" 
+                            class="typcn typcn-th-menu"></span>
+                            <ng-template #seatOneVal>{{f.value.seatOne}}</ng-template>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="seatDropdownOne">
                             <div *ngFor="let seats of seatOne">
@@ -187,7 +201,9 @@
                     <div class="dropdown" #elSeatTwo id="elSeatTwo">
                         <button class="btn add-flight-selectors" type="button" id="seatDropdownTwo"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{f.value.seatTwo}} 
+                            <span *ngIf="f.value.seatTwo == ''; else seatTwoVal" 
+                            class="typcn typcn-th-menu"></span>
+                            <ng-template #seatTwoVal>{{f.value.seatTwo}}</ng-template>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="seatDropdownTwo">
                             <div *ngFor="let seats of seatTwo">
@@ -204,7 +220,9 @@
                     <div class="dropdown" #elSeatThree id="elSeatThree">
                         <button class="btn add-flight-selectors" type="button" id="seatDropdownThree"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            {{f.value.seatThree}} 
+                            <span *ngIf="f.value.seatThree == ''; else seatThreeVal" 
+                            class="typcn typcn-th-menu"></span>
+                            <ng-template #seatThreeVal>{{f.value.seatThree}}</ng-template>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="seatDropdownThree">
                             <div *ngFor="let seats of seatThree">

@@ -2,29 +2,24 @@
 
 #flight-log-container {
     padding-top: 10px;
-    background-color: #AB987A; 
+    background-color: #F2F2F2; 
     height: 100vh; 
-    color: #F5F5F5;
     font-family: 'Playfair Display', serif;
 }
 
 #back-icon {
-    margin-right: 5px;
-    background-color: #FF533D;
-    color: #F5F5F5;
-    font-family: 'Playfair Display', serif;
-    text-align: center;
-    border-radius: 6px;
+    font-size: 200%;
 }
 
 #flight-log-title {
     font-size: 150%;
     text-align: center;
+    font-weight: 600;
 }
 
 .page-breaker-line {
     height: 1px;
-    background-color:#F5F5F5;
+    background-color:#2E2E2E;
 }
 
 #date-range-container {
@@ -33,31 +28,34 @@
 } 
 
 #modal-content-id {
-    background-color: #AB987A; 
-    color: #F5F5F5;
+    background-color: #F2F2F2; 
+    color: #2E2E2E;
 }
 
 #close-daterange-modal {
-    background-color: #FF533D;
-    color: #F5F5F5;
+    background-color: #8FC4D9;
+    color: #2E2E2E;
+    font-weight: 800;
 }
 
 #save-daterange-modal {
-    background-color: #0F1626;
-    color: #F5F5F5;
+    background-color: #8FC4D9;
+    color: #2E2E2E;
+    font-weight: 800;
 }
 
 #date-range-button {
-    background-color: #0F1626;
-    color: #F5F5F5;
+    background-color: #8FC4D9;
+    color: #2E2E2E;
     margin-top: 3%;
     margin-bottom: 3%;
     border-radius: 6px;
     text-align: center;
+    font-weight: 800;
 }
 
 #exampleModelLabel h5 {
-    color: #373D3F;
+    color: #2E2E2E;
 }
 
 .add-flight-list {
@@ -68,7 +66,7 @@
     text-align: center;
 }
 .hours-box p {
-    border: 2px solid #272D2D;
+    border: 2px solid #2E2E2E;
 }
 
 #filter-buttons {
@@ -76,8 +74,9 @@
 }
 
 #filterButton, #reqdButton {
-    background-color: #FF533D;
-    color: #F5F5F5;
+    background-color: #8FC4D9;
+    color: #2E2E2E;
+    font-weight: 800;
     text-align: center;
     border-radius: 6px;
     margin-top: 5%;
@@ -96,8 +95,8 @@
     height: 85%;
     border-radius: 10px;
     margin-top: 5%;
-    background-color: #0F1626;
-    color: #F5F5F5;
+    background-color: #8FC4D9;
+    color: #2E2E2E;
 }
 
 #big-flight-log {
@@ -113,18 +112,21 @@
 }
 
 #view-totals-btn {
-    background-color: #0F1626;
-    color: #F5F5F5;
+    background-color: #8FC4D9;
+    color: #2E2E2E;
+    font-weight: 800;
 }
 
 #edit-flights-btn {
-    background-color: #FF533D;
-    color: #F5F5F5;
+    background-color: #8FC4D9;
+    color: #2E2E2E;
+    font-weight: 800;
 }
 
 #show-flight-list {
-    background-color: #0F1626;
-    color: #F5F5F5;
+    background-color: #8FC4D9;
+    color: #2E2E2E;
+    font-weight: 800;
     margin-top: 3%;
 }
 

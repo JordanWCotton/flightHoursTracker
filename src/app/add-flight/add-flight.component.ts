@@ -39,25 +39,25 @@ export class AddFlightComponent {
  
   //Static values for our user input menus
   seatOne = [
-    { value: '---'},
+    { value: ''},
     { value: 'F'}, 
     { value: 'B'}
   ];
 
   seatTwo = [
-    { value: '---'},
+    { value: ''},
     { value: 'F'}, 
     { value: 'B'}
   ];
 
   seatThree = [
-    { value: '---'},
+    { value: ''},
     { value: 'F'}, 
     { value: 'B'}
   ];
 
   dutySymbolsOne = [
-    { value: '---'},
+    { value: ''},
     { value: 'PI'},
     { value: 'PC'},
     { value: 'IP'},
@@ -65,7 +65,7 @@ export class AddFlightComponent {
   ];
 
   dutySymbolsTwo = [
-    { value: '---'},
+    { value: ''},
     { value: 'PI'},
     { value: 'PC'},
     { value: 'IP'},
@@ -73,7 +73,7 @@ export class AddFlightComponent {
   ];
 
   dutySymbolsThree = [
-    { value: '---'},
+    { value: ''},
     { value: 'PI'},
     { value: 'PC'},
     { value: 'IP'},
@@ -81,7 +81,7 @@ export class AddFlightComponent {
   ];
 
   flightSymbolsOne = [
-    { value: '---'},
+    { value: ''},
     { value: 'Day'},
     { value: 'Night'},
     { value: 'Sim'},
@@ -93,7 +93,7 @@ export class AddFlightComponent {
   ];
 
   flightSymbolsTwo = [
-    { value: '---' },
+    { value: '' },
     { value: 'Day'},
     { value: 'Night'},
     { value: 'Sim'},
@@ -105,7 +105,7 @@ export class AddFlightComponent {
   ];
 
   flightSymbolsThree = [
-    { value: '---'},
+    { value: ''},
     { value: 'Day'},
     { value: 'Night'},
     { value: 'Sim'},

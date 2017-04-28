@@ -1,18 +1,16 @@
 /* Main Menu page */ 
-
 #main-menu-container {
-    background-color: #AB987A;
+    background-color: #F2F2F2;
     height: 100vh; 
-    color: #F5F5F5;
     font-family: 'Playfair Display', serif;
 }
 
 #it-name {
-    color: #FF533D;
+    color: #8FC4D9;
 }
 
 #log-name {
-    color: #0F1626;
+    color: #2E2E2E;
 }
 
 #title-container {
@@ -21,15 +19,9 @@
     border-radius: 10px;
 }
  
-#new-flight, #weather {
-    background-color: #FF533D;
-    color: #F5F5F5;
-    
-}
-
-#view-log, #notams {
-    background-color: #0F1626;
-    color: #F5F5F5;
+#new-flight, #weather, #view-log, #notams {
+    background-color: #8FC4D9;
+    color: #2E2E2E;
 }
 
 .main-menu-item {
@@ -37,6 +29,7 @@
     margin-top: 1%;
     border-radius: 6px;
     font-family: 'Playfair Display', serif;
+    font-weight: 800;
 }
 
 .main-menu-item p {
@@ -48,8 +41,8 @@
 }
 
 #logout-button {
-    background-color: #FF533D;
-    color: #F5F5F5;
+    background-color: #8FC4D9;
+    color: #2E2E2E;
     border-radius: 6px;
 }
 

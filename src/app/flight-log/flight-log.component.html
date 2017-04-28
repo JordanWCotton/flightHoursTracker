@@ -1,8 +1,8 @@
 <div class="container-fluid" id="flight-log-container">  
     <div class="row">
         <div class="col-3">
-            <button [routerLink]="['/main-menu']" class="btn" 
-            id="back-icon">Back</button>
+            <span class="typcn typcn-arrow-left-outline" 
+            [routerLink]="['/main-menu']" id="back-icon"></span>
         </div>
         <div class="col-6" id="flight-log-title">
             <p>Flight Log</p>
@@ -13,7 +13,7 @@
         <!--Controls date picker modal-->
         <div class="col-4 offset-4 btn-info" id="date-range-button" data-toggle="modal" 
         data-target="#myModal">
-            <span *ngIf="!datesSubmitted; else elseSpan">Current</span>
+            <span class="typcn typcn-th-menu" *ngIf="!datesSubmitted; else elseSpan"> Current</span>
             <ng-template #elseSpan id="date-span">{{fromDate.formatted}} <br>TO<br> {{toDate.formatted}}</ng-template>
         </div>
         <!--date picker modal-->
@@ -87,7 +87,6 @@
                 <button id="rmk-button">Rmk</button>
             </div>
         </div>
-         <div class="page-breaker-line"></div>
     </div>
     </div>
     <div class="row low-button-row">
@@ -105,8 +104,7 @@
     </div>
     </div>
     <ng-template #hourTotalsDiv>
-    <div *ngIf="!sortByDuty; else dutyHoursDiv">
-    <div class="page-breaker-line"></div>       
+    <div *ngIf="!sortByDuty; else dutyHoursDiv">      
     <div class="row">
         <div class="col-5 offset-1 add-flight-list">
             <p>Total Hours</p>
@@ -179,10 +177,8 @@
             {{simHours}}
         </div>
     </div>
-    <div class="page-breaker-line"></div>
     </div>
     <ng-template #dutyHoursDiv>
-    <div class="page-breaker-line"></div>
     <div class="row">
         <div class="col-5 offset-1 add-flight-list">
             <p>Total Hours</p>
@@ -223,7 +219,6 @@
             {{hoursSP}}
         </div>
     </div>
-    <div class="page-breaker-line"></div> 
     </ng-template>
     <div class="row" id="filter-buttons">
         <div class="col-3 offset-2 btn-info" id="filterButton"

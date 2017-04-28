@@ -44,7 +44,7 @@ export class AddFlightService {
     this.flightData.flightOne.dutySymbol = formData.dutySymbolOne;
     this.flightData.flightOne.seat = formData.seatOne;
 
-    if (formData.flightSymbolTwo !== '---') {
+    if (formData.flightSymbolTwo !== '') {
       this.flightData.flightTwo.date = formData.date;
       this.flightData.flightTwo.hours = formData.hoursTwo;
       this.flightData.flightTwo.remarks = formData.remarks;
@@ -57,7 +57,7 @@ export class AddFlightService {
 
     
 
-    if (formData.flightSymbolThree !== '---') {
+    if (formData.flightSymbolThree !== '') {
       this.flightData.flightThree.date = formData.date;
       this.flightData.flightThree.hours = formData.hoursThree;
       this.flightData.flightThree.remarks = formData.remarks;
