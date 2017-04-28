@@ -1,4 +1,8 @@
 # LogIt
+LogIt is an easy to use application that takes the hassle out of keeping personal track of flight hours for Army Rotary Wing Aviators. This application also allows pilots to view where ththeir ATP requirements for the remainder of their training period. 
+
+
+
 This project is currently still under development. The front end is built using Angular, with Node.js and Express handling the server side and API logic, and MongoDB as the database. 
 
 The project must be built before running on the development server.
