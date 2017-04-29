@@ -12,7 +12,6 @@ const User = mongoose.model('User');
 const app = express(); 
 
 let distDir = __dirname + "/dist/";
-//Serves our angular app upon user landing on domain
 app.use(express.static(distDir)); 
  
 app.use(bodyParser.json());
