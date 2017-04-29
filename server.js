@@ -20,9 +20,10 @@ app.use(bodyParser.json());
 let db;
 //Stores current logged in user for proper collection and data access 
 let currentUser = '';
+
 //Database credentials
-let username = '';  
-let password = '';
+let username = 'db2_user5';  
+let password = 'Password';
 
 //Create express server listening on port 3000
 app.listen(process.env.PORT || 3000, () => {
