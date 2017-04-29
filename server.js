@@ -177,10 +177,6 @@ mongodb.MongoClient.connect('mongodb://' + username + ':' + password + '@ds15582
     console.log('DB connected'); 
 });
 
-/* app.get('/', (req, res) => {
-  res.sendFile(distDir);
-}); */
-
 //##Routes for the SPA. Will handle the user refreshing the page, by resending the same page to Angular##
 app.get('/sign-up', (req, res) => {
   res.sendFile(distDir);
