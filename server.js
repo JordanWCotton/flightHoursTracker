@@ -22,16 +22,20 @@ let db;
 let currentUser = '';
 
 //Database credentials
-let username = 'db2_user5';  
-let password = 'Password';
+let username = '';  
+let password = ''; 
 
-//Create express server listening on port 3000
-app.listen(process.env.PORT || 3000, () => {
-    console.log('Express started')
-}); 
+//Connect to database
+mongodb.MongoClient.connect('mongodb://' + username + ':' + password + '@ds155820.mlab.com:55820/test-land', (err, database) => {
+    db = database;
+    if (err) console.log(err);
+    console.log('DB connected'); 
 
-//Get main-menu for users authorized
-app.get('/app/main-menu');
+    //Create express server listening on port 3000
+    app.listen(process.env.PORT || 3000, () => {
+        console.log('Express started')
+    });
+});
 
 //Register a new user
 app.post('/app/register', (req, res) => { 
@@ -170,12 +174,7 @@ app.post('/data/flightlog/range', (req, res) => {
     });
 })
 
-//Connect to database
-mongodb.MongoClient.connect('mongodb://' + username + ':' + password + '@ds155820.mlab.com:55820/test-land', (err, database) => {
-    db = database;
-    if (err) console.log(err);
-    console.log('DB connected'); 
-});
+
 
 //##Routes for the SPA. Will handle the user refreshing the page, by resending the same page to Angular##
 app.get('/sign-up', (req, res) => {
