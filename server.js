@@ -22,11 +22,10 @@ let db;
 let currentUser = '';
 
 //Database credentials
-let username = '4db_user1';  
-let password = 'Password1'; 
+let dbURI = process.env.MONGODB_URI;
 
 //Connect to database
-mongodb.MongoClient.connect('mongodb://' + username + ':' + password + '@ds155820.mlab.com:55820/test-land', (err, database) => {
+mongodb.MongoClient.connect(dbURI, (err, database) => {
     db = database;
     if (err) console.log(err);
     console.log('DB connected'); 

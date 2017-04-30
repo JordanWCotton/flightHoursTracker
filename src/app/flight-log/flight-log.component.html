@@ -4,17 +4,17 @@
             <span [routerLink]="['/main-menu']" id="back-icon">Back</span>
         </div>
         <div class="col-6" id="flight-log-title">
-            <p>Flight Log</p>
+            <p>Flight Log</p> 
         </div> 
     </div>
     <div class="page-breaker-line"></div>
     <div class="row">
         <!--Controls date picker modal-->
-        <div class="col-4 offset-4 btn-info" id="date-range-button">
+        <button class="col-4 offset-4 btn" id="date-range-button">
             <span class="typcn typcn-th-menu" *ngIf="!datesSubmitted; else elseSpan" data-toggle="modal" 
             data-target="#myModal"> Current</span>
             <ng-template #elseSpan id="date-span">{{fromDate.formatted}} <br>TO<br> {{toDate.formatted}}</ng-template>
-        </div>
+        </button>
         <!--date picker modal-->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="#exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">

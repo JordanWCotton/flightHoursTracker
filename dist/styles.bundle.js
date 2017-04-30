@@ -108,7 +108,7 @@ exports.i(__webpack_require__(331), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Playfair+Display);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\n\nbody {\n    margin: 0px;\n}\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\n\nbody {\n    margin: 0px;\n    height: 100%;\n    width: 100%;\n}\n", ""]);
 
 // exports
 
