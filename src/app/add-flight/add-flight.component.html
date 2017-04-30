@@ -29,8 +29,8 @@
                     <div class="dropdown" id="elFlight" #elFlight>
                         <button class="btn add-flight-selectors" type="button" id="flightDropdownOne"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <span *ngIf="f.value.flightSymbolOne == ''; else flightSymbolOneVal" 
-                            class="typcn typcn-th-menu"></span>
+                            <i *ngIf="f.value.flightSymbolOne == ''; else flightSymbolOneVal" 
+                            class="material-icons">menu</i>
                             <ng-template #flightSymbolOneVal>{{f.value.flightSymbolOne}}</ng-template>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="flightDropdownOne">

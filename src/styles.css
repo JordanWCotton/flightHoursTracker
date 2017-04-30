@@ -1,20 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
-@import "../node_modules/typicons.font/src/font/typicons.css";
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 
 body {
     margin: 0px;
-}
-
-@font-face {
-  font-family: 'typicons';
-  src: url("../node_modules/typicons.font/src/font/typicons.eot");
-  src: url("../node_modules/typicons.font/src/font/typicons.eot?#iefix") format('embedded-opentype');
-  src: url("../node_modules/typicons.font/src/font/typicons.woff") format('woff');
-  src: url("../node_modules/typicons.font/src/font/typicons.ttf") format('truetype');
-  src: url("../node_modules/typicons.font/src/font/typicons.svg#typicons") format('svg');
-  font-weight: normal;
-  font-style: normal;
 }
