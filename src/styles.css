@@ -10,11 +10,11 @@ body {
 
 @font-face {
   font-family: 'typicons';
-  src: url("typicons.eot");
-  src: url("typicons.eot?#iefix") format('embedded-opentype');
-  src: url("typicons.woff") format('woff');
-  src: url("typicons.ttf") format('truetype');
-  src: url("typicons.svg#typicons") format('svg');
+  src: url("../node_modules/typicons.font/src/font/typicons.eot");
+  src: url("../node_modules/typicons.font/src/font/typicons.eot?#iefix") format('embedded-opentype');
+  src: url("../node_modules/typicons.font/src/font/typicons.woff") format('woff');
+  src: url("../node_modules/typicons.font/src/font/typicons.ttf") format('truetype');
+  src: url("../node_modules/typicons.font/src/font/typicons.svg#typicons") format('svg');
   font-weight: normal;
   font-style: normal;
 }

@@ -145,7 +145,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Pla
 exports.i(__webpack_require__(336), "");
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\n\nbody {\n    margin: 0px;\n}\n\n@font-face {\n  font-family: 'typicons';\n  src: url(" + __webpack_require__(52) + ");\n  src: url(" + __webpack_require__(52) + "?#iefix) format('embedded-opentype'),\n       url(" + __webpack_require__(267) + ") format('woff'),\n       url(" + __webpack_require__(266) + ") format('truetype'),\n       url(" + __webpack_require__(112) + "#typicons) format('svg');\n  font-weight: normal;\n  font-style: normal;\n}", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\n\nbody {\n    margin: 0px;\n}\n\n@font-face {\n  font-family: 'typicons';\n  src: url(" + __webpack_require__(52) + ");\n  src: url(" + __webpack_require__(52) + "?#iefix) format('embedded-opentype');\n  src: url(" + __webpack_require__(267) + ") format('woff');\n  src: url(" + __webpack_require__(266) + ") format('truetype');\n  src: url(" + __webpack_require__(112) + "#typicons) format('svg');\n  font-weight: normal;\n  font-style: normal;\n}", ""]);
 
 // exports
 
