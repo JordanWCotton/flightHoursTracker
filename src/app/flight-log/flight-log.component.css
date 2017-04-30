@@ -27,9 +27,9 @@
     background-color:#2E2E2E;
 }
 
-#date-range-container {
-    margin-top: 3%;
-    text-align: center;
+#date-range-row {
+    margin-top: 2%;
+    margin-bottom: 1%;
 } 
 
 #modal-content-id {
@@ -53,10 +53,23 @@
     background-color: #8FC4D9;
     color: #2E2E2E;
     font-family: 'Playfair Display', serif;
-    margin-top: 3%;
-    margin-bottom: 3%;
+    margin-bottom: 2%;
     border-radius: 6px;
     text-align: center;
+    font-weight: 800;
+}
+
+#new-range-button {
+    background-color: #8FC4D9;
+    color: #2E2E2E;
+    font-family: 'Playfair Display', serif;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 800;
+}
+
+#date-range {
+    color: #2E2E2E; 
     font-weight: 800;
 }
 
@@ -107,7 +120,7 @@
 }
 
 #big-flight-log {
-    height: 420px;
+    height: 400px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -143,7 +156,7 @@
 
 @media only screen and (max-height: 570px) {
     #big-flight-log {
-        height: 355px;
+        height: 325px;
     }
 }
 

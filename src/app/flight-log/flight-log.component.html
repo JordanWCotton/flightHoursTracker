@@ -8,13 +8,18 @@
         </div> 
     </div>
     <div class="page-breaker-line"></div>
-    <div class="row">
+    <div class="row" id="date-range-row">
         <!--Controls date picker modal-->
-        <button class="col-4 offset-4 btn" id="date-range-button">
-            <span class="typcn typcn-th-menu" *ngIf="!datesSubmitted; else elseSpan" data-toggle="modal" 
-            data-target="#myModal"> Current</span>
-            <ng-template #elseSpan id="date-span">{{fromDate.formatted}} <br>TO<br> {{toDate.formatted}}</ng-template>
+        <button class="col-4 offset-4 btn" id="date-range-button" *ngIf="!datesSubmitted; else elseSpan">
+            <span data-toggle="modal" data-target="#myModal">Select range</span>
         </button>
+        <ng-template #elseSpan>
+            <div class="col-7 offset-1" id="date-range">
+                {{fromDate.formatted}} TO {{toDate.formatted}}
+            </div>
+            <button class="col-2 btn" data-toggle="modal" 
+            data-target="#myModal" id="new-range-button">New</button>
+        </ng-template>
         <!--date picker modal-->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="#exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
