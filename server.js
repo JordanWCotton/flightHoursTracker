@@ -22,8 +22,8 @@ let db;
 let currentUser = '';
 
 //Database credentials
-let username = '';  
-let password = ''; 
+let username = '4db_user1';  
+let password = 'Password1'; 
 
 //Connect to database
 mongodb.MongoClient.connect('mongodb://' + username + ':' + password + '@ds155820.mlab.com:55820/test-land', (err, database) => {
@@ -31,7 +31,7 @@ mongodb.MongoClient.connect('mongodb://' + username + ':' + password + '@ds15582
     if (err) console.log(err);
     console.log('DB connected'); 
 
-    //Create express server listening on port 3000
+    //Create express server 
     app.listen(process.env.PORT || 3000, () => {
         console.log('Express started')
     });
@@ -99,7 +99,7 @@ app.post('/data/log-flight', (req, res) => {
     db.collection(collection).insertOne(newFlightOne, (err, doc) => {
         if (!err) { 
             res.sendStatus(200);
-        };
+        } 
     });
  
     //If the user submitted the flight with multiple profiles, log those as well, as separate flights
@@ -199,3 +199,7 @@ app.get('/flight-log', (req, res) => {
 
 //#########ERROR HANDLERS ###################
 
+function errorHandle (res, reason, message, code) {
+    console.log("Error: " + reason);
+    res.status(code || 500).json({'error': message});
+}
