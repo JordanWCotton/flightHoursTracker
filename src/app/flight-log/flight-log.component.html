@@ -6,7 +6,7 @@
         <div class="col-6" id="flight-log-title">
             <p>Flight Log</p> 
         </div> 
-    </div>
+    </div> 
     <div class="page-breaker-line"></div>
     <div class="row" id="date-range-row">
         <!--Controls date picker modal-->
@@ -88,7 +88,7 @@
                 {{flights.seat}}
             </div>
             <div class="log-display" id="remarks-display-row">
-                <button id="rmk-button">Rmk</button>
+                <button id="rmk-button" (click)="showFlightRemarks(flights.remarks)">Rmk</button>
             </div>
         </div>
     </div>
@@ -220,7 +220,7 @@
             <p>SP</p>
         </div>
         <div class="col-3 offset-1 hours-box">
-            {{hoursSP}}
+            {{hoursSP}} 
         </div>
     </div>
     </ng-template>
@@ -238,4 +238,22 @@
         </div>
     </div>
     </ng-template>
+    <button id="openModalButton" #openModalButton [hidden]="true" data-toggle="modal"
+    data-target="#remarksModel"></button>
+    <div class="modal fade" id="remarksModel" tabindex="-1" role="dialog" aria-labelledby="#exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="modal-content-id">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Flight Remarks</h5>
+                </div>
+                <div class="modal-body">
+                    {{currentRemarks}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" id="close-remarks-modal" 
+                    data-dismiss="modal">Close</button>
+                 </div>
+            </div>
+        </div>
+    </div>
 </div>

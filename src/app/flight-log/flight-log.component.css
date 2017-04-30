@@ -27,7 +27,7 @@
     background-color:#2E2E2E;
 }
 
-#date-range-row {
+#date-range-row { 
     margin-top: 2%;
     margin-bottom: 1%;
 } 
@@ -38,6 +38,12 @@
 }
 
 #close-daterange-modal {
+    background-color: #8FC4D9;
+    color: #2E2E2E;
+    font-weight: 800;
+}
+
+#close-remarks-modal {
     background-color: #8FC4D9;
     color: #2E2E2E;
     font-weight: 800;

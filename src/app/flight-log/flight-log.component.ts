@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';   
+import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';   
 import { Response } from '@angular/http';
 
 import { ViewLogService } from '../view-log.service';
@@ -11,6 +11,8 @@ import { DatePickerOptions, DateModel } from 'ng2-datepicker';
   styleUrls: ['./flight-log.component.css']
 })
 export class FlightLogComponent implements OnInit {
+  @ViewChild('openModalButton') openModal:ElementRef;
+
   public fromOptions: DatePickerOptions;
   public toOptions: DatePickerOptions;
   public fromDate: DateModel;
@@ -20,6 +22,7 @@ export class FlightLogComponent implements OnInit {
   datesInvalid: boolean = false;
   sortByDuty: boolean = false; 
   showTotals: boolean = false; 
+  currentRemarks = '';
 
   //Holds the raw flight symbol hours after being sorted, before being rounded
   rawFlightHours = {
@@ -169,6 +172,11 @@ export class FlightLogComponent implements OnInit {
     this.flightCollection = flightData;
     this.flightSymbolSort(flightData);
     this.dutySymbolSort(flightData);
+  }
+
+  showFlightRemarks (remarks) {
+    this.currentRemarks = remarks;
+    this.openModal.nativeElement.click();
   }
 
 }
