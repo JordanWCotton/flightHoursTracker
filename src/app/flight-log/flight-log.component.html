@@ -1,8 +1,7 @@
 <div class="container-fluid" id="flight-log-container">  
     <div class="row"> 
-        <div class="col-3">
-            <span class="typcn typcn-arrow-left-outline" 
-            [routerLink]="['/main-menu']" id="back-icon"></span>
+        <div class="col-3"> 
+            <span [routerLink]="['/main-menu']" id="back-icon">Back</span>
         </div>
         <div class="col-6" id="flight-log-title">
             <p>Flight Log</p>
@@ -11,9 +10,9 @@
     <div class="page-breaker-line"></div>
     <div class="row">
         <!--Controls date picker modal-->
-        <div class="col-4 offset-4 btn-info" id="date-range-button" data-toggle="modal" 
-        data-target="#myModal">
-            <span class="typcn typcn-th-menu" *ngIf="!datesSubmitted; else elseSpan"> Current</span>
+        <div class="col-4 offset-4 btn-info" id="date-range-button">
+            <span class="typcn typcn-th-menu" *ngIf="!datesSubmitted; else elseSpan" data-toggle="modal" 
+            data-target="#myModal"> Current</span>
             <ng-template #elseSpan id="date-span">{{fromDate.formatted}} <br>TO<br> {{toDate.formatted}}</ng-template>
         </div>
         <!--date picker modal-->

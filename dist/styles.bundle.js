@@ -106,7 +106,6 @@ exports = module.exports = __webpack_require__(19)();
 // imports
 exports.i(__webpack_require__(331), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Playfair+Display);", ""]);
-exports.push([module.i, "@import url(https://fonts.googleapis.com/icon?family=Material+Icons);", ""]);
 
 // module
 exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\n\nbody {\n    margin: 0px;\n}\n", ""]);

@@ -22,8 +22,8 @@ let db;
 let currentUser = '';
 
 //Database credentials
-let username = '4db_user1';  
-let password = 'Password1'; 
+let username = '';  
+let password = ''; 
 
 //Connect to database
 mongodb.MongoClient.connect('mongodb://' + username + ':' + password + '@ds155820.mlab.com:55820/test-land', (err, database) => {

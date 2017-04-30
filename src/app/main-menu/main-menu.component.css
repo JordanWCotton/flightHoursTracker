@@ -44,11 +44,9 @@
     background-color: #8FC4D9;
     color: #2E2E2E;
     border-radius: 6px;
+    margin-top: 20%;
 }
 
-#logout-button p {
-    margin: 0;
-}
 /*Mobile specific */
 @media only screen and (max-width: 840px) {
     #title-container {
