@@ -32,6 +32,10 @@
     margin-bottom: 1%;
 } 
 
+.header-row {
+    font-weight: 600;
+}
+
 #modal-content-id {
     background-color: #F2F2F2; 
     color: #2E2E2E;

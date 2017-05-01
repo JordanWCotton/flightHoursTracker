@@ -108,77 +108,146 @@
     </div>
     </div>
     <ng-template #hourTotalsDiv>
-    <div *ngIf="!sortByDuty; else dutyHoursDiv">      
+    <div *ngIf="!sortByDuty; else dutyHoursDiv">
     <div class="row">
-        <div class="col-5 offset-1 add-flight-list">
+        <div class="col-4 add-flight-list header-row">
+            <p>Symbol</p>
+        </div>
+        <div class="col-2 add-flight-list header-row">
+            <p>Flown</p>
+        </div>
+        <div class="col-2 add-flight-list header-row">
+            <p>Req</p>
+        </div>
+        <div class="col-2 add-flight-list header-row">
+            <p>Diff</p>
+        </div>
+    </div>   
+    <div class="page-breaker-line"></div>   
+    <div class="row">
+        <div class="col-4 add-flight-list">
             <p>Total Hours</p>
         </div>
-        <div class="col-3 offset-1 hours-box">
+        <div class="col-2 hours-box">
             {{totalHours}}
+        </div>
+        <div class="col-2 hours-box">
+            {{flightSymReq.totalHours}}
+        </div>
+        <div class="col-2 hours-box">
+            {{reqDifference.totalHours}}
         </div>
     </div>
     <div class="row flight-list-row">
-        <div class="col-5 offset-1 add-flight-list">
+        <div class="col-4 add-flight-list">
             <p>Day</p>
         </div>
-        <div class="col-3 offset-1 hours-box">
+        <div class="col-2 hours-box">
             {{dayHours}}
+        </div>
+        <div class="col-2 hours-box">
+            {{flightSymReq.dayHours}}
+        </div>
+        <div class="col-2 hours-box">
+            {{reqDifference.dayHours}}
         </div>
     </div>  
     <div class="row flight-list-row">
-        <div class="col-5 offset-1 add-flight-list">
+        <div class="col-4 add-flight-list">
             <p>NVS</p>
         </div>
-        <div class="col-3 offset-1 hours-box">
+        <div class="col-2 hours-box">
             {{nvsHours}}
         </div>
+        <div class="col-2 hours-box">
+            {{flightSymReq.nvsHours}}
+        </div>
+        <div class="col-2 hours-box">
+            {{reqDifference.nvsHours}}
+        </div>
     </div>
     <div class="row flight-list-row">
-        <div class="col-5 offset-1 add-flight-list">
+        <div class="col-4 add-flight-list">
             <p>NVG</p>
         </div>
-        <div class="col-3 offset-1 hours-box">
+        <div class="col-2 hours-box">
             {{nvgHours}}
         </div>
+        <div class="col-2 hours-box">
+            {{flightSymReq.nvgHours}}
+        </div>
+        <div class="col-2 hours-box">
+            {{reqDifference.nvgHours}}
+        </div>
     </div> 
     <div class="row flight-list-row">
-        <div class="col-5 offset-1 add-flight-list">
+        <div class="col-4 add-flight-list">
             <p>NVD</p>
         </div>
-        <div class="col-3 offset-1 hours-box">
+        <div class="col-2 hours-box">
             {{nvdHours}}
         </div>
+        <div class="col-2 hours-box">
+            {{flightSymReq.nvdHours}}
+        </div>
+        <div class="col-2 hours-box">
+            {{reqDifference.nvdHours}}
+        </div>
     </div> 
     <div class="row flight-list-row">
-        <div class="col-5 offset-1 add-flight-list">
+        <div class="col-4 add-flight-list">
             <p>Hood</p>
         </div>
-        <div class="col-3 offset-1 hours-box">
+        <div class="col-2 hours-box">
             {{hoodHours}}
         </div>
+        <div class="col-2 hours-box">
+            {{flightSymReq.hoodHours}}
+        </div>
+        <div class="col-2 hours-box">
+            {{reqDifference.hoodHours}}
+        </div>
     </div>
     <div class="row flight-list-row">
-        <div class="col-5 offset-1 add-flight-list">
+        <div class="col-4 add-flight-list">
             <p>Night</p>
         </div>
-        <div class="col-3 offset-1 hours-box">
+        <div class="col-2 hours-box">
             {{nightHours}}
+        </div>
+        <div class="col-2 hours-box">
+            {{flightSymReq.nightHours}}
+        </div>
+        <div class="col-2 hours-box">
+            {{reqDifference.nightHours}}
         </div>
     </div>
     <div class="row flight-list-row">
-        <div class="col-5 offset-1 add-flight-list">
+        <div class="col-4 add-flight-list">
             <p>Weather</p>
         </div>
-        <div class="col-3 offset-1 hours-box">
+        <div class="col-2 hours-box">
             {{weatherHours}}
+        </div>
+        <div class="col-2 hours-box">
+            {{flightSymReq.weatherHours}}
+        </div>
+        <div class="col-2 hours-box">
+            {{reqDifference.weatherHours}}
         </div>
     </div> 
     <div class="row flight-list-row">
-        <div class="col-5 offset-1 add-flight-list">
+        <div class="col-4 add-flight-list">
             <p>Sim</p>
         </div>
-        <div class="col-3 offset-1 hours-box">
+        <div class="col-2 hours-box">
             {{simHours}}
+        </div>
+        <div class="col-2 hours-box">
+            {{flightSymReq.simHours}}
+        </div>
+        <div class="col-2 hours-box">
+            {{reqDifference.simHours}}
         </div>
     </div>
     </div>

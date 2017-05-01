@@ -62,6 +62,42 @@ export class FlightLogComponent implements OnInit {
       hoursIP;
       hoursSP;
 
+      /* ### ATP Requirements ### */
+
+      flightSymReq = {
+        totalHours: 70,
+        dayHours: 20,
+        nvsHours: 10,
+        nvgHours: 10,
+        nvdHours: 10,
+        hoodHours: 5,
+        nightHours: 20,
+        weatherHours: 15,
+        simHours: 40
+      }
+
+      reqDifference = {
+        totalHours: 0,
+        dayHours: 0,
+        nvsHours: 0,
+        nvgHours: 0,
+        nvdHours: 0,
+        hoodHours: 0,
+        nightHours: 0,
+        weatherHours: 0,
+        simHours: 0 
+      }
+
+      totalMet: boolean = false;
+      dayMet: boolean = false;
+      nvsMet: boolean = false;
+      nvgMet: boolean = false;
+      nvdMet: boolean = false;
+      hoodMet: boolean = false;
+      nightMet: boolean = false;
+      weatherMet: boolean = false;
+      simMet: boolean = false;
+
   constructor(private viewLog: ViewLogService) { 
     this.fromOptions = new DatePickerOptions ({
       initialDate: this.todayDate
@@ -81,7 +117,6 @@ export class FlightLogComponent implements OnInit {
           this.dutySymbolSort(flightData);
         } 
       );
-      this.roundHours(); //Shows previously saved hours while waiting for server response to pull hours
   }
 
   //Only way to allow .toFixed(1) to be called on hours, was to reassign them to new local variables
@@ -164,6 +199,7 @@ export class FlightLogComponent implements OnInit {
   }
 
   changeHoursDisplay () {
+    this.calculateRequirements();
     this.showTotals = (!this.showTotals);
   }
 
@@ -177,6 +213,32 @@ export class FlightLogComponent implements OnInit {
   showFlightRemarks (remarks) {
     this.currentRemarks = remarks;
     this.openModal.nativeElement.click();
+  }
+
+  calculateRequirements () {
+    this.totalHours >= this.flightSymReq.totalHours ? this.totalMet = true : null;
+    this.dayHours >= this.flightSymReq.dayHours ? this.dayMet = true : null;
+    this.nvsHours >= this.flightSymReq.nvsHours ? this.nvsMet = true : null;
+    this.nvdHours >= this.flightSymReq.nvdHours ? this.nvdMet = true : null;
+    this.nvgHours >= this.flightSymReq.nvgHours ? this.nvgMet = true : null;
+    this.hoodHours >= this.flightSymReq.hoodHours ? this.hoodMet = true : null;
+    this.nightHours >= this.flightSymReq.nightHours ? this.nightMet = true : null;
+    this.simHours >= this.flightSymReq.simHours ? this.simMet = true : null;
+    this.weatherHours >= this.flightSymReq.weatherHours ? this.weatherMet = true : null;
+
+    this.calculateReqDiff();
+  }
+
+  calculateReqDiff () {
+    this.reqDifference.totalHours = this.flightSymReq.totalHours - this.totalHours;
+    this.reqDifference.dayHours = this.flightSymReq.dayHours - this.dayHours;
+    this.reqDifference.nvsHours = this.flightSymReq.nvsHours - this.nvsHours;
+    this.reqDifference.nvgHours = this.flightSymReq.nvgHours - this.nvgHours;
+    this.reqDifference.nvdHours = this.flightSymReq.nvdHours - this.nvdHours;
+    this.reqDifference.hoodHours = this.flightSymReq.hoodHours - this.hoodHours;
+    this.reqDifference.nightHours = this.flightSymReq.nightHours - this.nightHours;
+    this.reqDifference.weatherHours = this.flightSymReq.weatherHours - this.weatherHours;
+    this.reqDifference.simHours = this.flightSymReq.simHours - this.simHours;
   }
 
 }
