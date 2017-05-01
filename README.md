@@ -34,5 +34,7 @@ The application is still very much in development, and as such the currently imp
 + User can view flights in a specified range, displayed back to the user in chronological order.
 + User can view hour totals for each Duty Symbol, or for each Flight Symbol, as well as overall total hours to date.
 + User can view the above mentioned filtered hour totals for specific date ranges. 
++ User can view flight hour requirements on the hour totals screen.
++ User can see how many hours they have remaining to fulfil each specific requirement.
 
 
