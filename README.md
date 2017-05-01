@@ -30,6 +30,7 @@ The application is still very much in development, and as such the currently imp
 + User can add flights to their account.
 + Multi-profile flights are now supported, and can be submitted in groups of three.
 + User can view all logged flights, displayed in chronological order by the flight's date.
++ User can view the logged remarks for each individual flight.
 + User can view flights in a specified range, displayed back to the user in chronological order.
 + User can view hour totals for each Duty Symbol, or for each Flight Symbol, as well as overall total hours to date.
 + User can view the above mentioned filtered hour totals for specific date ranges. 
