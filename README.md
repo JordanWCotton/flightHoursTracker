@@ -8,10 +8,12 @@ The project must be built before running on the development server.
 There are two variables for the database username and password, note that you must supply these parameters to access the mongoDB server. It is highly suggested that you create your own at https://mlab.com/welcome/
 
 ## Installing
-Navigate to the project's folder and run `npm install`
+For placement in a production environment, you only need the contents of the 'dist' folder as well as the server.js and user.js files.
+
+For a development environment, simply navigate to the repo's folder after download and run `npm install`.
 
 ## Development server
-Ensure the project is built using `ng build`. Run `node server.js`, then navigate to `http://localhost:3000/`. 
+Ensure the project is built using `ng build`. Run `npm start` or `node server.js`, then navigate to `http://localhost:3000/`. 
 
 ## Build
 
