@@ -120,7 +120,7 @@
             <p>Req</p>
         </div>
         <div class="col-2 add-flight-list header-row">
-            <p>Diff</p>
+            <p>Rem</p>
         </div>
     </div>   
     <div class="page-breaker-line"></div>   
@@ -134,8 +134,9 @@
         <div class="col-2 hours-box">
             {{flightSymReq.totalHours}}
         </div>
-        <div class="col-2 hours-box">
-            {{reqDifference.totalHours}}
+        <div class="col-2 hours-box not-met" [ngClass]="{'is-met': totalMet}">
+            <span *ngIf="totalMet; else diffNum">0 </span>
+            <ng-template #diffNum>{{reqDifference.totalHours}}</ng-template>
         </div>
     </div>
     <div class="row flight-list-row">
@@ -148,8 +149,9 @@
         <div class="col-2 hours-box">
             {{flightSymReq.dayHours}}
         </div>
-        <div class="col-2 hours-box">
-            {{reqDifference.dayHours}}
+        <div class="col-2 hours-box not-met" [ngClass]="{'is-met': dayMet}">
+            <span *ngIf="dayMet; else diffDay">0 </span>
+            <ng-template #diffDay>{{reqDifference.dayHours}}</ng-template>
         </div>
     </div>  
     <div class="row flight-list-row">
@@ -162,8 +164,9 @@
         <div class="col-2 hours-box">
             {{flightSymReq.nvsHours}}
         </div>
-        <div class="col-2 hours-box">
-            {{reqDifference.nvsHours}}
+        <div class="col-2 hours-box not-met" [ngClass]="{'is-met': nvsMet}">
+            <span *ngIf="nvsMet; else diffNvs">0 </span>
+            <ng-template #diffNvs>{{reqDifference.nvsHours}}</ng-template>
         </div>
     </div>
     <div class="row flight-list-row">
@@ -176,8 +179,9 @@
         <div class="col-2 hours-box">
             {{flightSymReq.nvgHours}}
         </div>
-        <div class="col-2 hours-box">
-            {{reqDifference.nvgHours}}
+        <div class="col-2 hours-box not-met" [ngClass]="{'is-met': nvgMet}">
+            <span *ngIf="nvgMet; else diffNvg">0 </span>
+            <ng-template #diffNvg>{{reqDifference.nvgHours}}</ng-template>
         </div>
     </div> 
     <div class="row flight-list-row">
@@ -190,8 +194,9 @@
         <div class="col-2 hours-box">
             {{flightSymReq.nvdHours}}
         </div>
-        <div class="col-2 hours-box">
-            {{reqDifference.nvdHours}}
+        <div class="col-2 hours-box not-met" [ngClass]="{'is-met': nvdMet}">
+            <span *ngIf="nvdMet; else diffNvd">0 </span>
+            <ng-template #diffNvd>{{reqDifference.nvdHours}}</ng-template>
         </div>
     </div> 
     <div class="row flight-list-row">
@@ -204,8 +209,9 @@
         <div class="col-2 hours-box">
             {{flightSymReq.hoodHours}}
         </div>
-        <div class="col-2 hours-box">
-            {{reqDifference.hoodHours}}
+        <div class="col-2 hours-box not-met" [ngClass]="{'is-met': hoodMet}">
+            <span *ngIf="hoodMet; else diffHood">0 </span>
+            <ng-template #diffHood>{{reqDifference.hoodHours}}</ng-template>
         </div>
     </div>
     <div class="row flight-list-row">
@@ -218,8 +224,9 @@
         <div class="col-2 hours-box">
             {{flightSymReq.nightHours}}
         </div>
-        <div class="col-2 hours-box">
-            {{reqDifference.nightHours}}
+        <div class="col-2 hours-box not-met" [ngClass]="{'is-met': nightMet}">
+            <span *ngIf="nightMet; else diffNight">0 </span>
+            <ng-template #diffNight>{{reqDifference.nightHours}}</ng-template>
         </div>
     </div>
     <div class="row flight-list-row">
@@ -232,8 +239,9 @@
         <div class="col-2 hours-box">
             {{flightSymReq.weatherHours}}
         </div>
-        <div class="col-2 hours-box">
-            {{reqDifference.weatherHours}}
+        <div class="col-2 hours-box not-met" [ngClass]="{'is-met': weatherMet}">
+            <span *ngIf="weatherMet; else diffWeather">0 </span>
+            <ng-template #diffWeather>{{reqDifference.weatherHours}}</ng-template>
         </div>
     </div> 
     <div class="row flight-list-row">
@@ -246,8 +254,9 @@
         <div class="col-2 hours-box">
             {{flightSymReq.simHours}}
         </div>
-        <div class="col-2 hours-box">
-            {{reqDifference.simHours}}
+        <div class="col-2 hours-box not-met" [ngClass]="{'is-met': simMet}">
+            <span *ngIf="simMet; else diffSim">0 </span>
+            <ng-template #diffSim>{{reqDifference.simHours}}</ng-template>
         </div>
     </div>
     </div>

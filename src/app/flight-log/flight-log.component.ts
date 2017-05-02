@@ -117,6 +117,7 @@ export class FlightLogComponent implements OnInit {
           this.dutySymbolSort(flightData);
         } 
       );
+      this.roundHours(); //Allows initial display of total hours
   }
 
   //Only way to allow .toFixed(1) to be called on hours, was to reassign them to new local variables

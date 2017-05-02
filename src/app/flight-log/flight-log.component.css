@@ -164,6 +164,15 @@
     margin-top: 3%;
 }
 
+.not-met {
+    background-color: #e74c3c;
+    border-radius: 6px;
+}
+
+.is-met {
+    background-color: #27ae60;
+}
+
 @media only screen and (max-height: 570px) {
     #big-flight-log {
         height: 325px;
