@@ -7,13 +7,13 @@ const crypto = require('crypto');
 const router = express.Router();
 
 require('./user'); 
-const User = mongoose.model('User');
+const User = mongoose.model('User'); 
 
 const app = express(); 
 
 let distDir = __dirname + "/dist/";
 app.use(express.static(distDir)); 
- 
+  
 app.use(bodyParser.json());
 
 //Allows access to our database outside of connect method
@@ -58,7 +58,7 @@ app.post('/app/login', (req, res) => {
     let validated = {
         key: false
     };
-
+   
     let cursor = db.collection('users').find({email: username});
     cursor.toArray((err, results) => {
         if (err) throw err;

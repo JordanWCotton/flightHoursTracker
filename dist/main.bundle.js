@@ -27,6 +27,7 @@ var AuthService = (function () {
         this.token = false;
     }
     AuthService.prototype.signinUser = function (user) {
+        console.log('signinUser called');
         return this.http.post('/app/login', user);
     };
     AuthService.prototype.userSignIn = function () {
@@ -651,7 +652,7 @@ module.exports = "<div class=\"container-fluid\" id=\"landing-menu-container\"> 
 /***/ 348:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\" id=\"log-in-container\">   \n  <div class=\"row\">\n    <div class=\"col-8 offset-2\" id=\"title-container\">\n       <h1><span id=\"log-name\">Log</span><span id=\"it-name\">It</span></h1>\n      <h4>AH-64D/E</h4>\n    </div> \n  </div> \n  <form #f=\"ngForm\" (ngSubmit)=\"onSignIn(f)\">\n  <div class=\"form-group\"> \n  <div class=\"row\" id=\"email-input-div\"> \n    <div class=\"col-8 offset-2\"> \n      <label>Email:</label> <br>\n      <input type=\"email\" name=\"email\" id=\"email-input\" ngModel class=\"form-control\">\n    </div>\n  </div>\n  <div class=\"row\" id=\"password-input-div\">\n    <div class=\"col-8 offset-2\">\n      <label>Password:</label> <br>\n      <input type=\"password\" name=\"password\" id=\"password-input\" ngModel class=\"form-control\">\n    </div>\n  </div> \n  <div class=\"row\" id=\"log-in-div\">\n    <button type=\"submit\" id=\"submit-button\" (click)=\"onSignIn(f)\"\n    class=\"col-4 offset-4 btn\">Sign In</button>\n  </div>\n  </div>\n  </form>\n  <button id=\"openModal\" #openModal [hidden]=\"true\" \n  data-toggle=\"modal\" data-target=\".bd-example-modal-sm\"></button>\n  <!--Log in fail notification modal -->\n  <div class=\"modal fade bd-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\"\n  aria-hidden=\"true\" id=\"validation-modal\">\n    <div class=\"modal-dialog modal-sm\">\n      <div class=\"modal-content\" id=\"validation-modal-content\">\n        <div class=\"modal-header\" id=\"validation-modal-header\">\n          <h3>Login credentials incorrect</h3>\n        </div>\n        <div class=\"modal-body\">\n          <p>You have failed to login, either the email or password you have provided is incorrect.\n            Please try again.</p>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn\" \n          data-dismiss=\"modal\" id=\"modal-close-button\">Close</button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container-fluid\" id=\"log-in-container\">   \n  <div class=\"row\">\n    <div class=\"col-8 offset-2\" id=\"title-container\">\n       <h1><span id=\"log-name\">Log</span><span id=\"it-name\">It</span></h1>\n      <h4>AH-64D/E</h4>\n    </div> \n  </div> \n  <form #f=\"ngForm\" (ngSubmit)=\"onSignIn(f)\">\n  <div class=\"form-group\"> \n  <div class=\"row\" id=\"email-input-div\"> \n    <div class=\"col-8 offset-2\"> \n      <label>Email:</label> <br>\n      <input type=\"email\" name=\"email\" id=\"email-input\" ngModel class=\"form-control\">\n    </div>\n  </div>\n  <div class=\"row\" id=\"password-input-div\">\n    <div class=\"col-8 offset-2\">\n      <label>Password:</label> <br>\n      <input type=\"password\" name=\"password\" id=\"password-input\" ngModel class=\"form-control\">\n    </div>\n  </div> \n  <div class=\"row\" id=\"log-in-div\">\n    <button type=\"submit\" id=\"submit-button\" \n    class=\"col-4 offset-4 btn\">Sign In</button>\n  </div>\n  </div>\n  </form>\n  <button id=\"openModal\" #openModal [hidden]=\"true\" \n  data-toggle=\"modal\" data-target=\".bd-example-modal-sm\"></button>\n  <!--Log in fail notification modal -->\n  <div class=\"modal fade bd-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\"\n  aria-hidden=\"true\" id=\"validation-modal\">\n    <div class=\"modal-dialog modal-sm\">\n      <div class=\"modal-content\" id=\"validation-modal-content\">\n        <div class=\"modal-header\" id=\"validation-modal-header\">\n          <h3>Login credentials incorrect</h3>\n        </div>\n        <div class=\"modal-body\">\n          <p>You have failed to login, either the email or password you have provided is incorrect.\n            Please try again.</p>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn\" \n          data-dismiss=\"modal\" id=\"modal-close-button\">Close</button>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -1272,6 +1273,7 @@ var LogInComponent = (function () {
     };
     LogInComponent.prototype.onSignIn = function (form) {
         var _this = this;
+        console.log('onSignIn called');
         this.auth.signinUser(form.value)
             .subscribe(function (res) {
             var validation = res.json();
@@ -1373,12 +1375,12 @@ var AuthenticationGuard = (function () {
         this.router = router;
     }
     AuthenticationGuard.prototype.canActivate = function (route, state) {
-        return true;
-        /* if (this.auth.isSignedIn() === true) {
-              return true;
-          } else {
-              this.router.navigate(['./']);
-          } */
+        if (this.auth.isSignedIn() === true) {
+            return true;
+        }
+        else {
+            this.router.navigate(['./']);
+        }
     };
     return AuthenticationGuard;
 }());
