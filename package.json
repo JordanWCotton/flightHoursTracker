@@ -2,13 +2,18 @@
   "name": "log-it",
   "version": "0.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "6.10.0",
+    "npm": "4.3.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
