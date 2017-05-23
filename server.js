@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const mongodb = require('mongodb');
 const bodyParser = require('body-parser');
 const crypto = require('crypto'); 
+const passport = require('passport');
+const Auth0Strategy = require('passport-auth0');
 const router = express.Router();
 
 require('./user'); 

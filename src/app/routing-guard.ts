@@ -8,7 +8,7 @@ export class AuthenticationGuard implements CanActivate {
 
   constructor(private auth: AuthService, private router: Router) {}
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      if (this.auth.isSignedIn() === true) {
+        if (this.auth.isSignedIn() === true) {
             return true;
         } else {
             this.router.navigate(['./']);
