@@ -7,6 +7,8 @@ The project must be built before running on the development server.
 
 There are two variables for the database username and password, note that you must supply these parameters to access the mongoDB server. It is highly suggested that you create your own at https://mlab.com/welcome/
 
+This application is hosted on Heroku, and is available at https://flighthourstracker.herokuapp.com/.
+
 ## Installing
 For placement in a production environment, you only need the contents of the 'dist' folder as well as the server.js and user.js files.
 
