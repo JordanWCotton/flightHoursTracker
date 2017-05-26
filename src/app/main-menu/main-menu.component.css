@@ -5,18 +5,15 @@
     font-family: 'Playfair Display', serif;
 }
 
-#it-name {
-    color: #8FC4D9;
-}
-
-#log-name {
-    color: #2E2E2E;
-}
-
 #title-container {
     text-align: center;
-    margin-top: 5%;
-    border-radius: 10px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#title-container img {
+    height: 250px;
+    width: 240px;
 }
  
 #new-flight, #weather, #view-log, #notams {
@@ -37,7 +34,7 @@
 }
 
 #new-flight {
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 #logout-button {
@@ -50,14 +47,15 @@
 /*Mobile specific */
 @media only screen and (max-width: 840px) {
     #title-container {
-        margin-top: 17%;
+        margin-top: 7%;
+        margin-bottom: 6%;
     }
 
     .main-menu-item {
-        margin-top: 5%;
+        margin-top: 3%;
     }
 
     #new-flight {
-        margin-top: 20%;
+        margin-top: 5%;
     }
 }

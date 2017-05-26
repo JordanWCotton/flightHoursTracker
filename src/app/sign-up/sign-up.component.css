@@ -6,21 +6,16 @@
     font-family: 'Playfair Display', serif; 
 }
 
-#it-name {
-    color: #8FC4D9;
-}
-
-#log-name {
-    color: #2E2E2E;
-}
-
 #title-container {
     text-align: center;
-    margin-top: 5%;
+    margin-top: 3%;
     margin-bottom: 3%;
-    border-radius: 10px;
 }
 
+#title-container img {
+    height: 250px;
+    width: 240px;
+}
 
 #sign-up-div {
     margin-top: 5%;
@@ -51,11 +46,11 @@
 /*Mobile specific */
 @media only screen and (max-width: 840px) {
     #title-container {
-        margin-top: 17%;
-        margin-bottom: 10%;
+        margin-top: 7%;
+        margin-bottom: 6%;
     }
 
     #sign-up-div {
-        margin-top: 15%;
+        margin-top: 5%;
     }
 }

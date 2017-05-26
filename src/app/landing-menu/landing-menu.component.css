@@ -6,19 +6,15 @@
     font-family: 'Playfair Display', serif;
 }   
 
-#it-name {
-    color: #8FC4D9;
-}
-
-#log-name {
-    color: #2E2E2E;
-}
-
 #title-container {
     text-align: center;
-    margin-top: 5%;
-    margin-bottom: 7%;
-    border-radius: 10px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+#title-container img {
+    height: 250px;
+    width: 240px;
 }
 
 .button-space {
@@ -58,8 +54,8 @@
     }
 
     #title-container {
-        margin-top: 17%;
-        margin-bottom: 13%;
+        margin-top: 7%;
+        margin-bottom: 6%;
     }
 }
 

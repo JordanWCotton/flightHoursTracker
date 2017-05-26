@@ -6,18 +6,15 @@
     font-family: 'Playfair Display', serif;
 } 
 
-#it-name {
-    color: #8FC4D9;
-}
-
-#log-name {
-    color: #2E2E2E;
-}
-
 #title-container {
     text-align: center;
-    margin-top: 6%;
-    border-radius: 10px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+#title-container img {
+    height: 250px;
+    width: 240px;
 }
 
 #email-input-div {
@@ -53,15 +50,16 @@
 /*Mobile specific */
 @media only screen and (max-width: 840px) {
     #title-container {
-        margin-top: 17%;
+        margin-top: 7%;
+        margin-bottom: 6%;
     }
 
     #email-input-div {
-        margin-top: 25%;
+        margin-top: 5%;
     }
 
     #log-in-div {
-        margin-top: 15%;
+        margin-top: 5%;
     }
 
 }
