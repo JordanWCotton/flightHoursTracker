@@ -239,7 +239,25 @@
                     data-target=".bd-example-modal-sm"></button>
                 <!--</div>-->
                 <!--Completion Modal-->
-                <!-- Third modal here -->
+                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+                aria-hidden="true" id="successModal">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content" id="submit-modal-content">
+                            <div class="modal-header" id="submit-modal-header">
+                                <h3>Upload successful!</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p>Do you want to log another flight?<p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn" id="yes-modal-button" 
+                                data-dismiss="modal" (click)="onResetForm()">Sure!</button>
+                                <button type="button" class="btn" id="no-modal-button" 
+                                data-dismiss="modal" [routerLink]="['/main-menu']">No thanks</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div> 
         </form>
         </div>
