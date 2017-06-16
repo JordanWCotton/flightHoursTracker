@@ -1,7 +1,8 @@
 /* Landing menu page */ 
  
 #landing-menu-container { 
-    background-color: #F2F2F2;   
+    background-color: #F2F2F2;
+    min-height: 100vh;   
     height: 100%;  
     font-family: 'Playfair Display', serif;
 }   

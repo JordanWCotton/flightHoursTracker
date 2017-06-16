@@ -3,6 +3,7 @@
 #flight-log-container {
     padding-top: 10px;
     background-color: #F2F2F2; 
+    min-height: 100vh;
     height: 100%; 
     font-family: 'Playfair Display', serif;
 }
