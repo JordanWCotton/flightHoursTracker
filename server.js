@@ -4,8 +4,6 @@ const mongoose = require('mongoose');
 const mongodb = require('mongodb');
 const bodyParser = require('body-parser');
 const crypto = require('crypto'); 
-const passport = require('passport');
-const Auth0Strategy = require('passport-auth0');
 const router = express.Router();
 
 require('./user'); 
@@ -24,7 +22,7 @@ let db;
 let currentUser = '';
 
 //Database credentials
-let dbURI = process.env.MONGODB_URI;
+let dbURI = 'mongodb://mongousr7:Password7@ds155820.mlab.com:55820/test-land';
 
 //Connect to database
 mongodb.MongoClient.connect(dbURI, (err, database) => {
