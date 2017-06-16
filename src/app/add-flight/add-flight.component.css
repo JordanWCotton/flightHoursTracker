@@ -3,7 +3,7 @@
 #add-new-flight-container {
     padding-top: 10px;
     background-color: #F2F2F2;
-    height: 100vh; 
+    height: 100%; 
     font-family: 'Playfair Display', serif;
 } 
 

@@ -1,7 +1,7 @@
 /* Main Menu page */ 
 #main-menu-container {
     background-color: #F2F2F2;
-    height: 100vh; 
+    height: 100%; 
     font-family: 'Playfair Display', serif;
 }
 
