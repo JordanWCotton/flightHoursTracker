@@ -94,7 +94,7 @@ app.post('/data/log-flight', (req, res) => {
     //Choose's the current logged in user's collection for storing flight data
     let collection = currentUser  
 
-    //Inserts the flight into the current user's table of flight data
+    //Insert the flight into the current user's table of flight data
     db.collection(collection).insertOne(newFlightOne, (err, doc) => {
         if (!err) { 
             res.sendStatus(200);
@@ -115,7 +115,6 @@ app.post('/data/log-flight', (req, res) => {
 app.get('/data/flightLog', (req, res) => {
     let collection = currentUser;
 
-    //Pulls all of the data in the flightData collection
     let cursor = db.collection(collection).find();
     cursor.toArray((err, results) => {
         //Handle errors
@@ -127,7 +126,6 @@ app.get('/data/flightLog', (req, res) => {
 });
 
 //Adds a sortBy function, which uses a Schwartzian Transform, to the Array prototype
-//This function was inspired by stackoverflow user Phrogz
 (() => {
   if (!Array.prototype.sortBy) Array.prototype.sortBy = sb;
 
@@ -152,7 +150,7 @@ app.get('/data/flightLog', (req, res) => {
 })();
 
 
-//Pulls a range of flight data from current user's collection of logged flights
+//Pulls flight data from a provided date range
 app.post('/data/flightlog/range', (req, res) => {
     let collection = currentUser;
     let fromDate = req.body.fromDate.momentObj;
