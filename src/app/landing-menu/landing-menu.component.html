@@ -1,15 +1,37 @@
 <div class="container-fluid" id="landing-menu-container"> 
   <div class="row">  
-    <div class="col-8 offset-2" id="title-container">
+    <div class="col-md-8 offset-md-2" id="title-container">
       <img src="assets/app_logo.png" href="flightTracker logo"> 
     </div>
   </div>
-  <div class="row button-space">
-    <button class="col-4 offset-4 btn menu-buttons" id="signin-button"
-    [routerLink]="['/log-in']">Sign In</button> 
-  </div>
-  <div class="row button-space">
-    <button class="col-4 offset-4 btn menu-buttons" id="signup-button"
-    [routerLink]="['/sign-up']">Sign Up</button> 
+  <div class="row">
+    <div class="menu-box col-md-4 offset-md-4">
+      <div class="row button-space">
+        <div class="col-md-8 offset-md-2">
+          <p>Log in to flightHoursTracker!</p>
+        </div>
+      </div>
+      <div class="row button-space">
+        <div class="col-md-8 offset-md-2"> 
+          <label>Email:</label> <br>
+          <input type="email" name="email" id="email-input" ngModel class="form-control">
+        </div>
+      </div>
+      <div class="row button-space">
+        <div class="col-md-8 offset-md-2">
+          <label>Password:</label> <br>
+          <input type="password" name="password" id="password-input" ngModel class="form-control">
+        </div>
+      </div>
+      <div class="row button-space">
+        <button class="col-md-4 offset-md-4 btn menu-buttons" id="signin-button"
+        [routerLink]="['/log-in']">Sign In</button> 
+      </div>
+      <div class="row button-space">
+        <div class="col-md-8 offset-md-2">
+          <span><p>Need an account? </p><p id="signup-link" [routerLink]="['/sign-up']">Sign up</p></span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
