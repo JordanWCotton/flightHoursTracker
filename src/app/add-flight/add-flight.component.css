@@ -1,20 +1,22 @@
 /*Add New Style page */ 
- 
+  
 #add-new-flight-container {
     padding-top: 10px;
-    background-color: #F2F2F2;
+    background-color: #FFFFFF;
     min-height: 100vh;
     height: 100%; 
     font-family: 'Playfair Display', serif;
+    padding-bottom: 15px;
 } 
 
 #back-icon {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     font-weight: 800;
     font-family: 'Playfair Display', serif;
     border-radius: 6px;
     padding: 3px;
+    cursor: pointer;
 }
 
 #add-flight-title {
@@ -82,42 +84,46 @@ ul input {
 }
 
 #flightDropdownOne, #flightDropdownTwo, #flightDropdownThree {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     font-weight: 800;
     font-family: 'Playfair Display', serif;
-    width: 60px; /* try 80 */
+    width: 60px; 
     border-radius: 6px;
+    cursor: pointer;
 }
 
 #seatDropdownOne, #seatDropdownTwo, #seatDropdownThree {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     font-weight: 800;
     font-family: 'Playfair Display', serif;
     width: 60px;
     border-radius: 6px;
+    cursor: pointer;
 }
 
 #dutyDropdownOne, #dutyDropdownTwo, #dutyDropdownThree {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     font-weight: 800;
     width: 60px;
+    cursor: pointer;
 } 
 
 #submit-button {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     font-weight: 800;
     font-family: 'Playfair Display', serif;
     margin-top: 2%;
     border-radius: 6px;
+    cursor: pointer;
 }
 
 #submit-modal-content {
     text-align: center;
-    background-color: #F2F2F2;
+    background-color: #FFFFFF;
     color: #2E2E2E;
 } 
 
@@ -138,15 +144,17 @@ ul input {
  }
 
  #yes-modal-button {
-     background-color: #8FC4D9;
-    color: #2E2E2E; 
+    background-color: #16a085;
+    color: #FFFFFF;
     font-weight: 800;
+    cursor: pointer;
  }
 
  #no-modal-button {
-     background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     font-weight: 800;
+    cursor: pointer;
  }
 
  .first-row-item {

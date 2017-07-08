@@ -2,19 +2,20 @@
 
 #flight-log-container {
     padding-top: 10px;
-    background-color: #F2F2F2; 
+    background-color: #FFFFFF; 
     min-height: 100vh;
     height: 100%; 
     font-family: 'Playfair Display', serif;
 }
 
 #back-icon {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     font-weight: 800;
     font-family: 'Playfair Display', serif;
     border-radius: 6px;
     padding: 3px;
+    cursor: pointer;
 }
 
 #flight-log-title {
@@ -38,45 +39,50 @@
 }
 
 #modal-content-id {
-    background-color: #F2F2F2; 
+    background-color: #FFFFFF;
     color: #2E2E2E;
 }
 
 #close-daterange-modal {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     font-weight: 800;
+    cursor: pointer;
 }
 
 #close-remarks-modal {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     font-weight: 800;
+    cursor: pointer;
 }
 
 #save-daterange-modal {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     font-weight: 800;
+    cursor: pointer;
 }
 
 #date-range-button {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     font-family: 'Playfair Display', serif;
     margin-bottom: 2%;
     border-radius: 6px;
     text-align: center;
     font-weight: 800;
+    cursor: pointer;
 }
 
 #new-range-button {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     font-family: 'Playfair Display', serif;
     border-radius: 6px;
     text-align: center;
     font-weight: 800;
+    cursor: pointer;
 }
 
 #date-range {
@@ -104,12 +110,13 @@
 }
 
 #filterButton, #reqdButton {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     font-weight: 800;
     text-align: center;
     border-radius: 6px;
     margin-top: 5%;
+    cursor: pointer;
 }
 
 .custom-col {
@@ -126,8 +133,9 @@
     border-radius: 10px;
     margin-top: 5%;
     padding: 2px;
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
+    cursor: pointer;
 }
 
 #big-flight-log {
@@ -143,22 +151,25 @@
 }
 
 #view-totals-btn {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     font-weight: 800;
+    cursor: pointer;
 }
 
 #edit-flights-btn {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     font-weight: 800;
+    cursor: pointer;
 }
 
 #show-flight-list {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     font-weight: 800;
     margin-top: 3%;
+    cursor: pointer;
 }
 
 .low-button-row {
