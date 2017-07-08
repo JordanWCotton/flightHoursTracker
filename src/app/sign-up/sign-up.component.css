@@ -30,6 +30,7 @@
     border-radius: 6px;
     font-family: 'Playfair Display', serif;
     font-weight: 800;
+    cursor: pointer;
 }
 
 #register-modal-content {
