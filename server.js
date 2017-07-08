@@ -22,7 +22,7 @@ let db;
 let currentUser = '';
 
 //Database credentials
-let dbURI = 'mongodb://mongousr7:Password7@ds155820.mlab.com:55820/test-land';
+let dbURI = process.env.MONGODB_URI;
 
 //Connect to database
 mongodb.MongoClient.connect(dbURI, (err, database) => {
