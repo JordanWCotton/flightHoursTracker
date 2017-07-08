@@ -3,7 +3,6 @@ import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { FlightLogComponent } from './flight-log/flight-log.component';
 import { AddFlightComponent } from './add-flight/add-flight.component';
-import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LandingMenuComponent } from './landing-menu/landing-menu.component';
 import { AuthenticationGuard } from './routing-guard';
@@ -13,7 +12,7 @@ const APP_ROUTES: Routes = [
     {path: 'main-menu', component: MainMenuComponent, canActivate: [AuthenticationGuard]},
     {path: 'flight-log', component: FlightLogComponent, canActivate: [AuthenticationGuard]},
     {path: 'add-flight', component: AddFlightComponent, canActivate: [AuthenticationGuard]},
-    {path: 'log-in', component: LogInComponent},
+    {path: 'landing-menu', component: LandingMenuComponent},
     {path: 'sign-up', component: SignUpComponent}
 ]
 

@@ -12,7 +12,6 @@ import { AddFlightComponent } from './add-flight/add-flight.component';
 import { routing } from './routing';
 import { AddFlightService } from './add-flight.service';
 import { ViewLogService } from './view-log.service';
-import { LogInComponent } from './log-in/log-in.component';
 import { LandingMenuComponent } from './landing-menu/landing-menu.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AuthService } from './auth.service';
@@ -25,7 +24,6 @@ import { AuthenticationGuard } from './routing-guard';
     MainMenuComponent,
     FlightLogComponent,
     AddFlightComponent,
-    LogInComponent,
     LandingMenuComponent,
     SignUpComponent
   ],
