@@ -178,7 +178,7 @@ app.get('/sign-up', (req, res) => {
   res.sendFile(distDir);
 });
 
-app.get('/log-in', (req, res) => {
+app.get('/landing-menu', (req, res) => {
   res.sendFile(distDir);
 });
 
