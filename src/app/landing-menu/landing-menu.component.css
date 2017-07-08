@@ -54,6 +54,10 @@
     cursor: pointer;
 }
 
+#modal-close-button {
+    cursor: pointer;
+}
+
 /*Mobile specific */
 @media only screen and (max-width: 840px) {
     .button-space {
