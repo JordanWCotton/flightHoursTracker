@@ -1,27 +1,31 @@
-<div class="container-fluid" id="main-menu-container">  
+<div class="container-fluid" id="main-menu-container">   
     <div class="row">
         <div class="col-8 offset-2" id="title-container"> 
             <img src="assets/app_logo.png" href="flightTracker logo"> 
         </div>
     </div>
+    <div class="row">
+        <div class="menu-box col-md-4 offset-md-4"> 
     <div class="row"> 
-        <button class="col-4 offset-4 main-menu-item btn" id="new-flight"
+        <button class="col-md-8 offset-md-2 main-menu-item btn" id="new-flight"
         [routerLink]="['/add-flight']">New Flight</button>
     </div>
     <div class="row">
-        <button class="col-4 offset-4 main-menu-item btn" id="view-log"
+        <button class="col-md-8 offset-md-2 main-menu-item btn" id="view-log"
         [routerLink]="['/flight-log']">View Log</button>
     </div>
     <div class="row">
-        <button class="col-4 offset-4 main-menu-item btn" 
+        <button class="col-md-8 offset-md-2 main-menu-item btn" 
         id="weather">Weather</button>
     </div>
     <div class="row">
-        <button class="col-4 offset-4 main-menu-item btn" 
+        <button class="col-md-8 offset-md-2 main-menu-item btn" 
         id="notams">NOTAMS</button>
     </div>
     <div class="row" id="logout-button-div">
-        <button class="col-4 offset-4 btn main-menu-item" id="logout-button" 
+        <button class="col-md-8 offset-md-2 btn main-menu-item" id="logout-button" 
         (click)="onLogout()">Log Out</button>
     </div>
+        </div>
+        </div>
 </div>

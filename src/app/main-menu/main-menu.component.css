@@ -1,9 +1,10 @@
 /* Main Menu page */ 
 #main-menu-container {
-    background-color: #F2F2F2;
+    background-color: #16a085;
     min-height: 100vh;
     height: 100%; 
     font-family: 'Playfair Display', serif;
+    padding-bottom: 15px;
 }
 
 #title-container {
@@ -18,8 +19,9 @@
 }
  
 #new-flight, #weather, #view-log, #notams {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
+    cursor: pointer;
 }
 
 .main-menu-item {
@@ -39,10 +41,20 @@
 }
 
 #logout-button {
-    background-color: #8FC4D9;
-    color: #2E2E2E;
+    background-color: #16a085;
+    color: #FFFFFF;
     border-radius: 6px;
-    margin-top: 20%;
+    margin-top: 4%;
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+
+.menu-box {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    text-align: center;
+    color: #16a085;
+    padding: 2%;
 }
 
 /*Mobile specific */
@@ -58,5 +70,10 @@
 
     #new-flight {
         margin-top: 5%;
+    }
+
+    .menu-box {
+        margin-left: 5px;
+        margin-right: 5px;
     }
 }
