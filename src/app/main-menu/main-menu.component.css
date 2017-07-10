@@ -12,7 +12,7 @@
     margin-top: 1%;
     margin-bottom: 1%;
 }
-
+ 
 #title-container img {
     height: 250px;
     width: 240px;
@@ -73,6 +73,11 @@
     }
 
     .menu-box {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    #new-flight, #weather, #view-log, #notams {
         margin-left: 5px;
         margin-right: 5px;
     }
