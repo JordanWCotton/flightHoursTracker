@@ -142,8 +142,7 @@ export class AddFlightComponent {
   }
  
   //Send the flight data  to the add-flight service 
-  onSubmit(f) {
-  if (true) {  
+  onSubmit(f) { 
     //replace hours validator here
       this.addFlight.logFlightData(f.value)
         .subscribe (
@@ -155,9 +154,6 @@ export class AddFlightComponent {
           },
           (error) => console.log(error) 
         );
-    } else {
-
-    } 
   }
 
   //Closes the dropdown menus when the user selects something

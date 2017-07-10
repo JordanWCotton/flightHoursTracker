@@ -11,7 +11,7 @@ import { DatePickerOptions, DateModel } from 'ng2-datepicker';
   styleUrls: ['./flight-log.component.css']
 })
 export class FlightLogComponent implements OnInit {
-  @ViewChild('openModalButton') openModal:ElementRef;
+  @ViewChild('openModalButton') openModal:ElementRef; 
 
   public fromOptions: DatePickerOptions;
   public toOptions: DatePickerOptions;
