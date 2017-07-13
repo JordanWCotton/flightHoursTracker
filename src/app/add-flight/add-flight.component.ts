@@ -25,9 +25,9 @@ export class AddFlightComponent {
   public date: DateModel;
   public options: DatePickerOptions;
   public todayDate = new Date();
-  public hoursOne: number;
-  public hoursTwo: number;
-  public hoursThree: number;
+  public hoursOne: number = 0.0;
+  public hoursTwo: number = 0.0;
+  public hoursThree: number = 0.0;
   public remarksValue: string = '';
 
   constructor(private addFlight: AddFlightService, private _fb: FormBuilder, 
@@ -150,7 +150,9 @@ export class AddFlightComponent {
             console.log(response);
             if (response.status == 200) {
               this.openModal.nativeElement.click(); //Displays success modal
-            } 
+            } else {
+              console.log('Failed');
+            }
           },
           (error) => console.log(error) 
         );
