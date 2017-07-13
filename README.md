@@ -9,6 +9,10 @@ There are two variables for the database username and password, note that you mu
 
 This application is hosted on Heroku, and is available at https://flighthourstracker.herokuapp.com/.
 
+For demo purposes, the following login information may be used to log into the application:
+Username: Example@example.com
+Password: Password93
+
 ## Installing
 For placement in a production environment, you only need the contents of the 'dist' folder as well as the server.js and user.js files.
 
@@ -35,6 +39,6 @@ The application is still very much in development, and as such the currently imp
 + User can view hour totals for each Duty Symbol, or for each Flight Symbol, as well as overall total hours to date.
 + User can view the above mentioned filtered hour totals for specific date ranges. 
 + User can view flight hour requirements on the hour totals screen.
-+ User can see how many hours they have remaining to fulfil each specific requirement.
++ User can see how many hours they have remaining to fulfill each specific requirement.
 
 
