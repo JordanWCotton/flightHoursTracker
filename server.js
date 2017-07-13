@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 
 //Allows access to our database outside of connect method
 let db;
+
 //Stores current logged in user for proper collection and data access 
 let currentUser = '';
 
