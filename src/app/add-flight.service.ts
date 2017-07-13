@@ -37,12 +37,13 @@ export class AddFlightService {
   constructor(private http: Http, private auth: AuthService) {}
 
   logFlightData (formData) {
-    this.flightData.flightOne.date = formData.date;
-    this.flightData.flightOne.hours = formData.hoursOne;
-    this.flightData.flightOne.remarks = formData.remarks;
-    this.flightData.flightOne.flightSymbol = formData.flightSymbolOne;
-    this.flightData.flightOne.dutySymbol = formData.dutySymbolOne;
-    this.flightData.flightOne.seat = formData.seatOne;
+      this.flightData.flightOne.date = formData.date;
+      this.flightData.flightOne.hours = formData.hoursOne;
+      this.flightData.flightOne.remarks = formData.remarks;
+      this.flightData.flightOne.flightSymbol = formData.flightSymbolOne;
+      this.flightData.flightOne.dutySymbol = formData.dutySymbolOne;
+      this.flightData.flightOne.seat = formData.seatOne;
+    
 
     if (formData.flightSymbolTwo !== '') {
       this.flightData.flightTwo.date = formData.date;
@@ -53,7 +54,7 @@ export class AddFlightService {
       this.flightData.flightTwo.seat = formData.seatTwo;
       
       this.flightData.secondFlight = true;
-    }
+    };
 
     
 
@@ -66,13 +67,13 @@ export class AddFlightService {
       this.flightData.flightThree.seat = formData.seatThree;
 
       this.flightData.thirdFlight = true;
-    }
-    console.log(this.flightData);
+    };
+  
     return this.http.post('/data/log-flight', this.flightData);
   }
 
-  sortFlightData (formData) {
+  /* sortFlightData (formData) {
     
-  }
+  } */
 
 } 
