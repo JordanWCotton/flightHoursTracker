@@ -35,7 +35,7 @@
                             <div *ngFor="let flightSymbol of flightSymbolsOne">
                                 <label>
                                 <input type="radio" name="flightSymbolOne" [(ngModel)]="flight.flightSymbolOne"
-                                [value]="flightSymbol.value" (click)="onDropdownSelect($event)" class="radioSel">
+                                [value]="flightSymbol.value" (click)="onDropdownSelect($event)" class="radioSel"/>
                                     {{flightSymbol.value}}
                                 </label>
                             </div>
@@ -53,7 +53,7 @@
                             <div *ngFor="let flightSymbol of flightSymbolsTwo">
                                 <label>
                                 <input type="radio" name="flightSymbolTwo" [(ngModel)]="flight.flightSymbolTwo"
-                                [value]="flightSymbol.value" (click)="onDropdownSelect($event)" class="radioSel">
+                                [value]="flightSymbol.value" (click)="onDropdownSelect($event)" class="radioSel"/>
                                     {{flightSymbol.value}}
                                 </label>
                             </div>
@@ -71,7 +71,7 @@
                             <div *ngFor="let flightSymbol of flightSymbolsThree">
                                 <label>
                                 <input type="radio" name="flightSymbolThree" [(ngModel)]="flight.flightSymbolThree"
-                                [value]="flightSymbol.value" (click)="onDropdownSelect($event)" class="radioSel">
+                                [value]="flightSymbol.value" (click)="onDropdownSelect($event)" class="radioSel"/>
                                     {{flightSymbol.value}}
                                 </label>
                             </div>
@@ -94,7 +94,7 @@
                             <div *ngFor="let dutySymbol of dutySymbolsOne">
                                 <label>
                                 <input type="radio" name="dutySymbolOne" [(ngModel)]="flight.dutySymbolOne"
-                                [value]="dutySymbol.value" (click)="onDropdownSelect($event)">
+                                [value]="dutySymbol.value" (click)="onDropdownSelect($event)"/>
                                     {{dutySymbol.value}}
                                 </label>
                             </div>
@@ -112,7 +112,7 @@
                             <div *ngFor="let dutySymbol of dutySymbolsTwo">
                                 <label>
                                 <input type="radio" name="dutySymbolTwo" [(ngModel)]="flight.dutySymbolTwo"
-                                [value]="dutySymbol.value" (click)="onDropdownSelect($event)">
+                                [value]="dutySymbol.value" (click)="onDropdownSelect($event)"/>
                                     {{dutySymbol.value}}
                                 </label>
                             </div>
@@ -130,7 +130,7 @@
                             <div *ngFor="let dutySymbol of dutySymbolsThree">
                                 <label>
                                 <input type="radio" name="dutySymbolThree" [(ngModel)]="flight.dutySymbolThree"
-                                [value]="dutySymbol.value" (click)="onDropdownSelect($event)">
+                                [value]="dutySymbol.value" (click)="onDropdownSelect($event)"/>
                                     {{dutySymbol.value}}
                                 </label>
                             </div>
@@ -145,19 +145,19 @@
                 <div class="col-1 first-row-item">
                     <div class="input-group add-flight-selectors">
                         <input type="number" id="hours-inputOne" class="hours-input-box" placeholder="0.0" 
-                        aria-describedby="sizing-addon1" name="hoursOne" [(ngModel)]="flight.hoursOne">
+                        aria-describedby="sizing-addon1" name="hoursOne" [(ngModel)]="flight.hoursOne"/>
                     </div>
                 </div>
                 <div class="col-1 next-row-item">
                     <div class="input-group add-flight-selectors">
                         <input type="number" id="hours-inputTwo" class="hours-input-box" placeholder="0.0" 
-                        aria-describedby="sizing-addon1" name="hoursTwo" [(ngModel)]="flight.hoursTwo">
+                        aria-describedby="sizing-addon1" name="hoursTwo" [(ngModel)]="flight.hoursTwo"/>
                     </div>
                 </div>
                 <div class="col-1 next-row-item">
                     <div class="input-group add-flight-selectors">
                         <input type="number" id="hours-inputThree" class="hours-input-box" placeholder="0.0" 
-                        aria-describedby="sizing-addon1" name="hoursThree" [(ngModel)]="flight.hoursThree">
+                        aria-describedby="sizing-addon1" name="hoursThree" [(ngModel)]="flight.hoursThree"/>
                     </div>
                 </div>
             </div> 
@@ -176,7 +176,7 @@
                             <div *ngFor="let seats of seatOne">
                                 <label>
                                 <input type="radio" name="seatOne" [(ngModel)]="flight.seatOne"
-                                [value]="seats.value" (click)="onDropdownSelect($event)">
+                                [value]="seats.value" (click)="onDropdownSelect($event)"/>
                                 {{seats.value}}
                                 </label>
                             </div> 
@@ -194,7 +194,7 @@
                             <div *ngFor="let seats of seatTwo">
                                 <label>
                                 <input type="radio" name="seatTwo" [(ngModel)]="flight.seatTwo"
-                                [value]="seats.value" (click)="onDropdownSelect($event)">
+                                [value]="seats.value" (click)="onDropdownSelect($event)"/>
                                 {{seats.value}}
                                 </label>
                             </div>
@@ -212,7 +212,7 @@
                             <div *ngFor="let seats of seatThree">
                                 <label>
                                 <input type="radio" name="seatThree" [(ngModel)]="flight.seatThree"
-                                [value]="seats.value" (click)="onDropdownSelect($event)">
+                                [value]="seats.value" (click)="onDropdownSelect($event)"/>
                                 {{seats.value}}
                                 </label>
                             </div>
@@ -227,7 +227,7 @@
                 <div class="col-7 add-flight-remarks first-row-item">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Enter remarks..." 
-                        aria-describedby="sizing-addon2" name="remarks" [maxlength]="30" [(ngModel)]="flight.remarks">
+                        aria-describedby="sizing-addon2" name="remarks" [maxlength]="30" [(ngModel)]="flight.remarks"/>
                     </div>
                 </div> 
             </div> 
