@@ -1,9 +1,12 @@
 /* Main Menu page */  
+
+* {
+    font-family: 'Playfair Display', serif;
+}
 #main-menu-container {
     background-color: #16a085;
     min-height: 100vh;
     height: 100%; 
-    font-family: 'Playfair Display', serif;
     padding-bottom: 15px;
 }
 
@@ -28,7 +31,6 @@
     text-align: center;
     margin-top: 1%;
     border-radius: 6px;
-    font-family: 'Playfair Display', serif;
     font-weight: 800;
 }
 
