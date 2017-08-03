@@ -1,11 +1,14 @@
 /*Add New Style page */ 
+
+* {
+    font-family: 'Playfair Display', serif;
+}
   
 #add-new-flight-container {
     padding-top: 10px;
     background-color: #FFFFFF;
     min-height: 100vh;
     height: 100%; 
-    font-family: 'Playfair Display', serif;
     padding-bottom: 15px;
 } 
 
@@ -13,7 +16,6 @@
     background-color: #16a085;
     color: #FFFFFF;
     font-weight: 800;
-    font-family: 'Playfair Display', serif;
     border-radius: 6px;
     padding: 3px;
     cursor: pointer;
@@ -68,7 +70,6 @@ ul input {
 }
 
 .add-flight-selectors {
-    font-family: 'Playfair Display', serif;
     font-weight: 800;
 }
 
@@ -87,7 +88,6 @@ ul input {
     background-color: #16a085;
     color: #FFFFFF;
     font-weight: 800;
-    font-family: 'Playfair Display', serif;
     width: 60px; 
     border-radius: 6px;
     cursor: pointer;
@@ -97,7 +97,6 @@ ul input {
     background-color: #16a085;
     color: #FFFFFF;
     font-weight: 800;
-    font-family: 'Playfair Display', serif;
     width: 60px;
     border-radius: 6px;
     cursor: pointer;
@@ -115,7 +114,6 @@ ul input {
     background-color: #16a085;
     color: #FFFFFF;
     font-weight: 800;
-    font-family: 'Playfair Display', serif;
     margin-top: 2%;
     border-radius: 6px;
     cursor: pointer;
