@@ -1,18 +1,20 @@
 /* Flight Log page */
 
+* {
+    font-family: 'Playfair Display', serif;
+}
+
 #flight-log-container {
     padding-top: 10px;
     background-color: #FFFFFF; 
     min-height: 100vh;
     height: 100%; 
-    font-family: 'Playfair Display', serif;
 }
 
 #back-icon {
     background-color: #16a085;
     color: #FFFFFF;
     font-weight: 800;
-    font-family: 'Playfair Display', serif;
     border-radius: 6px;
     padding: 3px;
     cursor: pointer;
@@ -67,7 +69,6 @@
 #date-range-button {
     background-color: #16a085;
     color: #FFFFFF;
-    font-family: 'Playfair Display', serif;
     margin-bottom: 2%;
     border-radius: 6px;
     text-align: center;
@@ -78,7 +79,6 @@
 #new-range-button {
     background-color: #16a085;
     color: #FFFFFF;
-    font-family: 'Playfair Display', serif;
     border-radius: 6px;
     text-align: center;
     font-weight: 800;
