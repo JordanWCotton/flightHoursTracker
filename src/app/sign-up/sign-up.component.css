@@ -1,10 +1,13 @@
 /* Sign up page */
-  
+
+* {
+    font-family: 'Playfair Display', serif;
+}
+
 #sign-up-container { 
     background-color: #16a085;
     min-height: 100vh;
     height: 100%; 
-    font-family: 'Playfair Display', serif; 
     padding-bottom: 15px;
 }
 
@@ -28,7 +31,6 @@
     color: #FFFFFF;
     text-align: center;
     border-radius: 6px;
-    font-family: 'Playfair Display', serif;
     font-weight: 800;
     cursor: pointer;
 }
@@ -41,7 +43,6 @@
 
 #modal-close-button {
     background-color: #8FC4D9;
-     font-family: 'Playfair Display', serif;
     color: #2E2E2E;
     font-weight: 800; 
 }
