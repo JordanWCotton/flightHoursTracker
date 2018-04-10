@@ -120,8 +120,10 @@ export class FlightLogComponent implements OnInit {
       this.roundHours(); //Allows initial display of total hours
   }
 
-  //Only way to allow .toFixed(1) to be called on hours, was to reassign them to new local variables
-  //ensuring correct addition of hours for their display
+  /*
+  Only way to allow .toFixed(1) to be called on hours, was to reassign them to new local variables
+  ensuring correct addition of hours for their display
+  */
   roundHours () { 
     this.totalHours = this.rawFlightHours.totalHours.toFixed(1);
     this.dayHours = this.rawFlightHours.dayHours.toFixed(1);
@@ -173,8 +175,10 @@ export class FlightLogComponent implements OnInit {
       this.roundHours(); 
     } 
 
-  //Date range validation logic. Ensures users enter a date range from a point in the past to a point in the 
-  //future. If they input an incorrect date range the button/date range display willd default back to current
+  /*
+  Date range validation logic. Ensures users enter a date range from a point in the past to a point in the 
+  future. If they input an incorrect date range the button/date range display will default back to current date
+  */
   sendDates () {
     this.fromDate.year > this.toDate.year ? this.datesSubmitted = false//Failed
     : this.fromDate.month > this.toDate.month ? this.datesSubmitted = false//Failed
