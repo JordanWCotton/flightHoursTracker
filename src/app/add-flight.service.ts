@@ -71,9 +71,4 @@ export class AddFlightService {
   
     return this.http.post('/data/log-flight', this.flightData);
   }
-
-  /* sortFlightData (formData) {
-    
-  } */
-
 } 
